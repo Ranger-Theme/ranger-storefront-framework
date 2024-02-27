@@ -1,0 +1,35 @@
+{
+  "name": "@ranger/ui-theme",
+  "version": "0.1.0",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "license": "MIT",
+  "description": "Ranger Ui Base On Mui",
+  "scripts": {
+    "start": "yarn dev",
+    "start:dev": "yarn dev",
+    "dev:staging": "yarn dev",
+    "dev:prod": "yarn dev",
+    "build": "tsup src/index.tsx --format esm,cjs --dts --external react",
+    "build:dev": "tsup src/index.tsx --format esm,cjs --dts --external react",
+    "build:staging": "tsup src/index.tsx --format esm,cjs --dts --external react",
+    "dev": "tsup src/index.tsx --format esm,cjs --watch --dts --external react",
+    "lint": "eslint \"**/*.{ts,tsx}\"",
+    "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "CHANGELOG.md"
+  ],
+  "dependencies": {
+    "@emotion/styled": "^11.10.5",
+    "@mui/material": "^5.5.11"
+  },
+  "devDependencies": {
+    "@ranger/ts-config": "workspace:^",
+    "@ranger/eslint-config": "workspace:^",
+    "tsup": "^5.10.1"
+  }
+}
