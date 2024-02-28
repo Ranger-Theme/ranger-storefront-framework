@@ -7,14 +7,14 @@
   "license": "MIT",
   "description": "Ranger Ui Base On Mui",
   "scripts": {
-    "start": "yarn dev",
-    "start:dev": "yarn dev",
-    "dev:staging": "yarn dev",
-    "dev:prod": "yarn dev",
-    "build": "tsup src/index.tsx --format esm,cjs --dts --external react",
-    "build:dev": "tsup src/index.tsx --format esm,cjs --dts --external react",
-    "build:staging": "tsup src/index.tsx --format esm,cjs --dts --external react",
-    "dev": "tsup src/index.tsx --format esm,cjs --watch --dts --external react",
+    "start": "pnpm dev",
+    "start:dev": "pnpm dev",
+    "dev:staging": "pnpm dev",
+    "dev:prod": "pnpm dev",
+    "build": "tsup src/index.ts --format esm,cjs --dts --external react",
+    "build:dev": "tsup src/index.ts --format esm,cjs --dts --external react",
+    "build:staging": "tsup src/index.ts --format esm,cjs --dts --external react",
+    "dev": "tsup src/index.ts --format esm,cjs --watch --dts --external react",
     "lint": "eslint \"**/*.{ts,tsx}\"",
     "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist"
   },
@@ -25,11 +25,15 @@
   ],
   "dependencies": {
     "@emotion/styled": "^11.10.5",
-    "@mui/material": "^5.5.11"
+    "@mui/material": "^5.5.11",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   },
   "devDependencies": {
-    "@ranger/ts-config": "workspace:^",
     "@ranger/eslint-config": "workspace:^",
+    "@ranger/ts-config": "workspace:^",
+    "@types/react": "^18.2.46",
+    "@types/react-dom": "^18.2.18",
     "tsup": "^5.10.1"
   }
 }

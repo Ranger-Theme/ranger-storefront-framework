@@ -15,9 +15,7 @@
   },
   "dependencies": {
     "dateformat": "^4.5.1",
-    "next-build-id": "^3.0.0",
-    "@sentry/nextjs": "^7.54.0",
-    "next-pwa": "^5.6.0"
+    "next-build-id": "^3.0.0"
   },
   "devDependencies": {
     "@next/bundle-analyzer": "^13.4.12"

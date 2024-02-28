@@ -1,12 +1,8 @@
 {
   "extends": "@ranger/ts-config/react-library.json",
   "compilerOptions": {
-    "outDir": "dist",
-    "baseUrl": ".",
-    "paths": {
-      "@/*": ["/*"]
-    }
+    "lib": ["dom", "ES2015"]
   },
-  "include": ["**/*.ts", "**/*.tsx"],
+  "include": ["."],
   "exclude": ["dist", "build", "node_modules"]
 }
