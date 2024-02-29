@@ -1,16 +1,18 @@
-const withSentry = require("@sentry/nextjs");
+const fs = require("fs");
 const dateformat = require("dateformat");
 const nextBuildId = require("next-build-id");
-const fs = require("fs");
+
 const BannerPlugin = require("./banner");
-const nextCache = require("./cache");
 
 const isProd = process.env.NODE_ENV === "production";
-const isPWA = process.env.REACT_APP_PWA_ENABLE === "1";
-const isAnalyzer = process.env.REACT_APP_BUNDLE_VISUALIZE === "1" && isProd;
-const isSentry = process.env.REACT_SENTRY_ENABLE === "1";
+const isAnalyzer = process.env.REACT_APP_BUNDLE_VISUALIZE === "1";
 
-module.exports = ({ pkg = {}, dir = __dirname, timeStamp = 0, ...rest }) => {
+module.exports = ({
+  pkg = {},
+  dirname = __dirname,
+  timestamp = 0,
+  ...rest
+}) => {
   /**
    * @type {import('next').NextConfig}
    */
@@ -24,7 +26,12 @@ module.exports = ({ pkg = {}, dir = __dirname, timeStamp = 0, ...rest }) => {
     reactStrictMode: isProd,
     swcMinify: true,
     trailingSlash: false,
-    transpilePackages: ["lodash-es", "nanoid", "@ocloud/mui"],
+    transpilePackages: [
+      "lodash-es",
+      "nanoid",
+      "@ranger/ui-theme",
+      ...(rest?.transpilePackages ?? []),
+    ],
     compiler: {
       reactRemoveProperties: isProd,
       removeConsole: false,
@@ -51,10 +58,6 @@ module.exports = ({ pkg = {}, dir = __dirname, timeStamp = 0, ...rest }) => {
     eslint: {
       ignoreDuringBuilds: true,
     },
-    experimental: {
-      appDir: false,
-      esmExternals: "loose",
-    },
     images: {
       remotePatterns: [
         {
@@ -63,18 +66,13 @@ module.exports = ({ pkg = {}, dir = __dirname, timeStamp = 0, ...rest }) => {
         },
       ],
     },
-    modularizeImports: {
-      lodash: {
-        transform: "lodash/{{member}}",
-      },
-    },
     typescript: {
       ignoreBuildErrors: isProd,
     },
     generateBuildId: async () => {
-      const commitId = await nextBuildId({ dir });
+      const commitId = await nextBuildId({ dir: dirname });
       const trunk = commitId.substring(0, 16);
-      return `${trunk}_${timeStamp.toString()}`;
+      return `${trunk}_${timestamp.toString()}`;
     },
     async headers() {
       return [
@@ -90,13 +88,13 @@ module.exports = ({ pkg = {}, dir = __dirname, timeStamp = 0, ...rest }) => {
         },
       ];
     },
-    webpack: (config, { buildId, isServer, webpack }) => {
+    webpack: (config, { buildId, isServer }) => {
       // Write buildId to the version controll file
       fs.writeFileSync(
         "public/version.json",
         JSON.stringify({
           version: buildId,
-          timeStamp,
+          timestamp,
         })
       );
 
@@ -106,28 +104,28 @@ module.exports = ({ pkg = {}, dir = __dirname, timeStamp = 0, ...rest }) => {
           if (
             config.output.filename === "static/chunks/[name]-[contenthash].js"
           ) {
-            config.output.filename = `static/chunks/[name]-[contenthash]-${timeStamp}.js`;
+            config.output.filename = `static/chunks/[name]-[contenthash]-${timestamp}.js`;
           }
 
           if (
             config.output.chunkFilename ===
             "static/chunks/[name].[contenthash].js"
           ) {
-            config.output.chunkFilename = `static/chunks/[name]-[contenthash]-${timeStamp}.js`;
+            config.output.chunkFilename = `static/chunks/[name]-[contenthash]-${timestamp}.js`;
           }
         }
 
         // Polyfill contorll version
         config.plugins.map((plugin) => {
           if (plugin.constructor.name === "CopyFilePlugin") {
-            plugin.name = `static/chunks/polyfills-[hash]-${timeStamp}.js`;
+            plugin.name = `static/chunks/polyfills-[hash]-${timestamp}.js`;
           }
 
           if (plugin.constructor.name === "NextMiniCssExtractPlugin") {
             plugin.options = {
               ...plugin.options,
-              filename: `static/css/[contenthash]-${timeStamp}.css`,
-              chunkFilename: `static/css/[contenthash]-${timeStamp}.css`,
+              filename: `static/css/[contenthash]-${timestamp}.css`,
+              chunkFilename: `static/css/[contenthash]-${timestamp}.css`,
             };
           }
 
@@ -137,37 +135,9 @@ module.exports = ({ pkg = {}, dir = __dirname, timeStamp = 0, ...rest }) => {
 
       // Client webpack conifg
       if (!isServer) {
-        // Attention: It must be placed after terserplugin, otherwise the generated annotation description will be cleared by terserplugin or other compression plug-ins
         if (isProd && pkg) {
           config.optimization.splitChunks.cacheGroups = {
-            ...(isSentry && {
-              sentry: {
-                chunks: "all",
-                name: "sentry",
-                test: /[\\/]node_modules[\\/](@sentry\/nextjs|@sentry\/core|@sentry\/replay|@sentry\/browser|@sentry\/utils|@sentry-internal\/tracing)[\\/]/,
-                priority: 100,
-                enforce: true,
-                reuseExistingChunk: true,
-              },
-            }),
-            runtime: {
-              chunks: "all",
-              name: "runtime",
-              test: /[\\/]node_modules[\\/](redux-logger|react-toastify|react-intl|redux|@reduxjs\/toolkit|react-redux|@emotion\/cache|@emotion\/react|@emotion\/styled|axios|crypto-js|ua-parser-js|big.js|sa-sdk-javascript|dayjs|immer|qs|@mui\/x-date-pickers)[\\/]/,
-              priority: 90,
-              enforce: true,
-              reuseExistingChunk: true,
-            },
-            mui: {
-              name: "mui",
-              test: /[\\/]node_modules[\\/]@mui\/material[\\/]/,
-              chunks: "all",
-              priority: 3,
-              minSize: 300000,
-              maxSize: 600000,
-              reuseExistingChunk: true,
-              enforce: true,
-            },
+            ...(rest?.cacheGroups ?? {}),
             ...config.optimization.splitChunks.cacheGroups,
           };
 
@@ -187,19 +157,11 @@ module.exports = ({ pkg = {}, dir = __dirname, timeStamp = 0, ...rest }) => {
         }
       }
 
-      // Sentry webpack tree shaking
-      config.plugins.push(
-        new webpack.DefinePlugin({
-          __SENTRY_DEBUG__: false,
-          __SENTRY_TRACING__: false,
-        })
-      );
-      // Important: return the modified config
       return config;
     },
   };
 
-  const plugins = [];
+  const plugins = [...(rest?.plugins ?? [])];
 
   if (isAnalyzer)
     plugins.push(

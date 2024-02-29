@@ -12,6 +12,7 @@
     "ssl:start": "cross-env NODE_ENV=production node dist/server.js"
   },
   "dependencies": {
+    "@ranger/nextjs-config": "workspace:^",
     "@ranger/ui-theme": "workspace:^",
     "express": "^4.18.2",
     "next": "^14.1.0",

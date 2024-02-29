@@ -23,6 +23,9 @@ importers:
 
   apps/ranger-cli:
     dependencies:
+      '@ranger/nextjs-config':
+        specifier: workspace:^
+        version: link:../../packages/ranger-nextjs-config
       '@ranger/ui-theme':
         specifier: workspace:^
         version: link:../../packages/ranger-ui-theme
