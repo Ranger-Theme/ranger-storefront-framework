@@ -33,7 +33,6 @@ export default function Home() {
             </a>
           </div>
         </div>
-
         <div>
           <Image
             src="/next.svg"
@@ -43,6 +42,9 @@ export default function Home() {
             priority
           />
         </div>
+        <footer>
+          <p>Nextjs On SSL</p>
+        </footer>
       </main>
     </>
   );
