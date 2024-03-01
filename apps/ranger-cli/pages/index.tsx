@@ -1,7 +1,9 @@
 import Head from "next/head";
 import Image from "next/image";
 
-export default function Home() {
+import { Input } from "@ranger/ui-theme";
+
+const Home = () => {
   return (
     <>
       <Head>
@@ -12,28 +14,6 @@ export default function Home() {
       </Head>
       <main>
         <div>
-          <p>
-            Get started by editing&nbsp;
-            <code>pages/index.tsx</code>
-          </p>
-          <div>
-            <a
-              href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              By{" "}
-              <Image
-                src="/vercel.svg"
-                alt="Vercel Logo"
-                width={100}
-                height={24}
-                priority
-              />
-            </a>
-          </div>
-        </div>
-        <div>
           <Image
             src="/next.svg"
             alt="Next.js Logo"
@@ -42,10 +22,13 @@ export default function Home() {
             priority
           />
         </div>
+        <Input />
         <footer>
           <p>Nextjs On SSL</p>
         </footer>
       </main>
     </>
   );
-}
+};
+
+export default Home;

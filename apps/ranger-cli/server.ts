@@ -4,9 +4,10 @@ import express from "express";
 import { parse } from "url";
 import { createServer, ServerOptions } from "spdy-fixes";
 
+const hostname = process.env.HOSTNAME || "127.0.0.1";
 const port = parseInt(process.env.PORT || "3000", 10);
 const dev = process.env.NODE_ENV !== "production";
-const app = next({ dev });
+const app = next({ dev, hostname, port });
 const handle = app.getRequestHandler();
 
 const options: ServerOptions = {

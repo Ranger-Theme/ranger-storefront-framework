@@ -4,8 +4,8 @@ export interface InputProps {
   type: string;
 }
 
-const Input: FC<InputProps> = ({ ...props }) => {
-  return <input {...props} />;
+const Input: FC<InputProps> = ({ type = "text", ...props }) => {
+  return <input type={type} {...props} />;
 };
 
 export default Input;

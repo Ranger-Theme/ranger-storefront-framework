@@ -81,9 +81,6 @@ importers:
 
   packages/ranger-eslint-config:
     devDependencies:
-      '@ranger/eslint-config':
-        specifier: workspace:^
-        version: 'link:'
       '@typescript-eslint/eslint-plugin':
         specifier: ^6.17.0
         version: 6.21.0(@typescript-eslint/parser@6.21.0)(eslint@8.57.0)(typescript@5.3.3)

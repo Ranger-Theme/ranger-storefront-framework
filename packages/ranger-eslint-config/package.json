@@ -8,7 +8,6 @@
     "react-internal.js"
   ],
   "devDependencies": {
-    "@ranger/eslint-config": "workspace:^",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-only-warn": "^1.1.0",
     "@typescript-eslint/parser": "^6.17.0",
