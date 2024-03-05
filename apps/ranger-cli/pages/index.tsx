@@ -1,5 +1,6 @@
 import Head from "next/head";
 import Image from "next/image";
+import Button from "@mui/material/Button";
 
 import { Input } from "@ranger/ui-theme";
 
@@ -22,7 +23,8 @@ const Home = () => {
             priority
           />
         </div>
-        <Input />
+        <Input type="text" />
+        <Button>Add To Cart</Button>
         <footer>
           <p>Nextjs On SSL</p>
         </footer>

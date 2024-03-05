@@ -1,5 +1,12 @@
+import { AppCacheProvider } from "@mui/material-nextjs/v14-pagesRouter";
 import type { AppProps } from "next/app";
 
-export default function App({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />;
-}
+const App = ({ Component, pageProps, ...props }: AppProps) => {
+  return (
+    <AppCacheProvider {...props}>
+      <Component {...pageProps} />
+    </AppCacheProvider>
+  );
+};
+
+export default App;
