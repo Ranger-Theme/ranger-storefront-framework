@@ -1,8 +1,8 @@
-import Head from "next/head";
-import Image from "next/image";
-import Button from "@mui/material/Button";
+import Head from 'next/head'
+import Image from 'next/image'
+import Button from '@mui/material/Button'
 
-import { Input } from "@ranger/ui-theme";
+import { Input } from '@ranger/ui-theme'
 
 const Home = () => {
   return (
@@ -15,13 +15,7 @@ const Home = () => {
       </Head>
       <main>
         <div>
-          <Image
-            src="/next.svg"
-            alt="Next.js Logo"
-            width={180}
-            height={37}
-            priority
-          />
+          <Image src="/next.svg" alt="Next.js Logo" width={180} height={37} priority />
         </div>
         <Input type="text" />
         <Button>Add To Cart</Button>
@@ -30,7 +24,7 @@ const Home = () => {
         </footer>
       </main>
     </>
-  );
-};
+  )
+}
 
-export default Home;
+export default Home

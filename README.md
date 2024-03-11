@@ -107,3 +107,41 @@ app.prepare().then(() => {
 # How to development localhost to Public IP access
 
 ## Ngroks (https://ngrok.com/)
+ngrok 是一个免费的代理服务, 用于将本地服务映射到公网, 通过ngrok可以将本地服务映射到公网, 然后通过ngrok提供的url访问到本地服务
+
+以下以nodejs举例说明:
+```js
+const ngrok = require('ngrok')
+
+const bootstrap = async () => {
+  const url = await ngrok.connect({
+    proto: 'http', // http|tcp|tls, defaults to http
+    addr: 8000, // port or network address, defaults to 80
+    authtoken: '2ZqIexMonOQDvGAs3e1YgNiKggG_ZYCvseao9nJhWfgus76k' // your authtoken from ngrok.com
+  })
+  console.info(`🚀 Server ready at: ${url}`)
+}
+
+bootstrap()
+```
+
+- 安装ngrok
+```bash
+pnpm add ngrok -w
+```
+
+- 创建ngrok.js, 用于代理本地http服务, 需要去官网单独申请一个账户, 配置authtoken
+
+- 配置package.json的scripts
+```json
+{
+  "scripts": {
+    "ngrok": "node ./ngrok.js"
+  }
+}
+```
+
+- 启动ngrok
+```
+pnpm run ngrok
+```

@@ -10,10 +10,12 @@
     "clean:turbo": "find . -name '.turbo' -type d -prune -exec rm -rf '{}' +",
     "clean:node_modules": "find . -name 'node_modules' -type d -prune -exec rm -rf '{}' +",
     "clean:next": "find . -name '.next' -type d -prune -exec rm -rf '{}' +",
-    "clean:dist": "find . -name 'dist' -type d -prune -exec rm -rf '{}' +"
+    "clean:dist": "find . -name 'dist' -type d -prune -exec rm -rf '{}' +",
+    "ngrok": "node ./ngrok.js"
   },
   "dependencies": {
-    "@mui/material": "^5.5.11"
+    "@mui/material": "^5.5.11",
+    "ngrok": "5.0.0-beta.2"
   },
   "devDependencies": {
     "@ranger/eslint-config": "workspace:^",
