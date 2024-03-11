@@ -102,6 +102,48 @@ app.prepare().then(() => {
 
 
 ### Vite https localhost
+vite框架支持本地https, 可以配置vite.config.ts文件, 通过https方式启动服务
+
+以下以vite.config.ts举例说明:
+```ts
+import { defineConfig } from 'vite'
+import fs from 'node:fs'
+import react from '@vitejs/plugin-react-swc'
+
+import { httpProxy } from './plugin/proxy'
+
+const enbaleProxy = process.env.REACT_APP_API_URL !== undefined
+
+// https://vitejs.dev/config/
+export default defineConfig({
+  server: {
+    cors: true,
+    port: 3000,
+    host: 'localhost',
+    hmr: true,
+    https: {
+      // SSL certificate config
+      key: fs.readFileSync('keys/ssl-key.pem'),
+      cert: fs.readFileSync('keys/ssl-cert.pem')
+    }
+  },
+  plugins: [
+    react(),
+    enbaleProxy &&
+      httpProxy({
+        '/api': {
+          target: process.env.REACT_APP_API_URL,
+          changeOrigin: true,
+          secure: false,
+          rewrite: (url: string) => url.replace(/^\/api/, '')
+        }
+      })
+  ]
+})
+```
+
+- 有些类似的第三方包vite-plugin-basic-ssl, 可以实现自动的https服务
+https://www.npmjs.com/package/node-forge
 
 
 # How to development localhost to Public IP access
