@@ -1,0 +1,20 @@
+{
+  "name": "@ranger/prettier-config",
+  "version": "0.1.0",
+  "license": "MIT",
+  "main": "index.js",
+  "files": [
+    "index.js",
+    "README.md",
+    "CHANGELOG.md"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "prettier": "^2.8.8"
+  },
+  "devDependencies": {
+    "@types/prettier": "^2.7.3"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "name": "@ranger/stylelint-config",
+  "version": "0.1.0",
+  "license": "MIT",
+  "main": "index.js",
+  "bin": {
+    "stylelint": "node_modules/stylelint/bin/stylelint.js"
+  },
+  "files": [
+    "index.js",
+    "README.md"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "stylelint": "^13.8.0",
+    "stylelint-config-prettier": "^8.0.2",
+    "stylelint-config-recommended": "^3.0.0",
+    "stylelint-order": "^4.1.0"
+  }
+}

@@ -1,3 +1,3 @@
-# `@turbo/eslint-config`
+# `@ranger/eslint-config`
 
 Collection of internal eslint configurations.
