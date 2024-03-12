@@ -1,14 +1,14 @@
 {
   "name": "@ranger/ui-theme",
   "version": "0.1.0",
-  "main": "./dist/index.js",
-  "module": "./dist/index.mjs",
-  "types": "./dist/index.d.ts",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
   "license": "MIT",
   "description": "Ranger Ui Base On Mui",
   "scripts": {
-    "dev": "tsup src/index.ts --format esm,cjs --watch --dts --external react",
-    "build": "tsup src/index.ts --format esm,cjs --dts --external react",
+    "dev": "tsup --watch",
+    "build": "tsup",
     "lint": "eslint \"**/*.{ts,tsx}\"",
     "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist"
   },

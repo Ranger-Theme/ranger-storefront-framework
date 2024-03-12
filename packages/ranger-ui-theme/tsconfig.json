@@ -3,6 +3,6 @@
   "compilerOptions": {
     "lib": ["dom", "ES2015"]
   },
-  "include": ["."],
+  "include": ["./src/**/*.ts"],
   "exclude": ["dist", "build", "node_modules"]
 }

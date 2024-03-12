@@ -1,1 +1,1 @@
-export {} from "./formElement";
+export {} from './formElement'

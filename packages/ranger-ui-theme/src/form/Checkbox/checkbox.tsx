@@ -1,11 +1,11 @@
-import type { FC } from "react";
+import type { FC } from 'react'
 
 export interface CheckboxProps {
-  checked: boolean;
+  checked: boolean
 }
 
 const Checkbox: FC<CheckboxProps> = ({ ...props }) => {
-  return <input type="checkbox" {...props} />;
-};
+  return <input type="checkbox" {...props} />
+}
 
-export default Checkbox;
+export default Checkbox

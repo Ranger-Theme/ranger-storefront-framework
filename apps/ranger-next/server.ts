@@ -1,6 +1,7 @@
 import fs from 'fs'
 import next from 'next'
 import express from 'express'
+import cp from 'node:child_process'
 import { parse } from 'url'
 import { createServer, ServerOptions } from 'spdy-fixes'
 
@@ -35,10 +36,25 @@ app.prepare().then(() => {
       return process.exit(1)
     }
 
-    return console.warn(
-      `> Server listening at https://localhost:${port} as ${
-        dev ? 'development' : process.env.NODE_ENV
-      }`
+    const serverUrl: string = `http://localhost:${port}`
+    console.warn(
+      `> Server listening at ${serverUrl} as ${dev ? 'development' : process.env.NODE_ENV}`
     )
+
+    // development auto open browser
+    if (dev) {
+      switch (process.platform) {
+        // macos
+        case 'darwin':
+          cp.exec(`open ${serverUrl}`)
+          break
+        // windows
+        case 'win32':
+          cp.exec(`start ${serverUrl}`)
+          break
+        default:
+          cp.exec(`open ${serverUrl}`)
+      }
+    }
   })
 })

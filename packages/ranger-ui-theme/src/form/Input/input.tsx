@@ -1,11 +1,11 @@
-import type { FC } from "react";
+import type { FC } from 'react'
 
 export interface InputProps {
-  type: string;
+  type: string
 }
 
-const Input: FC<InputProps> = ({ type = "text", ...props }) => {
-  return <input type={type} {...props} />;
-};
+const Input: FC<InputProps> = ({ type = 'text', ...props }) => {
+  return <input type={type} {...props} />
+}
 
-export default Input;
+export default Input
