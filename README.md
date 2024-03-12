@@ -3,10 +3,16 @@
 ## SSL Certificate
 
 ### 安装本地SSL证书, mkcert是其中一种
+https://github.com/FiloSottile/mkcert#installation
+
+Windows
+```bash
+choco install mkcert
+```
 
 Linux
 ```bash
-choco install mkcert
+brew install mkcert
 ```
 
 Mac OS
