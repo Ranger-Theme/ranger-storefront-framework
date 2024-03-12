@@ -142,7 +142,7 @@ export default defineConfig({
 })
 ```
 
-- 有些类似的第三方包vite-plugin-basic-ssl, 可以实现自动的https服务
+- 有些类似的第三方包@vitejs/plugin-basic-ssl, 可以实现自动的https服务
 https://www.npmjs.com/package/node-forge
 
 
