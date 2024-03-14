@@ -19,9 +19,6 @@ const Home = () => {
         </div>
         <Input type="text" />
         <Button>Add To Cart</Button>
-        <footer>
-          <p>Nextjs On SSL</p>
-        </footer>
       </main>
     </>
   )
