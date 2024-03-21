@@ -4,6 +4,6 @@
     "baseUrl": "./src",
     "lib": ["dom", "ES2015"]
   },
-  "include": ["/**/*.ts", "**/*.tsx"],
+  "include": ["/**/*.ts", "/**/*.tsx"],
   "exclude": ["dist", "build", "node_modules"]
 }
