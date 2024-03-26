@@ -8,6 +8,7 @@ const isProd = process.env.NODE_ENV === 'production'
 const isAnalyzer = process.env.REACT_APP_BUNDLE_VISUALIZE === '1'
 
 module.exports = ({ pkg = {}, dirname = __dirname, timestamp = 0, ...rest }) => {
+  const { plugins, transpilePackages, cacheGroups, ...options } = rest
   /**
    * @type {import('next').NextConfig}
    */
@@ -21,12 +22,7 @@ module.exports = ({ pkg = {}, dirname = __dirname, timestamp = 0, ...rest }) => 
     reactStrictMode: isProd,
     swcMinify: true,
     trailingSlash: false,
-    transpilePackages: [
-      'lodash-es',
-      'nanoid',
-      '@ranger/ui-theme',
-      ...(rest?.transpilePackages ?? [])
-    ],
+    transpilePackages: ['lodash-es', 'nanoid', '@ranger/ui-theme', ...(transpilePackages ?? [])],
     compiler: {
       reactRemoveProperties: isProd,
       removeConsole: false,
@@ -64,6 +60,7 @@ module.exports = ({ pkg = {}, dirname = __dirname, timestamp = 0, ...rest }) => 
     typescript: {
       ignoreBuildErrors: isProd
     },
+    ...options,
     generateBuildId: async () => {
       const commitId = await nextBuildId({ dir: dirname })
       const trunk = commitId.substring(0, 16)
@@ -127,7 +124,7 @@ module.exports = ({ pkg = {}, dirname = __dirname, timestamp = 0, ...rest }) => 
       if (!isServer) {
         if (isProd && pkg) {
           config.optimization.splitChunks.cacheGroups = {
-            ...(rest?.cacheGroups ?? {}),
+            ...(cacheGroups ?? {}),
             ...config.optimization.splitChunks.cacheGroups
           }
 
@@ -151,14 +148,14 @@ module.exports = ({ pkg = {}, dirname = __dirname, timestamp = 0, ...rest }) => 
     }
   }
 
-  const plugins = [...(rest?.plugins ?? [])]
+  const nextPlugins = [...(plugins ?? [])]
 
   if (isAnalyzer)
-    plugins.push(
+    nextPlugins.push(
       require('@next/bundle-analyzer')({
         enabled: true
       })
     )
 
-  return plugins.reduce((acc, plugin) => plugin(acc), { ...nextConfig })
+  return nextPlugins.reduce((acc, plugin) => plugin(acc), { ...nextConfig })
 }
