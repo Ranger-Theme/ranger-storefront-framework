@@ -24,7 +24,7 @@ module.exports = {
     'import/prefer-default-export': 0,
     'lines-around-directive': ['error', { before: 'always', after: 'never' }],
     'jsx-a11y/label-has-associated-control': 0,
-    'no-console': ['error', { allow: ['error', 'info', 'warn'] }],
+    'no-console': ['error', { allow: ['error', 'debug', 'info', 'warn'] }],
     'no-param-reassign': 0,
     'no-continue': 0,
     'no-plusplus': 0,
