@@ -194,3 +194,13 @@ pnpm add ngrok -w
 ```
 pnpm run ngrok
 ```
+
+## Git hooks push
+
+```bash
+# hint: The '.husky/pre-commit' hook was ignored because it's not set as executable.
+chmod +x .husky/pre-commit
+
+# env: sh\r: No such file or directory
+sed -i '' 's/\r//' .husky/commit-msg 
+```
