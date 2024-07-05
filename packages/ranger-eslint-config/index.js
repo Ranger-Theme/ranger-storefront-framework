@@ -30,6 +30,7 @@ module.exports = {
     'no-restricted-exports': 0,
     'no-return-assign': 0,
     'no-underscore-dangle': 0,
+    'no-promise-executor-return': 0,
     'no-restricted-syntax': ['error', 'WithStatement'],
     'prettier/prettier': [
       'error',

@@ -18,6 +18,9 @@ importers:
       '@changesets/cli':
         specifier: ^2.26.2
         version: 2.27.7
+      '@ranger-theme/branchlint-config':
+        specifier: workspace:^
+        version: link:packages/ranger-branchlint-config
       '@ranger-theme/commitizen-config':
         specifier: workspace:^
         version: link:packages/ranger-commitizen-config
@@ -149,6 +152,31 @@ importers:
       vite:
         specifier: ^5.1.4
         version: 5.3.3
+
+  packages/ranger-branchlint-config:
+    dependencies:
+      chalk:
+        specifier: ^4.1.2
+        version: 4.1.2
+      cosmiconfig:
+        specifier: ^7.0.1
+        version: 7.1.0
+      path-to-regexp:
+        specifier: ^6.2.0
+        version: 6.2.2
+      tsup:
+        specifier: ^8.0.1
+        version: 8.1.0
+    devDependencies:
+      '@ranger-theme/eslint-config':
+        specifier: workspace:^
+        version: link:../ranger-eslint-config
+      '@ranger-theme/ts-config':
+        specifier: workspace:^
+        version: link:../ranger-ts-config
+      '@types/node':
+        specifier: ^20.10.6
+        version: 20.14.9
 
   packages/ranger-commitizen-config:
     dependencies:
@@ -7383,6 +7411,10 @@ packages:
 
   /path-to-regexp@0.1.7:
     resolution: {integrity: sha512-5DFkuoqlv1uYQKxy8omFBeJPQcdoE07Kv2sferDCrAq1ohOU+MSDswDIbnx3YAM60qIOnYa53wBhXW0EbMonrQ==}
+    dev: false
+
+  /path-to-regexp@6.2.2:
+    resolution: {integrity: sha512-GQX3SSMokngb36+whdpRXE+3f9V8UzyAorlYvOGx87ufGHehNTn5lCxrKtLyZ4Yl/wEKnNnr98ZzOwwDZV5ogw==}
     dev: false
 
   /path-type@4.0.0:

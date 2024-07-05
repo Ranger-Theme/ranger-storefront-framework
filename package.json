@@ -26,6 +26,7 @@
   },
   "devDependencies": {
     "@changesets/cli": "^2.26.2",
+    "@ranger-theme/branchlint-config": "workspace:^",
     "@ranger-theme/eslint-config": "workspace:^",
     "@ranger-theme/prettier-config": "workspace:^",
     "@ranger-theme/stylelint-config": "workspace:^",
