@@ -1,6 +1,25 @@
-## vite配置
+# @ocloud/vite-config
 
-### 使用示例
+## 🎉 Introduce
+
+> vite配置项
+
+## 📚 Documentation
+
+- [Npm](https://www.npmjs.com/package/@ranger-theme/vite-config)
+- [CHANGELOG](CHANGELOG.md)
+
+## 📦 Install
+
+```bash
+$ npm install --save-dev @ranger-theme/vite-config
+# or
+$ yarn add --save-dev @ranger-theme/vite-config
+# or
+$ pnpm add --save-dev @ranger-theme/vite-config
+```
+
+## 🔨 Usage
 
 ```ts
 // vite.config.ts
