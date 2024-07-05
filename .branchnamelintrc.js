@@ -17,6 +17,6 @@ module.exports = {
     ],
     desc: ['[a-z0-9-]+']
   },
-  prohibited: ['dev', 'main', 'release'],
-  whiteList: ['test']
+  prohibited: ['dev', 'release'],
+  whiteList: ['test', 'main']
 }
