@@ -22,17 +22,18 @@
   },
   "dependencies": {
     "@mui/material": "^5.5.11",
-    "ngrok": "5.0.0-beta.2"
+    "ngrok": "5.0.0-beta.2",
+    "only-allow": "^1.2.1"
   },
   "devDependencies": {
     "@changesets/cli": "^2.26.2",
     "@ranger-theme/branchlint-config": "workspace:^",
+    "@ranger-theme/commitizen-config": "workspace:^",
+    "@ranger-theme/commitlint-config": "workspace:^",
     "@ranger-theme/eslint-config": "workspace:^",
     "@ranger-theme/prettier-config": "workspace:^",
     "@ranger-theme/stylelint-config": "workspace:^",
     "@ranger-theme/ts-config": "workspace:^",
-    "@ranger-theme/commitlint-config": "workspace:^",
-    "@ranger-theme/commitizen-config": "workspace:^",
     "eslint": "^8.2.0",
     "husky": "^8.0.1",
     "lint-staged": "^13.0.3",
