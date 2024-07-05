@@ -82,7 +82,7 @@ $ pnpm add --save-dev @ranger-theme/commitizen-config
 
 ```js
 // .cz-config.js
-const commitizenConfig = require('@ocloud/admin-commitizen-config')
+const commitizenConfig = require('@ranger-theme/admin-commitizen-config')
 
 module.exports = {
   ...commitizenConfig

@@ -1,4 +1,4 @@
-# @ocloud/vite-config
+# @ranger-theme/vite-config
 
 ## 🎉 Introduce
 
@@ -25,7 +25,7 @@ $ pnpm add --save-dev @ranger-theme/vite-config
 // vite.config.ts
 
 import { defineConfig } from 'vite';
-import { baseConfig } from '@ocloud/admin-vite-config';
+import { baseConfig } from '@ranger-theme/admin-vite-config';
 import pkg from './package.json';
 
 export default ({ mode }: ConfigEnv) => {

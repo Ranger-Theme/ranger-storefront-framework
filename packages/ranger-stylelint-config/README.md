@@ -1,4 +1,4 @@
-# @ocloud/stylelint-config
+# @ranger-theme/stylelint-config
 
 ## 🎉 Introduce
 

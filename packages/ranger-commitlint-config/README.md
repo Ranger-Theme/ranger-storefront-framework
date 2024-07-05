@@ -51,7 +51,7 @@ $ pnpm add --save-dev @ranger-theme/commitlint-config
 
 ```js
 // .commitlintrc.js
-const commitlintConfig = require('@ocloud/admin-commitlint-config')
+const commitlintConfig = require('@ranger-theme/admin-commitlint-config')
 
 module.exports = {
   ...commitlintConfig
