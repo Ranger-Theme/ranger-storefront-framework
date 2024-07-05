@@ -6,7 +6,7 @@ const fs = require('fs')
 // Path to the @commitlint/cli binary
 const binPath = path.resolve(__dirname, 'node_modules', '.bin', 'commitlint')
 
-// Create a temporary commit message file
+// Create a temporary commit message
 const commitMsgFilePath = path.resolve(process.cwd(), '.git', 'COMMIT_EDITMSG')
 const exsit = fs.existsSync(commitMsgFilePath)
 const message = 'chore: correct minor typos in code'
