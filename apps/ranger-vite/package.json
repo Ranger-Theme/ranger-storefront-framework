@@ -1,5 +1,5 @@
 {
-  "name": "@ranger/vite",
+  "name": "@ranger-theme/vite",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -15,8 +15,8 @@
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
-    "@ranger/eslint-config": "workspace:^",
-    "@ranger/ts-config": "workspace:^",
+    "@ranger-theme/eslint-config": "workspace:^",
+    "@ranger-theme/ts-config": "workspace:^",
     "@types/react": "^18.2.56",
     "@types/react-dom": "^18.2.19",
     "@vitejs/plugin-react-swc": "^3.5.0",

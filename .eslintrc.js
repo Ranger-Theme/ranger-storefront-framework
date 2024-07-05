@@ -1,4 +1,4 @@
 module.exports = {
   root: true,
-  extends: [require.resolve('@ranger/eslint-config')]
+  extends: [require.resolve('@ranger-theme/eslint-config')]
 }

@@ -22,30 +22,7 @@ module.exports = ({ pkg = {}, dirname = __dirname, timestamp = 0, ...rest }) => 
     reactStrictMode: isProd,
     swcMinify: true,
     trailingSlash: false,
-    transpilePackages: ['lodash-es', 'nanoid', '@ranger/ui-theme', ...(transpilePackages ?? [])],
-    compiler: {
-      reactRemoveProperties: isProd,
-      removeConsole: false,
-      emotion: {
-        sourceMap: !isProd,
-        autoLabel: 'dev-only',
-        labelFormat: '[local]',
-        importMap: {
-          '@mui/system': {
-            styled: {
-              canonicalImport: ['@emotion/styled', 'default'],
-              styledBaseImport: ['@mui/system', 'styled']
-            }
-          },
-          '@mui/material/styles': {
-            styled: {
-              canonicalImport: ['@emotion/styled', 'default'],
-              styledBaseImport: ['@mui/material/styles', 'styled']
-            }
-          }
-        }
-      }
-    },
+    transpilePackages: ['lodash-es', 'nanoid', ...(transpilePackages ?? [])],
     eslint: {
       ignoreDuringBuilds: true
     },

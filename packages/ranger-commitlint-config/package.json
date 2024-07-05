@@ -1,0 +1,21 @@
+{
+  "name": "@ranger-theme/commitlint-config",
+  "version": "0.1.0",
+  "main": "index.js",
+  "license": "MIT",
+  "description": "Ranger theme commitlint config",
+  "files": [
+    "bin.js",
+    "index.js",
+    "README.md",
+    "CHANGELOG.md"
+  ],
+  "bin": {
+    "commitlint": "./bin.js"
+  },
+  "dependencies": {
+    "@commitlint/cli": "^17.2.0",
+    "@commitlint/config-conventional": "17.4.4",
+    "cross-spawn": "^7.0.3"
+  }
+}

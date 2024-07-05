@@ -1,6 +1,12 @@
 {
-  "name": "@ranger/theme-framework",
+  "name": "@ranger-theme/framework",
+  "version": "0.1.0",
   "private": true,
+  "config": {
+    "cz-customizable": {
+      "config": "./.cz-config.js"
+    }
+  },
   "scripts": {
     "build": "turbo build",
     "dev": "turbo dev",
@@ -11,17 +17,21 @@
     "clean:node_modules": "find . -name 'node_modules' -type d -prune -exec rm -rf '{}' +",
     "clean:next": "find . -name '.next' -type d -prune -exec rm -rf '{}' +",
     "clean:dist": "find . -name 'dist' -type d -prune -exec rm -rf '{}' +",
-    "ngrok": "node ./ngrok.js"
+    "ngrok": "node ./ngrok.js",
+    "husky:prepare": "husky install"
   },
   "dependencies": {
     "@mui/material": "^5.5.11",
     "ngrok": "5.0.0-beta.2"
   },
   "devDependencies": {
-    "@ranger/eslint-config": "workspace:^",
-    "@ranger/prettier-config": "workspace:^",
-    "@ranger/stylelint-config": "workspace:^",
-    "@ranger/ts-config": "workspace:^",
+    "@changesets/cli": "^2.26.2",
+    "@ranger-theme/eslint-config": "workspace:^",
+    "@ranger-theme/prettier-config": "workspace:^",
+    "@ranger-theme/stylelint-config": "workspace:^",
+    "@ranger-theme/ts-config": "workspace:^",
+    "@ranger-theme/commitlint-config": "workspace:^",
+    "@ranger-theme/commitizen-config": "workspace:^",
     "eslint": "^8.2.0",
     "husky": "^8.0.1",
     "lint-staged": "^13.0.3",

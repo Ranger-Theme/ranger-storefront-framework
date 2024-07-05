@@ -1,4 +1,4 @@
-const prettierConfig = require('@ranger/prettier-config')
+const prettierConfig = require('@ranger-theme/prettier-config')
 
 module.exports = {
   ...prettierConfig

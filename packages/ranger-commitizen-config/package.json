@@ -1,0 +1,29 @@
+{
+  "name": "@ranger-theme/commitizen-config",
+  "version": "0.1.0",
+  "main": "index.js",
+  "license": "MIT",
+  "files": [
+    "bin.js",
+    "index.js",
+    "README.md",
+    "CHANGELOG.md"
+  ],
+  "bin": {
+    "commit": "./bin.js"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/.bin/cz-customizable"
+    },
+    "cz-customizable": {
+      "config": "./index.js"
+    }
+  },
+  "scripts": {
+    "commit": "./node_modules/.bin/cz-customizable"
+  },
+  "dependencies": {
+    "cz-customizable": "^7.0.0"
+  }
+}

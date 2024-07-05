@@ -1,12 +1,14 @@
 {
-  "name": "@ranger/ts-config",
-  "version": "0.1.0",
-  "private": true,
+  "name": "@ranger-theme/ts-config",
+  "version": "1.0.0",
   "license": "MIT",
   "files": [
     "base.json",
+    "nestjs.json",
     "nextjs.json",
+    "react-app.json",
     "react-library.json",
+    "vite.json",
     "README.md",
     "CHANGELOG.md"
   ],

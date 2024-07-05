@@ -1,5 +1,5 @@
 {
-  "name": "@ranger/stylelint-config",
+  "name": "@ranger-theme/stylelint-config",
   "version": "0.1.0",
   "license": "MIT",
   "main": "index.js",
@@ -8,7 +8,8 @@
   },
   "files": [
     "index.js",
-    "README.md"
+    "README.md",
+    "CHANGELOG.md"
   ],
   "publishConfig": {
     "access": "public"

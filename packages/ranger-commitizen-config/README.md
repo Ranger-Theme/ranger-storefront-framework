@@ -1,3 +1,17 @@
+# @ranger-theme/commitizen-config
+
+## 🎉 Introduce
+
+> Commitizen 是一个用于生成和校验提交信息的工具，它可以帮助我们生成符合规范的提交信息，并自动校验提交信息是否符合规范.
+
+## 📚 Documentation
+
+- [Npm](https://www.npmjs.com/package/@ranger-theme/commitizen-config)
+- [CHANGELOG](CHANGELOG.md)
+
+## ✨ Features
+
+```js
 module.exports = {
   types: [
     {
@@ -52,3 +66,34 @@ module.exports = {
   skipQuestions: [],
   subjectLimit: 100,
 }
+```
+
+## 📦 Install
+
+```bash
+$ npm install --save-dev @ranger-theme/commitizen-config
+# or
+$ yarn add --save-dev @ranger-theme/commitizen-config
+# or
+$ pnpm add --save-dev @ranger-theme/commitizen-config
+```
+
+## 🔨 Usage
+
+```js
+// .cz-config.js
+const commitizenConfig = require('@ocloud/admin-commitizen-config')
+
+module.exports = {
+  ...commitizenConfig
+}
+```
+
+```json
+"config": {
+  "cz-customizable": {
+    "config": "./.cz-config.js"
+  }
+}
+```
+

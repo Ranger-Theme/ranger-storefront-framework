@@ -1,0 +1,9 @@
+{
+  "extends": "@ocloud/admin-ts-config/base.json",
+  "compilerOptions": {
+    "lib": ["ESNext", "DOM"],
+    "outDir": "dist/esm",
+  },
+  "include": ["index.ts", "./plugin/**/*.ts"],
+  "exclude": ["node_modules"]
+}

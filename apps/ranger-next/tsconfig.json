@@ -1,5 +1,5 @@
 {
-  "extends": "@ranger/ts-config/nextjs.json",
+  "extends": "@ranger-theme/ts-config/nextjs.json",
   "compilerOptions": {
     "plugins": [
       {

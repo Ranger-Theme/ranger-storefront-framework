@@ -1,5 +1,5 @@
 {
-  "name": "@ranger/eslint-config",
+  "name": "@ranger-theme/eslint-config",
   "version": "0.1.0",
   "main": "index.js",
   "license": "MIT",

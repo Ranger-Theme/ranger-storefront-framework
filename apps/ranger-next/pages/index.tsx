@@ -1,10 +1,7 @@
 import Head from 'next/head'
 import Image from 'next/image'
-import Link from 'next/link'
 import { useRouter } from 'next/router'
 import Button from '@mui/material/Button'
-
-import { Input } from '@ranger/ui-theme'
 
 const Home = () => {
   const router = useRouter()
@@ -27,11 +24,7 @@ const Home = () => {
             priority
           />
         </div>
-        <Input type="text" />
         <Button>Add To Cart</Button>
-        <div>
-          <Link href="/cart">Cart</Link>
-        </div>
       </main>
     </>
   )
