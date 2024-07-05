@@ -1,3 +1,27 @@
+# @ranger-theme/nextjs-config
+
+## 🎉 Introduce
+
+> nextjs配置
+
+## 📚 Documentation
+
+- [Npm](https://www.npmjs.com/package/@ranger-theme/nextjs-config)
+- [CHANGELOG](CHANGELOG.md)
+
+## 📦 Install
+
+```bash
+$ npm install --save-dev @ranger-theme/nextjs-config
+# or
+$ yarn add --save-dev @ranger-theme/nextjs-config
+# or
+$ pnpm add --save-dev @ranger-theme/nextjs-config
+```
+
+## 🔨 Usage
+
+```js
 const nextConfig = require('@ranger-theme/nextjs-config')
 
 const pkg = require('./package.json')
@@ -52,3 +76,5 @@ module.exports = nextConfig({
     ]
   }
 })
+```
+
