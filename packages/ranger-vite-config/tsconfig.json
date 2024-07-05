@@ -1,9 +1,14 @@
 {
-  "extends": "@ocloud/admin-ts-config/base.json",
+  "extends": "@ranger-theme/ts-config/base.json",
   "compilerOptions": {
+    "incremental": false,
+    "module": "ESNext",
+    "target": "ESNext",
     "lib": ["ESNext", "DOM"],
-    "outDir": "dist/esm",
+    "outDir": "dist",
+    "declarationMap": false,
+    "sourceMap": false
   },
-  "include": ["index.ts", "./plugin/**/*.ts"],
-  "exclude": ["node_modules"]
+  "include": ["**/*.ts"],
+  "exclude": ["node_modules", "dist"]
 }
