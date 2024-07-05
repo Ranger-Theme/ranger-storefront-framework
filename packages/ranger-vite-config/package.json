@@ -11,6 +11,9 @@
     "README.md",
     "CHANGELOG.md"
   ],
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "prebuild": "pnpm clean && pnpm bootstrap",
     "bootstrap": "node bootstrap.js",

@@ -10,6 +10,9 @@
     "README.md",
     "CHANGELOG.md"
   ],
+  "publishConfig": {
+    "access": "public"
+  },
   "bin": {
     "commitlint": "./bin.js"
   },

@@ -3,12 +3,16 @@
   "version": "0.1.0",
   "main": "index.js",
   "license": "MIT",
+  "description": "Ranger theme commitizen config",
   "files": [
     "bin.js",
     "index.js",
     "README.md",
     "CHANGELOG.md"
   ],
+  "publishConfig": {
+    "access": "public"
+  },
   "bin": {
     "commit": "./bin.js"
   },
