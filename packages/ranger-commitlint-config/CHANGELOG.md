@@ -1,5 +1,11 @@
 # @ranger-theme/commitlint-config
 
+## 0.4.0
+
+### Minor Changes
+
+- use command pnpm
+
 ## 0.3.0
 
 ### Minor Changes
