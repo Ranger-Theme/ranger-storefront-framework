@@ -5,7 +5,7 @@ const nextBuildId = require('next-build-id')
 const BannerPlugin = require('./banner')
 
 const isProd = process.env.NODE_ENV === 'production'
-const isAnalyzer = process.env.REACT_APP_BUNDLE_VISUALIZE === '1'
+const isAnalyzer = process.env.NEXT_PUBLIC_BUNDLE_VISUALIZE === '1'
 
 module.exports = ({ pkg = {}, dirname = __dirname, timestamp = 0, ...rest }) => {
   const { plugins, transpilePackages, cacheGroups, ...options } = rest
@@ -42,20 +42,6 @@ module.exports = ({ pkg = {}, dirname = __dirname, timestamp = 0, ...rest }) => 
       const commitId = await nextBuildId({ dir: dirname })
       const trunk = commitId.substring(0, 16)
       return `${trunk}_${timestamp.toString()}`
-    },
-    async headers() {
-      return [
-        {
-          source: '/:all*(png|woff2|tff)',
-          locale: false,
-          headers: [
-            {
-              key: 'Cache-Control',
-              value: 'public, max-age=3600, immutable'
-            }
-          ]
-        }
-      ]
     },
     webpack: (config, { buildId, isServer }) => {
       // Write buildId to the version controll file
