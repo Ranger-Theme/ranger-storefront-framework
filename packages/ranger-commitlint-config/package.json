@@ -1,6 +1,6 @@
 {
   "name": "@ranger-theme/commitlint-config",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "main": "index.js",
   "license": "MIT",
   "description": "Ranger theme commitlint config",
@@ -14,7 +14,7 @@
     "access": "public"
   },
   "bin": {
-    "commitlint": "./bin.js"
+    "commit-msg-check": "./bin.js"
   },
   "dependencies": {
     "@commitlint/cli": "^17.2.0",

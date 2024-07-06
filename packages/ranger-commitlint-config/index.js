@@ -15,9 +15,9 @@ module.exports = {
         'test', // Adding missing tests
         'chore', // Changes to the build process or auxiliary tools and libraries such as documentation generation
         'revert', // revert to a commit
-        'build', // pack
-      ],
+        'build' // pack
+      ]
     ],
-    'subject-case': [0],
-  },
+    'subject-case': [0]
+  }
 }
