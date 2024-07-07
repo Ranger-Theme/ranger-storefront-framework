@@ -1,10 +1,10 @@
 {
   "name": "@ranger-theme/stylelint-config",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "license": "MIT",
   "main": "index.js",
   "bin": {
-    "style-lint": "./bin.js"
+    "stylecheck": "./bin.js"
   },
   "files": [
     "index.js",
