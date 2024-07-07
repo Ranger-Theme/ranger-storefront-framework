@@ -1,5 +1,11 @@
 # @ranger-theme/eslint-config
 
+## 0.3.0
+
+### Minor Changes
+
+- package version upadte
+
 ## 0.2.0
 
 ### Minor Changes

@@ -1,6 +1,6 @@
 {
   "name": "@ranger-theme/prettier-config",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "license": "MIT",
   "main": "index.js",
   "files": [
@@ -12,7 +12,7 @@
     "access": "public"
   },
   "dependencies": {
-    "prettier": "^2.8.8"
+    "prettier": "^3.3.2"
   },
   "devDependencies": {
     "@types/prettier": "^2.7.3"
