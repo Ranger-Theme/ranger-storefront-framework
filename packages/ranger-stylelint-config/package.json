@@ -4,7 +4,7 @@
   "license": "MIT",
   "main": "index.js",
   "bin": {
-    "stylecheck": "stylelint --fix"
+    "stylecheck": "./bin.js"
   },
   "files": [
     "index.js",

@@ -5,8 +5,6 @@ const Cart = () => {
     <div>
       <span>Cart Page</span>
       <br />
-      <Link href="/">Home Page</Link>
-      <br />
       <Link href="/checkout">Checkout Page</Link>
     </div>
   )
