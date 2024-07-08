@@ -1,15 +1,5 @@
 {
   "extends": "@ranger-theme/ts-config/nextjs.json",
-  "compilerOptions": {
-    "plugins": [
-      {
-        "name": "next"
-      }
-    ],
-    "lib": ["dom", "dom.iterable", "esnext"],
-    "incremental": true,
-    "resolveJsonModule": true
-  },
-  "include": ["next-env.d.ts", "next.config.js", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
   "exclude": ["node_modules"]
 }

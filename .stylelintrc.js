@@ -1,3 +1,3 @@
 module.exports = {
-  extends: ['@ranger-theme/stylelint-config']
+  extends: [require.resolve('@ranger-theme/stylelint-config')]
 }

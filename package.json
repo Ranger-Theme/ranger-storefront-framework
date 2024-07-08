@@ -22,7 +22,6 @@
     "husky:prepare": "husky install"
   },
   "dependencies": {
-    "@mui/material": "^5.5.11",
     "ngrok": "5.0.0-beta.2",
     "only-allow": "^1.2.1"
   },

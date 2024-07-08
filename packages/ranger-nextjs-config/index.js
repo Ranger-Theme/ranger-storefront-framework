@@ -29,6 +29,10 @@ module.exports = ({ pkg = {}, dirname = __dirname, timestamp = 0, ...rest }) => 
     images: {
       remotePatterns: [
         {
+          protocol: 'http',
+          hostname: '**'
+        },
+        {
           protocol: 'https',
           hostname: '**'
         }

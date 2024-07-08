@@ -4,7 +4,7 @@
   "license": "MIT",
   "main": "index.js",
   "bin": {
-    "stylecheck": "./bin.js"
+    "stylecheck": "node_modules/stylelint/bin/stylelint.js"
   },
   "files": [
     "index.js",
@@ -16,9 +16,9 @@
   },
   "dependencies": {
     "cross-spawn": "^7.0.3",
-    "stylelint": "^14.16.1",
-    "stylelint-config-prettier": "^9.0.5",
-    "stylelint-config-recommended": "^9.0.0",
-    "stylelint-order": "^6.0.4"
+    "stylelint": "^13.8.0",
+    "stylelint-config-prettier": "^8.0.2",
+    "stylelint-config-recommended": "^3.0.0",
+    "stylelint-order": "^4.1.0"
   }
 }
