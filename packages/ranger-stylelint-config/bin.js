@@ -39,7 +39,7 @@
 // process.exit(1)
 const { exec } = require('child_process')
 
-exec('stylelint --fix lintstage', (error, stdout, stderr) => {
+exec('stylelint --fix', (error, stdout, stderr) => {
   if (error) {
     console.error(`Error: ${error.message}`)
     return
