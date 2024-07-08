@@ -37,9 +37,9 @@
 // console.info(result.status)
 // // process.exit(result.status)
 // process.exit(1)
-const { exec } = require('child_process')
+const spawn = require('cross-spawn')
 
-exec('stylelint --fix', (error, stdout, stderr) => {
+spawn.sync('stylelint --fix', (error, stdout, stderr) => {
   if (error) {
     console.error(`Error: ${error.message}`)
     return
@@ -48,5 +48,6 @@ exec('stylelint --fix', (error, stdout, stderr) => {
     console.error(`Stderr: ${stderr}`)
     return
   }
+
   console.info(`Stdout: ${stdout}`)
 })
