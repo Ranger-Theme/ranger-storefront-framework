@@ -21,9 +21,27 @@ const command = isUsingPnpm ? 'pnpm' : origin
 const args = ['stylelint', '--fix']
 
 // Execute the command
-spawn.sync(command, args, {
-  // cwd: binPath,
+const result = spawn(command, args, {
+  cwd: binPath,
   encoding: 'utf-8',
   stdio: 'inherit',
-  shell: true
+  shell: true,
+  timeout: 2000
 })
+
+if (result.error) {
+  // result.kill('SIGKILL')
+  console.error(`Error executing command: ${result.error.message}`)
+  process.exit(1)
+}
+
+// process.exit(result.status)
+// child.on('error', (error) => {
+//   console.error(`Error: ${error.message}`)
+//   clearTimeout(timeout)
+// })
+
+// child.on('close', (code) => {
+//   console.info(`Child process exited with code ${code}`)
+//   clearTimeout(timeout)
+// })
