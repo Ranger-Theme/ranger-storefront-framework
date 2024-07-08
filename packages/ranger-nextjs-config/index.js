@@ -19,7 +19,7 @@ module.exports = ({ pkg = {}, dirname = __dirname, timestamp = 0, ...rest }) => 
     generateEtags: false,
     pageExtensions: ['tsx', 'ts'],
     poweredByHeader: false,
-    reactStrictMode: isProd,
+    reactStrictMode: false,
     swcMinify: true,
     trailingSlash: false,
     transpilePackages: ['lodash-es', 'nanoid', ...(transpilePackages ?? [])],

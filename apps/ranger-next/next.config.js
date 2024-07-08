@@ -13,13 +13,5 @@ module.exports = nextConfig({
   compiler: {
     reactRemoveProperties: isProd,
     removeConsole: false
-  },
-  async rewrites() {
-    return [
-      {
-        source: '/:pathname*',
-        destination: '/_resolver'
-      }
-    ]
   }
 })
