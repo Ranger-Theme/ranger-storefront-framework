@@ -18,17 +18,12 @@ const isUsingYarn = fs.existsSync(path.join(excutePath, 'yarn.lock'))
 // Command and arguments
 const origin = isUsingYarn ? 'yarn' : 'npm'
 const command = isUsingPnpm ? 'pnpm' : origin
-console.info(command)
 const args = ['stylelint', '--fix']
 
 // Execute the command
-spawn.sync(command, args, { stdio: 'inherit' })
-
-// if (result.error) {
-//   console.error(`Error executing command: ${result.error.message}`)
-//   process.exit(1)
-// }
-
-// console.info(result.status)
-// process.exit(result.status)
-// process.exit(1)
+spawn.sync(command, args, {
+  // cwd: binPath,
+  encoding: 'utf-8',
+  stdio: 'inherit',
+  shell: true
+})
