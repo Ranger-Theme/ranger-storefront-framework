@@ -36,7 +36,7 @@ app.prepare().then(() => {
       return process.exit(1)
     }
 
-    const serverUrl: string = `http://localhost:${port}`
+    const serverUrl: string = `https://localhost:${port}`
     console.warn(
       `> Server listening at ${serverUrl} as ${dev ? 'development' : process.env.NODE_ENV}`
     )
