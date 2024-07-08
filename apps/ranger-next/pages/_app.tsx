@@ -2,7 +2,7 @@ import Head from 'next/head'
 import type { AppProps } from 'next/app'
 
 const App = ({ Component, pageProps }: AppProps) => {
-  console.info('app star 111t...')
+  console.info('app start...')
   return (
     <>
       <Head>
