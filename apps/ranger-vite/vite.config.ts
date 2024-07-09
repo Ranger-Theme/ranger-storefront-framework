@@ -1,34 +1,35 @@
-import { defineConfig } from 'vite'
 import fs from 'node:fs'
-import react from '@vitejs/plugin-react-swc'
+import path from 'node:path'
+import { defineConfig } from 'vite'
+import type { ConfigEnv } from 'vite'
 
-import { httpProxy } from './plugin/proxy'
+import { baseConfig } from '@ranger-theme/vite-config'
 
-const enbaleProxy = process.env.REACT_APP_API_URL !== undefined
+import pkg from './package.json'
 
-// https://vitejs.dev/config/
-export default defineConfig({
-  server: {
-    cors: true,
-    port: 3000,
-    host: 'localhost',
-    hmr: true,
+const viteConfig: any = ({ mode }: ConfigEnv) => {
+  const defaultConfig: any = baseConfig({
+    mode,
+    pkg,
+    https: false,
+    entry: path.resolve(__dirname, 'bootstrap/main.tsx'),
+    outDir: 'build'
+  })
+
+  return defineConfig({
+    ...defaultConfig,
     https: {
       // SSL certificate config
       key: fs.readFileSync('keys/ssl-key.pem'),
       cert: fs.readFileSync('keys/ssl-cert.pem')
+    },
+    resolve: {
+      alias: {
+        '@': path.resolve(__dirname, './'),
+        '~': path.resolve(__dirname, './')
+      }
     }
-  },
-  plugins: [
-    react(),
-    enbaleProxy &&
-      httpProxy({
-        '/api': {
-          target: process.env.REACT_APP_API_URL,
-          changeOrigin: true,
-          secure: false,
-          rewrite: (url: string) => url.replace(/^\/api/, '')
-        }
-      })
-  ]
-})
+  })
+}
+
+export default viteConfig

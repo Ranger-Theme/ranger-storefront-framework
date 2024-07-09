@@ -10,6 +10,7 @@ import { httpProxy, svgBuilder } from './plugin'
 export type BaseConfigType = {
   entry: string
   mode: string
+  https?: boolean
   outDir?: string
   htmlId?: string
   pkg?: any
@@ -19,6 +20,7 @@ export type BaseConfigType = {
 export const baseConfig = ({
   entry,
   mode,
+  https = false,
   outDir = 'dist',
   htmlId = 'root',
   pkg = {},
@@ -46,7 +48,8 @@ export const baseConfig = ({
       cors: true,
       host: '127.0.0.1',
       port: 3000,
-      hmr: true
+      hmr: true,
+      https
     },
     plugins: [
       createHtmlPlugin({
