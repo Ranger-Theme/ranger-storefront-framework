@@ -1,5 +1,11 @@
 # @ranger-theme/nextjs-config
 
+## 0.3.0
+
+### Minor Changes
+
+- pwa plugin support
+
 ## 0.2.0
 
 ### Minor Changes

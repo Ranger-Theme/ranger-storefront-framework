@@ -5,7 +5,7 @@ const nextBuildId = require('next-build-id')
 const BannerPlugin = require('./banner')
 
 const isProd = process.env.NODE_ENV === 'production'
-const isAnalyzer = process.env.NEXT_PUBLIC_BUNDLE_VISUALIZE === '1'
+const isAnalyzer = process.env.NEXT_PUBLIC_VISUALIZE_ENABLE === 'true'
 
 module.exports = ({ pkg = {}, dirname = __dirname, timestamp = 0, ...rest }) => {
   const { plugins, transpilePackages, cacheGroups, ...options } = rest

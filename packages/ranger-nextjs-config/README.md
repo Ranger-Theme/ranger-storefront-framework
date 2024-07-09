@@ -31,14 +31,8 @@ const isProd = process.env.NODE_ENV === 'production'
 /** @type {import('next').NextConfig} */
 module.exports = nextConfig({
   pkg,
-  dirname: process.cwd(),
-  basePath: '/en',
   timestamp: new Date().getTime(),
   transpilePackages: [],
-  i18n: {
-    locales: ['en', 'fr', 'de', 'it'],
-    defaultLocale: 'en'
-  },
   compiler: {
     reactRemoveProperties: isProd,
     removeConsole: false,
@@ -62,19 +56,7 @@ module.exports = nextConfig({
       }
     }
   },
-  async rewrites() {
-    return [
-      {
-        source: '/:locale/api/:path*',
-        destination: '/api/:path*',
-        locale: false
-      },
-      {
-        source: '/:locale/:pathname*',
-        destination: '/_resolver'
-      }
-    ]
-  }
+  plugins: []
 })
 ```
 

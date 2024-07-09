@@ -1,6 +1,6 @@
 {
   "name": "@ranger-theme/nextjs-config",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "main": "index.js",
   "license": "MIT",
   "files": [
@@ -17,6 +17,9 @@
     "next-build-id": "^3.0.0"
   },
   "devDependencies": {
+    "@next/bundle-analyzer": "^13.4.12"
+  },
+  "peerDependencies": {
     "@next/bundle-analyzer": "^13.4.12"
   }
 }

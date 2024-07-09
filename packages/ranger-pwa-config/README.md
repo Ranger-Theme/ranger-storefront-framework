@@ -1,3 +1,27 @@
+# @ranger-theme/pwa-config
+
+## 🎉 Introduce
+
+> pwa配置
+
+## 📚 Documentation
+
+- [Npm](https://www.npmjs.com/package/@ranger-theme/pwa-config)
+- [CHANGELOG](CHANGELOG.md)
+
+## 📦 Install
+
+```bash
+$ npm install --save-dev @ranger-theme/pwa-config
+# or
+$ yarn add --save-dev @ranger-theme/pwa-config
+# or
+$ pnpm add --save-dev @ranger-theme/pwa-config
+```
+
+## 🔨 Usage
+
+```js
 const nextConfig = require('@ranger-theme/nextjs-config')
 const pwaConfig = require('@ranger-theme/pwa-config')
 
@@ -18,3 +42,5 @@ module.exports = nextConfig({
   },
   plugins: [...pwaConfig({ timestamp })]
 })
+```
+
