@@ -9,5 +9,5 @@ export default defineConfig({
   sourcemap: false,
   shims: true,
   format: ['esm', 'cjs'],
-  external: []
+  external: ['react']
 })

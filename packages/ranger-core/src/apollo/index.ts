@@ -1,0 +1,1 @@
+export { withApollo } from './withApollo'
