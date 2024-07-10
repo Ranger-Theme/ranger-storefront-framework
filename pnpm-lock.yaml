@@ -291,6 +291,22 @@ importers:
 
   packages/ranger-ts-config: {}
 
+  packages/ranger-utils:
+    dependencies:
+      tsup:
+        specifier: ^8.0.1
+        version: 8.1.0
+    devDependencies:
+      '@ranger-theme/eslint-config':
+        specifier: workspace:^
+        version: link:../ranger-eslint-config
+      '@ranger-theme/ts-config':
+        specifier: workspace:^
+        version: link:../ranger-ts-config
+      '@types/node':
+        specifier: ^20.10.6
+        version: 20.14.10
+
   packages/ranger-vite-config:
     dependencies:
       '@vitejs/plugin-legacy':

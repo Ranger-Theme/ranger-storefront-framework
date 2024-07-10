@@ -1,0 +1,30 @@
+{
+  "name": "@ranger-theme/utils",
+  "version": "0.1.0",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "license": "MIT",
+  "files": [
+    "dist",
+    "lib",
+    "README.md",
+    "CHANGELOG.md"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "prebuild": "pnpm clean",
+    "build": "tsup",
+    "clean": "rm -rf dist lib"
+  },
+  "dependencies": {
+    "tsup": "^8.0.1"
+  },
+  "devDependencies": {
+    "@ranger-theme/eslint-config": "workspace:^",
+    "@ranger-theme/ts-config": "workspace:^",
+    "@types/node": "^20.10.6"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "extends": "@ranger-theme/ts-config/base.json",
+  "compilerOptions": {
+    "incremental": false,
+    "module": "ESNext",
+    "target": "ESNext",
+    "lib": ["ESNext", "DOM"],
+    "outDir": "dist",
+    "declarationMap": false,
+    "sourceMap": false
+  },
+  "include": ["**/*.ts"],
+  "exclude": ["node_modules", "dist"]
+}
