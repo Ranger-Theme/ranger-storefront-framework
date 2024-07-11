@@ -1,6 +1,6 @@
 {
   "name": "@ranger-theme/vite-config",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
@@ -17,6 +17,7 @@
   "scripts": {
     "prebuild": "pnpm clean && pnpm bootstrap",
     "bootstrap": "node bootstrap.js",
+    "dev": "tsup --watch",
     "build": "tsup",
     "clean": "rm -rf dist lib"
   },
