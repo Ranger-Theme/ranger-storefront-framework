@@ -1,6 +1,6 @@
 {
   "name": "@ranger-theme/utils",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
@@ -21,6 +21,7 @@
     "clean": "rm -rf dist lib"
   },
   "dependencies": {
+    "events": "^3.3.0",
     "nookies": "^2.5.2",
     "tsup": "^8.0.1"
   },

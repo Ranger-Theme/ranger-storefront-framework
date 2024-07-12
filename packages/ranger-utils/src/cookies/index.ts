@@ -19,7 +19,8 @@ const defaultOptions: Options = {
 }
 
 export const setItem = (name: string, value: string, options?: Options) => {
-  nookies.set(null, name, value, options || defaultOptions)
+  const mergeOptions: any = options || defaultOptions
+  nookies.set(null, name, value, mergeOptions)
 }
 
 export const getItem = (name: string) => {
@@ -28,7 +29,8 @@ export const getItem = (name: string) => {
 }
 
 export const removeItem = (name: string, options?: Options) => {
-  nookies.destroy(null, name, options || defaultOptions)
+  const mergeOptions: any = options || defaultOptions
+  nookies.destroy(null, name, mergeOptions)
 }
 
 export { parseCookies, destroyCookie }

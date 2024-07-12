@@ -1,5 +1,11 @@
 # @ranger-theme/utils
 
+## 0.4.1
+
+### Patch Changes
+
+- node events
+
 ## 0.4.0
 
 ### Minor Changes

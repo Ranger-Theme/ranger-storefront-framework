@@ -11,6 +11,7 @@
     "clean": "rm -rf dist"
   },
   "dependencies": {
+    "@ranger-theme/hooks": "workspace:^",
     "@ranger-theme/vite-config": "workspace:^",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"

@@ -1,4 +1,3 @@
-import fs from 'node:fs'
 import path from 'node:path'
 import { defineConfig } from 'vite'
 import type { ConfigEnv } from 'vite'
@@ -18,11 +17,11 @@ const viteConfig: any = ({ mode }: ConfigEnv) => {
 
   return defineConfig({
     ...defaultConfig,
-    https: {
-      // SSL certificate config
-      key: fs.readFileSync('keys/ssl-key.pem'),
-      cert: fs.readFileSync('keys/ssl-cert.pem')
-    },
+    // https: {
+    //   // SSL certificate config
+    //   key: fs.readFileSync('keys/ssl-key.pem'),
+    //   cert: fs.readFileSync('keys/ssl-cert.pem')
+    // },
     resolve: {
       alias: {
         '@': path.resolve(__dirname, './'),

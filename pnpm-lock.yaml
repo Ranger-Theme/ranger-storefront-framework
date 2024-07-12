@@ -121,6 +121,9 @@ importers:
 
   apps/ranger-vite:
     dependencies:
+      '@ranger-theme/hooks':
+        specifier: workspace:^
+        version: link:../../packages/ranger-hooks
       '@ranger-theme/vite-config':
         specifier: workspace:^
         version: link:../../packages/ranger-vite-config
@@ -370,6 +373,9 @@ importers:
 
   packages/ranger-utils:
     dependencies:
+      events:
+        specifier: ^3.3.0
+        version: 3.3.0
       nookies:
         specifier: ^2.5.2
         version: 2.5.2
