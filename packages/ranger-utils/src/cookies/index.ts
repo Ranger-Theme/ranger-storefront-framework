@@ -1,6 +1,6 @@
 import { parseCookies, destroyCookie, setCookie } from 'nookies'
 
-interface Options {
+export interface Options {
   domain?: string
   encode?: string
   expires?: string

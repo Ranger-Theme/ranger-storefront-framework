@@ -1,22 +1,26 @@
 import { setItem, getItem, removeItem } from '@ranger-theme/utils'
+import type { Options } from '@ranger-theme/utils'
 
 interface Cookie {
-  setItem: typeof setItem
-  getItem: typeof getItem
-  removeItem: typeof removeItem
+  setItem: (name: string, value: string, options?: Options) => void
+  getItem: (name: string) => string
+  removeItem: (name: string, options?: Options) => void
 }
 
 export const useCookie = () => {
   const cookie: Cookie = {
-    setItem,
-    getItem,
-    removeItem
+    setItem: (name: string, value: string, options?: Options) => {
+      setItem(null, name, value, options)
+    },
+    getItem: (name: string) => {
+      return getItem(null, name)
+    },
+    removeItem: (name: string, options?: Options) => {
+      removeItem(null, name, options)
+    }
   }
 
   return {
     cookie
   }
 }
-
-type UseCookie = typeof useCookie
-export type UseCookieReturn = ReturnType<UseCookie>

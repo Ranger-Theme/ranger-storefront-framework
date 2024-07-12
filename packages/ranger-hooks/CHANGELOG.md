@@ -1,5 +1,13 @@
 # @ranger-theme/hooks
 
+## 0.3.1
+
+### Patch Changes
+
+- cookie params for ssr context null
+- Updated dependencies
+  - @ranger-theme/utils@0.5.1
+
 ## 0.3.0
 
 ### Minor Changes

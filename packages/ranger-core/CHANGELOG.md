@@ -1,5 +1,12 @@
 # @ranger-theme/core
 
+## 0.3.3
+
+### Patch Changes
+
+- Updated dependencies
+  - @ranger-theme/utils@0.5.1
+
 ## 0.3.2
 
 ### Patch Changes
