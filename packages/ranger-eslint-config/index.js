@@ -12,6 +12,7 @@ module.exports = {
     semi: ['error', 'never'],
     quotes: ['error', 'single'],
     'arrow-body-style': 0,
+    'default-param-last': 0,
     'consistent-return': 0,
     'global-require': 0,
     'import/extensions': 0,

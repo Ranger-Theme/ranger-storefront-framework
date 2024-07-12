@@ -1,5 +1,11 @@
 # @ranger-theme/utils
 
+## 0.5.0
+
+### Minor Changes
+
+- solve cookie ts
+
 ## 0.4.1
 
 ### Patch Changes

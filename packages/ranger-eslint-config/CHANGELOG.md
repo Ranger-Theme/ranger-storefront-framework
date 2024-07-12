@@ -1,5 +1,11 @@
 # @ranger-theme/eslint-config
 
+## 0.4.0
+
+### Minor Changes
+
+- solve cookie ts
+
 ## 0.3.0
 
 ### Minor Changes

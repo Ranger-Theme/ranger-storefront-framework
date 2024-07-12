@@ -1,4 +1,4 @@
-import nookies, { parseCookies, destroyCookie } from 'nookies'
+import { parseCookies, destroyCookie, setCookie } from 'nookies'
 
 interface Options {
   domain?: string
@@ -17,20 +17,19 @@ const defaultOptions: Options = {
   sameSite: 'lax',
   secure: true
 }
-
-export const setItem = (name: string, value: string, options?: Options) => {
+export const setItem = (ctx: any = null, name: string, value: string, options?: Options) => {
   const mergeOptions: any = options || defaultOptions
-  nookies.set(null, name, value, mergeOptions)
+  setCookie(ctx, name, value, mergeOptions)
 }
 
-export const getItem = (name: string) => {
-  const cookies = nookies.get()
+export const getItem = (ctx: any = null, name: string) => {
+  const cookies = parseCookies(ctx)
   return cookies[name]
 }
 
-export const removeItem = (name: string, options?: Options) => {
+export const removeItem = (ctx: any = null, name: string, options?: Options) => {
   const mergeOptions: any = options || defaultOptions
-  nookies.destroy(null, name, mergeOptions)
+  destroyCookie(ctx, name, mergeOptions)
 }
 
 export { parseCookies, destroyCookie }

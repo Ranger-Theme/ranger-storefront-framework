@@ -1,5 +1,16 @@
 # @ranger-theme/hooks
 
+## 0.3.0
+
+### Minor Changes
+
+- solve cookie ts
+
+### Patch Changes
+
+- Updated dependencies
+  - @ranger-theme/utils@0.5.0
+
 ## 0.2.1
 
 ### Patch Changes
