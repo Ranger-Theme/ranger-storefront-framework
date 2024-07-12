@@ -3,7 +3,7 @@ import react from '@vitejs/plugin-react-swc'
 import banner from 'vite-plugin-banner'
 import { createHtmlPlugin } from 'vite-plugin-html'
 import { loadEnv } from 'vite'
-import type { UserConfigExport } from 'vite'
+import type { BuildOptions, UserConfigExport } from 'vite'
 
 import { httpProxy, svgBuilder } from './plugin'
 
@@ -16,6 +16,7 @@ export type BaseConfigType = {
   htmlId?: string
   pkg?: any
   reactOptions?: any
+  buildOptions?: BuildOptions
 }
 
 export const baseConfig = ({
@@ -26,7 +27,8 @@ export const baseConfig = ({
   outDir = 'dist',
   htmlId = 'root',
   pkg = {},
-  reactOptions = {}
+  reactOptions = {},
+  buildOptions = {}
 }: BaseConfigType) => {
   process.env = { ...process.env, ...loadEnv(mode, process.cwd(), 'REACT_') }
 
@@ -39,7 +41,8 @@ export const baseConfig = ({
       outDir,
       cssMinify: isProd,
       sourcemap: !isProd,
-      reportCompressedSize: !isProd
+      reportCompressedSize: !isProd,
+      ...buildOptions
     },
     esbuild: isProd
       ? {

@@ -1,5 +1,11 @@
 # @ranger-theme/vite-config
 
+## 0.5.0
+
+### Minor Changes
+
+- support build options
+
 ## 0.4.0
 
 ### Minor Changes
