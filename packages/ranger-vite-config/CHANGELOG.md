@@ -1,5 +1,11 @@
 # @ranger-theme/vite-config
 
+## 0.4.0
+
+### Minor Changes
+
+- support custom http port
+
 ## 0.3.0
 
 ### Minor Changes

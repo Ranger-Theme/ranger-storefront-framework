@@ -11,6 +11,7 @@ export type BaseConfigType = {
   entry: string
   mode: string
   https?: boolean
+  port?: number
   outDir?: string
   htmlId?: string
   pkg?: any
@@ -21,6 +22,7 @@ export const baseConfig = ({
   entry,
   mode,
   https = false,
+  port = 3000,
   outDir = 'dist',
   htmlId = 'root',
   pkg = {},
@@ -47,7 +49,7 @@ export const baseConfig = ({
     server: {
       cors: true,
       host: '127.0.0.1',
-      port: 3000,
+      port,
       hmr: true,
       https
     },
