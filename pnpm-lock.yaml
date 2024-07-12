@@ -290,6 +290,9 @@ importers:
 
   packages/ranger-hooks:
     dependencies:
+      '@ranger-theme/utils':
+        specifier: workspace:^
+        version: link:../ranger-utils
       ahooks:
         specifier: ^3.8.0
         version: 3.8.0(react@18.3.1)
@@ -303,6 +306,9 @@ importers:
       '@ranger-theme/ts-config':
         specifier: workspace:^
         version: link:../ranger-ts-config
+      '@types/cookie':
+        specifier: ^0.6.0
+        version: 0.6.0
       '@types/node':
         specifier: ^20.10.6
         version: 20.14.10
@@ -3388,6 +3394,10 @@ packages:
     resolution: {integrity: sha512-K6uROf1LD88uDQqJCktA4yzL1YYAK6NgfsI0v/mTgyPKWsX1CnJ0XPSDhViejru1GcRkLWb8RlzFYJRqGUbaug==}
     dependencies:
       '@types/node': 20.14.10
+    dev: true
+
+  /@types/cookie@0.6.0:
+    resolution: {integrity: sha512-4Kh9a6B2bQciAhf7FSuMRRkUWecJgJu9nPnx3yzpsfXX/c50REIqpHY4C82bXP90qrLtXtkDxTZosYO3UpOwlA==}
     dev: true
 
   /@types/eslint-scope@3.7.7:
