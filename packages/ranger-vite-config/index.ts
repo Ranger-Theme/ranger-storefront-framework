@@ -14,6 +14,7 @@ export type BaseConfigType = {
   port?: number
   outDir?: string
   htmlId?: string
+  isMicroApp?: boolean
   pkg?: any
   reactOptions?: any
   buildOptions?: BuildOptions
@@ -26,6 +27,7 @@ export const baseConfig = ({
   port = 3000,
   outDir = 'dist',
   htmlId = 'root',
+  isMicroApp = false,
   pkg = {},
   reactOptions = {},
   buildOptions = {}
@@ -85,7 +87,7 @@ export const baseConfig = ({
         polyfills: true,
         renderLegacyChunks: true
       }),
-      react({ ...reactOptions }),
+      ...(isMicroApp ? [] : [react({ ...reactOptions })]),
       !isProd &&
         httpProxy({
           '/api/': {

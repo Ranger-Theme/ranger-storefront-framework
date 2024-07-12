@@ -1,5 +1,11 @@
 # @ranger-theme/vite-config
 
+## 0.5.1
+
+### Patch Changes
+
+- support qiank micro app
+
 ## 0.5.0
 
 ### Minor Changes
