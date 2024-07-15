@@ -29,7 +29,19 @@ export const baseConfig = ({
   htmlId = 'root',
   isMicroApp = false,
   pkg = {},
-  reactOptions = {},
+  reactOptions = {
+    jsxImportSource: '@emotion/react',
+    plugins: [
+      [
+        '@swc/plugin-emotion',
+        {
+          sourceMap: true,
+          autoLabel: 'dev-only',
+          labelFormat: '[local]'
+        }
+      ]
+    ]
+  },
   buildOptions = {}
 }: BaseConfigType) => {
   process.env = { ...process.env, ...loadEnv(mode, process.cwd(), 'REACT_') }

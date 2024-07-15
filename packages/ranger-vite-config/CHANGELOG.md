@@ -1,5 +1,11 @@
 # @ranger-theme/vite-config
 
+## 0.6.0
+
+### Minor Changes
+
+- support emotion class name
+
 ## 0.5.1
 
 ### Patch Changes
