@@ -1,0 +1,1 @@
+export { qiankunTransform } from './qiankun'

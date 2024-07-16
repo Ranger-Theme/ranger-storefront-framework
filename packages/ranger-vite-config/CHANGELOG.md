@@ -1,5 +1,11 @@
 # @ranger-theme/vite-config
 
+## 0.7.1
+
+### Patch Changes
+
+- support qiankun
+
 ## 0.7.0
 
 ### Minor Changes

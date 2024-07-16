@@ -5,7 +5,7 @@ import { createHtmlPlugin } from 'vite-plugin-html'
 import { loadEnv } from 'vite'
 import type { BuildOptions, UserConfigExport } from 'vite'
 
-import { completePlugin, httpProxy, svgBuilder, reporterPlugin } from './plugin'
+import { completePlugin, httpProxy, svgBuilder, qiankunTransform, reporterPlugin } from './plugin'
 
 export type BaseConfigType = {
   entry: string
@@ -133,6 +133,7 @@ export const baseConfig = ({
       svgBuilder('svgs/'),
       completePlugin(),
       reporterPlugin(),
+      qiankunTransform(isMicroApp),
       process.env.REACT_APP_BUNDLE_VISUALIZE === '1' &&
         require('rollup-plugin-visualizer').visualizer({
           open: true,

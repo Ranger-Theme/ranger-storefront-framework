@@ -1,4 +1,5 @@
 export { completePlugin } from './complete'
 export { httpProxy } from './proxy'
+export { qiankunTransform } from './qiankun'
 export { reporterPlugin } from './report'
 export { svgBuilder } from './svg'
