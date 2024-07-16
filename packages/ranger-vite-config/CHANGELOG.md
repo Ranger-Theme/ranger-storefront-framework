@@ -1,5 +1,11 @@
 # @ranger-theme/vite-config
 
+## 0.7.0
+
+### Minor Changes
+
+- sovle the antd ssr directive
+
 ## 0.6.0
 
 ### Minor Changes

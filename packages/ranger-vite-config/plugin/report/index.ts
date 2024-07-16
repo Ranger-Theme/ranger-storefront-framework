@@ -1,0 +1,1 @@
+export { reporterPlugin } from './report'

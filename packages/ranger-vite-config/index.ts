@@ -5,7 +5,7 @@ import { createHtmlPlugin } from 'vite-plugin-html'
 import { loadEnv } from 'vite'
 import type { BuildOptions, UserConfigExport } from 'vite'
 
-import { httpProxy, svgBuilder } from './plugin'
+import { completePlugin, httpProxy, svgBuilder, reporterPlugin } from './plugin'
 
 export type BaseConfigType = {
   entry: string
@@ -56,7 +56,28 @@ export const baseConfig = ({
       cssMinify: isProd,
       sourcemap: !isProd,
       reportCompressedSize: !isProd,
-      ...buildOptions
+      ...buildOptions,
+      rollupOptions: {
+        ...(buildOptions?.rollupOptions ?? {}),
+        onLog(level: string, log: any, handler: any) {
+          if (
+            [
+              'CYCLIC_CROSS_CHUNK_REEXPORT',
+              'MODULE_LEVEL_DIRECTIVE',
+              'PLUGIN_WARNING',
+              'CIRCULAR_DEPENDENCY'
+            ].includes(log.code)
+          ) {
+            return // Ignore circular dependency warnings
+          }
+
+          if (level === 'warn') {
+            handler('error', log)
+          } else {
+            handler(level, log)
+          }
+        }
+      }
     },
     esbuild: isProd
       ? {
@@ -110,6 +131,8 @@ export const baseConfig = ({
           }
         }),
       svgBuilder('svgs/'),
+      completePlugin(),
+      reporterPlugin(),
       process.env.REACT_APP_BUNDLE_VISUALIZE === '1' &&
         require('rollup-plugin-visualizer').visualizer({
           open: true,
