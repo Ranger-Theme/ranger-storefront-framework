@@ -1,5 +1,11 @@
 # @ranger-theme/vite-config
 
+## 0.8.0
+
+### Minor Changes
+
+- compile after all order
+
 ## 0.7.1
 
 ### Patch Changes
