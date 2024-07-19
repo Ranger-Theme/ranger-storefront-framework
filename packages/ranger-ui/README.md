@@ -1,6 +1,6 @@
 # @ranger-theme/ui
 
-<p align='center'>
+<p>
   <a href='https://www.npmjs.com/package/@ranger-theme/ui'><img src='https://img.shields.io/npm/v/@ranger-theme/ui.svg' alt='Latest npm version'></a>
 </p>
 
