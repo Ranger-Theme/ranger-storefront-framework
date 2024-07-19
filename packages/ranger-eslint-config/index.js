@@ -14,6 +14,7 @@ module.exports = {
     'arrow-body-style': 0,
     'default-param-last': 0,
     'consistent-return': 0,
+    'class-methods-use-this': 0,
     'global-require': 0,
     'import/extensions': 0,
     'import/no-unresolved': 0,

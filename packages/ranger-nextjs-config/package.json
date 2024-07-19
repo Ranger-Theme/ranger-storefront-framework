@@ -1,6 +1,6 @@
 {
   "name": "@ranger-theme/nextjs-config",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "main": "index.js",
   "license": "MIT",
   "files": [
@@ -13,6 +13,7 @@
     "access": "public"
   },
   "dependencies": {
+    "chalk": "^4.1.2",
     "dateformat": "^4.5.1",
     "next-build-id": "^3.0.0"
   },

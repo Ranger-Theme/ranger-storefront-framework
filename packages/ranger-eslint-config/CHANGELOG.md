@@ -1,5 +1,11 @@
 # @ranger-theme/eslint-config
 
+## 0.5.0
+
+### Minor Changes
+
+- nextjs and shop ui
+
 ## 0.4.0
 
 ### Minor Changes

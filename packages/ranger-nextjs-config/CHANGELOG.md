@@ -1,5 +1,11 @@
 # @ranger-theme/nextjs-config
 
+## 0.4.0
+
+### Minor Changes
+
+- nextjs and shop ui
+
 ## 0.3.0
 
 ### Minor Changes

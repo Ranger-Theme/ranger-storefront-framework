@@ -3,6 +3,7 @@ const dateformat = require('dateformat')
 const nextBuildId = require('next-build-id')
 
 const BannerPlugin = require('./banner')
+const BuildTimePlugin = require('./build')
 
 const isProd = process.env.NODE_ENV === 'production'
 const isAnalyzer = process.env.NEXT_PUBLIC_VISUALIZE_ENABLE === 'true'
@@ -47,7 +48,7 @@ module.exports = ({ pkg = {}, dirname = __dirname, timestamp = 0, ...rest }) => 
       const trunk = commitId.substring(0, 16)
       return `${trunk}_${timestamp.toString()}`
     },
-    webpack: (config, { buildId, isServer }) => {
+    webpack: (config, { buildId, isServer, nextRuntime }) => {
       // Write buildId to the version controll file
       fs.writeFileSync(
         'public/version.json',
@@ -85,6 +86,12 @@ module.exports = ({ pkg = {}, dirname = __dirname, timestamp = 0, ...rest }) => 
 
           return plugin
         })
+
+        config.plugins.push(
+          new BuildTimePlugin({
+            runtime: nextRuntime
+          })
+        )
       }
 
       // Client webpack conifg

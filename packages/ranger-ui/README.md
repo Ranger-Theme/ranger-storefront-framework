@@ -26,6 +26,6 @@ $ pnpm add --save-dev @ranger-theme/ui
 ## 🔨 Usage
 
 ```js
-import { CountDown, CsvLink, InfiniteScroll, Player, Portal } from '@ranger-theme/ui'
+import { CopyBoard, CountDown, CsvLink, HeadRoom, InfiniteScroll, Player, Portal, PrintScreen } from '@ranger-theme/ui'
 ```
 
