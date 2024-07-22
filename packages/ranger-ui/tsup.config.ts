@@ -19,7 +19,7 @@ export default defineConfig((options: Options) => {
     terserOptions: {
       compress: true
     },
-    plugins: [
+    esbuildPlugins: [
       replacePlugin({
         values: {
           // 使用正则表达式替换掉模板字符串中的换行符

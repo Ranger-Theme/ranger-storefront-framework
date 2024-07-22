@@ -23,6 +23,7 @@
   "dependencies": {
     "@emotion/react": "^11.11.4",
     "@emotion/styled": "^11.11.5",
+    "esbuild": "^0.21.4",
     "react-copy-to-clipboard": "^5.1.0",
     "react-countdown": "^2.3.5",
     "react-csv": "^2.2.2",
