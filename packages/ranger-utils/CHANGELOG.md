@@ -1,5 +1,11 @@
 # @ranger-theme/utils
 
+## 0.6.0
+
+### Minor Changes
+
+- esbuild plugins
+
 ## 0.5.1
 
 ### Patch Changes

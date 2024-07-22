@@ -1,5 +1,11 @@
 # @ranger-theme/ui
 
+## 0.4.0
+
+### Minor Changes
+
+- esbuild plugins
+
 ## 0.3.0
 
 ### Minor Changes

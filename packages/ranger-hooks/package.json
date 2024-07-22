@@ -1,6 +1,6 @@
 {
   "name": "@ranger-theme/hooks",
-  "version": "0.3.1",
+  "version": "0.4.0",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
@@ -22,8 +22,7 @@
   },
   "dependencies": {
     "@ranger-theme/utils": "workspace:^",
-    "ahooks": "^3.8.0",
-    "tsup": "^8.0.1"
+    "ahooks": "^3.8.0"
   },
   "devDependencies": {
     "@ranger-theme/eslint-config": "workspace:^",
@@ -31,7 +30,8 @@
     "@types/cookie": "^0.6.0",
     "@types/node": "^20.10.6",
     "@types/react": "^18.3.3",
-    "react": "^18.2.0"
+    "react": "^18.2.0",
+    "tsup": "^8.0.1"
   },
   "peerDependencies": {
     "react": "^18.2.0"

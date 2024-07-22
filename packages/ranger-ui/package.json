@@ -1,6 +1,6 @@
 {
   "name": "@ranger-theme/ui",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
@@ -23,7 +23,6 @@
   "dependencies": {
     "@emotion/react": "^11.11.4",
     "@emotion/styled": "^11.11.5",
-    "esbuild": "^0.21.4",
     "react-copy-to-clipboard": "^5.1.0",
     "react-countdown": "^2.3.5",
     "react-csv": "^2.2.2",
@@ -36,8 +35,7 @@
     "react-resizable": "^3.0.5",
     "react-responsive": "^10.0.0",
     "react-slick": "^0.30.2",
-    "react-to-print": "^2.15.1",
-    "tsup": "^8.0.1"
+    "react-to-print": "^2.15.1"
   },
   "devDependencies": {
     "@ranger-theme/eslint-config": "workspace:^",
@@ -51,8 +49,11 @@
     "@types/react-infinite-scroller": "^1.2.5",
     "@types/react-resizable": "^3.0.8",
     "@types/react-slick": "^0.23.13",
+    "chalk": "^4.1.2",
+    "esbuild": "^0.21.4",
     "react": "^18.2.0",
-    "typescript": "^5.5.3"
+    "typescript": "^5.5.3",
+    "tsup": "^8.0.1"
   },
   "peerDependencies": {
     "react": "^18.2.0"

@@ -1,6 +1,6 @@
 {
   "name": "@ranger-theme/utils",
-  "version": "0.5.1",
+  "version": "0.6.0",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
@@ -22,12 +22,12 @@
   },
   "dependencies": {
     "events": "^3.3.0",
-    "nookies": "^2.5.2",
-    "tsup": "^8.0.1"
+    "nookies": "^2.5.2"
   },
   "devDependencies": {
     "@ranger-theme/eslint-config": "workspace:^",
     "@ranger-theme/ts-config": "workspace:^",
-    "@types/node": "^20.10.6"
+    "@types/node": "^20.10.6",
+    "tsup": "^8.0.1"
   }
 }

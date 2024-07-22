@@ -1,5 +1,16 @@
 # @ranger-theme/hooks
 
+## 0.4.0
+
+### Minor Changes
+
+- esbuild plugins
+
+### Patch Changes
+
+- Updated dependencies
+  - @ranger-theme/utils@0.6.0
+
 ## 0.3.1
 
 ### Patch Changes

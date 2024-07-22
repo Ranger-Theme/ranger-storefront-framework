@@ -1,5 +1,11 @@
 # @ranger-theme/vite-config
 
+## 0.9.0
+
+### Minor Changes
+
+- esbuild plugins
+
 ## 0.8.0
 
 ### Minor Changes
