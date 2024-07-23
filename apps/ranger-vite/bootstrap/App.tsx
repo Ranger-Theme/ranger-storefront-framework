@@ -1,9 +1,13 @@
 import { useState } from 'react'
+import { useCookie } from '@ranger-theme/hooks'
 
 import './App.css'
 
 const App = () => {
+  const { cookie } = useCookie()
   const [count, setCount] = useState<number>(0)
+
+  console.info(cookie.getItem('access_token'))
 
   return (
     <>
