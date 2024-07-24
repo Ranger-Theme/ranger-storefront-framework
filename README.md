@@ -204,3 +204,12 @@ chmod +x .husky/pre-commit
 # env: sh\r: No such file or directory
 sed -i '' 's/\r//' .husky/commit-msg 
 ```
+
+## Changeset pusblish alpha, beta
+
+```bash
+pnpm changeset pre enter alpha # beta
+pnpm changeset version
+pnpm changeset pre exit
+pnpm changeset publish
+```

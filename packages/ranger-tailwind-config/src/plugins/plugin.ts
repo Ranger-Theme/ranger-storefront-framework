@@ -1,14 +1,16 @@
-const createPlugin = require('tailwindcss/plugin')
+import createPlugin from 'tailwindcss/plugin'
 
-const plugins = [
+import { ID, addRulesets } from './root'
+
+const plugins: any = [
   // base plugins
-  require('./root')
+  [ID, addRulesets]
   // component plugins
 ]
 
-const includePlugins = (pluginApi) => {
+const includePlugins = (pluginApi: any) => {
   const { theme } = pluginApi
-  const config = theme('venia.plugins')
+  const config: any = theme('venia.plugins')
 
   for (const [id, plugin] of plugins) {
     try {
@@ -28,4 +30,4 @@ const includePlugins = (pluginApi) => {
   }
 }
 
-module.exports = createPlugin(includePlugins)
+export const corePlugin = createPlugin(includePlugins)

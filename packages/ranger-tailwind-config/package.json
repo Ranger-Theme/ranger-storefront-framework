@@ -1,18 +1,32 @@
 {
   "name": "@ranger-theme/tailwind-config",
-  "version": "0.1.0",
+  "version": "0.2.0-alpha.0",
   "license": "MIT",
-  "main": "index.js",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
   "files": [
     "plugins",
     "index.js",
     "README.md",
     "CHANGELOG.md"
   ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "prebuild": "pnpm clean",
+    "dev": "tsup --watch",
+    "build": "tsup",
+    "clean": "rm -rf dist lib"
+  },
   "dependencies": {
     "tailwindcss": "^3.4.6"
   },
-  "publishConfig": {
-    "access": "public"
+  "devDependencies": {
+    "@ranger-theme/eslint-config": "workspace:^",
+    "@ranger-theme/ts-config": "workspace:^",
+    "@types/node": "^20.10.6",
+    "tsup": "^8.0.1"
   }
 }

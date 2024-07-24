@@ -1,9 +1,9 @@
-const defaultTheme = require('tailwindcss/defaultTheme')
+import defaultTheme from 'tailwindcss/defaultTheme'
 
-const { getColors, hexToRgb } = require('./plugins/colors')
-const corePlugin = require('./plugins/plugin')
+import { getColors, hexToRgb } from './plugins/colors'
+import { corePlugin } from './plugins/plugin'
 
-const colors = {
+const colors: any = {
   brand: {
     base: '61 132 255',
     dark: '41 84 255',
@@ -11,7 +11,7 @@ const colors = {
     light: '194 200 255',
     100: '194 200 255',
     400: '61 132 255',
-    // 500: '51 109 255',
+    500: '51 109 255',
     600: '41 84 255',
     700: '31 57 255',
     800: '23 43 196'
@@ -26,13 +26,13 @@ const extend = {
     spin: 'spin 1920ms linear infinite',
     shimmer: 'shimmer 1s linear infinite forwards'
   },
-  backgroundColor: (theme) => ({
+  backgroundColor: (theme: any) => ({
     body: '#FFF',
     header: '#FFF',
     subtle: theme('colors.gray.100'),
     disabledTile: '#f5f5f5'
   }),
-  backgroundImage: (theme) => ({
+  backgroundImage: (theme: any) => ({
     'gradient-radial': `radial-gradient(circle, ${theme('colors.gray.100')}, white)`,
     swatch: theme('colors.gray.100'),
     'swatch-selected': `linear-gradient(-45deg, rgba(0, 0, 0, 0.2), transparent), ${theme(
@@ -46,10 +46,10 @@ const extend = {
       ${theme('colors.gray.50/0')} 100%
     )`
   }),
-  backgroundSize: (theme) => ({
+  backgroundSize: (theme: any) => ({
     maxSite: `${theme('maxWidth.site')} 100%`
   }),
-  borderColor: (theme) => ({
+  borderColor: (theme: any) => ({
     currentColor: 'currentColor',
     button: theme('colors.gray.600'),
     error: theme('colors.red.400'),
@@ -82,7 +82,7 @@ const extend = {
   borderWidth: {
     DEFAULT: '1px'
   },
-  boxShadow: (theme) => ({
+  boxShadow: (theme: any) => ({
     buttonFocus: `-6px 6px ${theme('colors.brand.700')} / 0.3`,
     dialog: `1px 1px 5px ${theme('colors.gray.600')}`,
     headerTrigger: `0 4px ${theme('colors.brand.600')}`,
@@ -93,7 +93,7 @@ const extend = {
     radioFocus: `-3px 3px ${theme('colors.brand.100')}`,
     thin: `0 1px ${theme('colors.gray.300')}`
   }),
-  colors: getColors(colors),
+  colors: getColors(colors, '--color'),
   content: {
     empty: ''
   },
@@ -166,11 +166,11 @@ const extend = {
     modal: '360px',
     site: '1440px'
   },
-  minHeight: (theme) => ({
+  minHeight: (theme: any) => ({
     auto: 'auto',
     4: theme('spacing.4')
   }),
-  minWidth: (theme) => ({
+  minWidth: (theme: any) => ({
     auto: 'auto',
     32: theme('spacing.32')
   }),
@@ -201,13 +201,13 @@ const extend = {
     '50vw': '50vw',
     '25vw': '25vw'
   },
-  textColor: (theme) => ({
+  textColor: (theme: any) => ({
     colorDefault: theme('colors.gray.900'), // TODO @TW naming collision: TW puts "fontSize" + "color" under "text-" prefix
     error: theme('colors.red.700'),
     subtle: theme('colors.gray.600'),
     DEFAULT: theme('colors.gray.900')
   }),
-  width: (theme) => ({
+  width: (theme: any) => ({
     fit: 'fit-content',
     swatch: '3.875rem',
     maxSite: theme('maxWidth.site')
@@ -302,7 +302,7 @@ const tailwindTheme = {
     enter: '224ms',
     exit: '192ms'
   },
-  venia: (theme) => ({
+  venia: (theme: any) => ({
     plugins: {
       body: {
         color: theme('colors.neutral.900')
@@ -339,11 +339,7 @@ const tailwindTheme = {
   })
 }
 
-const config = {
-  // TODO @TW: see top too. Had to disable to get working locally.
-  // plugins: [aspectRatioPlugin, corePlugin],
+export const tailwindConfig = {
   plugins: [corePlugin],
   theme: tailwindTheme
 }
-
-module.exports = config
