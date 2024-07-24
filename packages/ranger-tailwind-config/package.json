@@ -1,13 +1,12 @@
 {
   "name": "@ranger-theme/tailwind-config",
-  "version": "0.2.0-alpha.0",
+  "version": "0.2.0",
   "license": "MIT",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
   "files": [
-    "plugins",
-    "index.js",
+    "dist",
     "README.md",
     "CHANGELOG.md"
   ],

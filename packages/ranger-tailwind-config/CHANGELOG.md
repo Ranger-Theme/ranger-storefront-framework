@@ -1,5 +1,11 @@
 # @ranger-theme/tailwind-config
 
+## 0.2.0
+
+### Patch Changes
+
+- publish
+
 ## 0.2.0-alpha.0
 
 ### Minor Changes
