@@ -1,5 +1,12 @@
 # @ranger-theme/nextjs
 
+## 1.1.4
+
+### Patch Changes
+
+- Updated dependencies
+  - @ranger-theme/nextjs-config@0.5.0
+
 ## 1.1.3
 
 ### Patch Changes

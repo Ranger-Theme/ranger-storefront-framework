@@ -1,10 +1,11 @@
 {
   "name": "@ranger-theme/nextjs-config",
-  "version": "0.4.0",
+  "version": "0.5.0",
   "main": "index.js",
   "license": "MIT",
   "files": [
     "banner.js",
+    "build.js",
     "index.js",
     "README.md",
     "CHANGELOG.md"
