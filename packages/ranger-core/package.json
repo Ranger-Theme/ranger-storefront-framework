@@ -1,9 +1,9 @@
 {
   "name": "@ranger-theme/core",
-  "version": "0.4.0",
-  "main": "dist/index.js",
-  "module": "dist/index.mjs",
-  "types": "dist/index.d.ts",
+  "version": "0.5.0",
+  "main": "./dist/index.mjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
   "license": "MIT",
   "files": [
     "dist",
@@ -40,5 +40,11 @@
   },
   "peerDependencies": {
     "react": "^18.2.0"
+  },
+  "exports": {
+    "default": "./dist/index.js",
+    "require": "./dist/index.js",
+    "import": "./dist/index.mjs",
+    "node": "./dist/index.js"
   }
 }
