@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import { withApollo } from '@ranger-theme/core'
 import type { AppProps } from 'next/app'
 
 const App = ({ Component, pageProps }: AppProps) => {
@@ -16,4 +17,4 @@ const App = ({ Component, pageProps }: AppProps) => {
   )
 }
 
-export default App
+export default withApollo(App)

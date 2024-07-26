@@ -63,6 +63,9 @@ importers:
       '@mui/material-nextjs':
         specifier: ^5.15.11
         version: 5.15.11(@emotion/cache@11.11.0)(@emotion/server@11.11.0)(@mui/material@5.16.0)(@types/react@18.3.3)(next@14.2.4)(react@18.3.1)
+      '@ranger-theme/core':
+        specifier: workspace:^
+        version: link:../../packages/ranger-core
       '@ranger-theme/nextjs-config':
         specifier: workspace:^
         version: link:../../packages/ranger-nextjs-config

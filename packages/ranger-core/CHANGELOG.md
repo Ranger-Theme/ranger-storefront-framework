@@ -1,5 +1,23 @@
 # @ranger-theme/core
 
+## 0.5.3
+
+### Patch Changes
+
+- main entry cjs
+
+## 0.5.2
+
+### Patch Changes
+
+- default last one
+
+## 0.5.1
+
+### Patch Changes
+
+- export for package
+
 ## 0.5.0
 
 ### Minor Changes

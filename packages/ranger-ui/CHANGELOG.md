@@ -1,5 +1,17 @@
 # @ranger-theme/ui
 
+## 0.5.2
+
+### Patch Changes
+
+- lazy load json view
+
+## 0.5.1
+
+### Patch Changes
+
+- export default
+
 ## 0.5.0
 
 ### Minor Changes

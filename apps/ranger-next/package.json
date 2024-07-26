@@ -1,9 +1,9 @@
 {
   "name": "@ranger-theme/nextjs",
-  "version": "1.1.4",
+  "version": "1.1.6",
   "private": true,
   "scripts": {
-    "dev:tt": "next dev -H 127.0.0.1 -p 3000",
+    "dev": "next dev -H 127.0.0.1 -p 3000",
     "build": "next build",
     "start": "next start",
     "lint": "eslint . --max-warnings 0",
@@ -15,6 +15,7 @@
     "@emotion/cache": "^11.11.0",
     "@emotion/server": "^11.11.0",
     "@mui/material-nextjs": "^5.15.11",
+    "@ranger-theme/core": "workspace:^",
     "@ranger-theme/nextjs-config": "workspace:^",
     "@ranger-theme/pwa-config": "workspace:^",
     "express": "^4.18.2",

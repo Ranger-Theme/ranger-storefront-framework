@@ -1,7 +1,7 @@
 {
   "name": "@ranger-theme/core",
-  "version": "0.5.0",
-  "main": "./dist/index.mjs",
+  "version": "0.5.3",
+  "main": "./dist/index.js",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
   "license": "MIT",
@@ -42,9 +42,9 @@
     "react": "^18.2.0"
   },
   "exports": {
-    "default": "./dist/index.js",
     "require": "./dist/index.js",
     "import": "./dist/index.mjs",
-    "node": "./dist/index.js"
+    "node": "./dist/index.js",
+    "default": "./dist/index.js"
   }
 }
