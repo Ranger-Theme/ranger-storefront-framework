@@ -1,7 +1,7 @@
 import { defineConfig } from 'tsup'
 import type { Options } from 'tsup'
 
-import { replacePlugin } from './tsup.replace'
+// import { replacePlugin } from './tsup.replace'
 
 export default defineConfig((options: Options) => {
   return {
@@ -9,16 +9,16 @@ export default defineConfig((options: Options) => {
     outDir: 'dist',
     clean: true,
     dts: true,
-    splitting: true,
-    shims: true,
+    // splitting: true,
+    // shims: true,
     watch: options.watch,
     sourcemap: !!options.watch,
     format: ['esm', 'cjs'],
-    external: ['react'],
+    external: ['react', '@emotion/react', '@emotion/styled'],
     minify: 'terser',
     terserOptions: {
       compress: true
-    },
-    esbuildPlugins: [replacePlugin()]
+    }
+    // esbuildPlugins: [replacePlugin()]
   }
 })

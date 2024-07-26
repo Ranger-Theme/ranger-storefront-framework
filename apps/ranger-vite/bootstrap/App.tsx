@@ -1,16 +1,17 @@
 import { useState } from 'react'
 import { useCookie } from '@ranger-theme/hooks'
+import { CountDown } from '@ranger-theme/ui'
 
 import './App.css'
 
 const App = () => {
   const { cookie } = useCookie()
   const [count, setCount] = useState<number>(0)
-
   console.info(cookie.getItem('access_token'))
 
   return (
     <>
+      <CountDown date={Date.now() + 10000} />
       <div>
         <a href="https://vitejs.dev">
           <img src="/vite.svg" className="logo" alt="Vite logo" />

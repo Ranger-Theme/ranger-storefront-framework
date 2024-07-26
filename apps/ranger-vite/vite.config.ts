@@ -17,8 +17,8 @@ const viteConfig: any = ({ mode }: ConfigEnv) => {
 
   return defineConfig({
     ...defaultConfig,
+    // SSL certificate config
     // https: {
-    //   // SSL certificate config
     //   key: fs.readFileSync('keys/ssl-key.pem'),
     //   cert: fs.readFileSync('keys/ssl-cert.pem')
     // },

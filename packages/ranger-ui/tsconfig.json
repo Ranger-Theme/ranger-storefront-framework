@@ -1,10 +1,10 @@
 {
   "extends": "@ranger-theme/ts-config/react-library.json",
   "compilerOptions": {
-    "incremental": false,
     "outDir": "dist",
     "declarationMap": false,
-    "sourceMap": false
+    "sourceMap": false,
+    "jsxImportSource": "@emotion/react"
   },
   "include": ["**/*.ts", "**/*.tsx"],
   "exclude": ["node_modules", "dist"]

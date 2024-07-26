@@ -15,6 +15,7 @@
     "@emotion/styled": "^11.11.5",
     "@ranger-theme/hooks": "workspace:^",
     "@ranger-theme/vite-config": "workspace:^",
+    "@ranger-theme/ui": "workspace:^",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },

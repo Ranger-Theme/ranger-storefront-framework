@@ -1,4 +1,2 @@
-import JsonView from './jsonView'
-
-export default JsonView
+export { default as JsonView } from './jsonView'
 export type { JsonViewProps } from './jsonView'

@@ -1,5 +1,29 @@
 # @ranger-theme/ui
 
+## 0.5.6
+
+### Patch Changes
+
+- lazyload json view
+
+## 0.5.5
+
+### Patch Changes
+
+- loadable component
+
+## 0.5.4
+
+### Patch Changes
+
+- tree shaking
+
+## 0.5.3
+
+### Patch Changes
+
+- remove json view
+
 ## 0.5.2
 
 ### Patch Changes
