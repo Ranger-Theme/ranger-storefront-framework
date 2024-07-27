@@ -14,8 +14,31 @@ export interface MediaQueryProps extends MediaQueryAllQueryable {
   onChange?: (_matches: boolean) => void
 }
 
-const MediaQuery: FC<MediaQueryProps> = () => {
-  return <ReactResponsive />
+const MediaQuery: FC<MediaQueryProps> = ({
+  children,
+  className = '',
+  query,
+  style,
+  device,
+  values,
+  onBeforeChange,
+  onChange,
+  ...props
+}) => {
+  return (
+    <ReactResponsive
+      className={className}
+      query={query}
+      style={style}
+      device={device}
+      values={values}
+      onBeforeChange={onBeforeChange}
+      onChange={onChange}
+      {...props}
+    >
+      {children}
+    </ReactResponsive>
+  )
 }
 
 export default MediaQuery

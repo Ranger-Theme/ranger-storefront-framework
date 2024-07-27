@@ -11,7 +11,7 @@ module.exports = nextConfig({
   pkg,
   dirname: process.cwd(),
   timestamp,
-  transpilePackages: [],
+  transpilePackages: ['@ranger-theme/ui'],
   compiler: {
     reactRemoveProperties: isProd,
     removeConsole: false

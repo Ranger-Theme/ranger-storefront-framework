@@ -2,7 +2,7 @@ import ReactDraggable from 'react-draggable'
 import type { FC } from 'react'
 import type { DraggableProps as ReactDraggableProps } from 'react-draggable'
 
-export interface DraggableProps extends ReactDraggableProps {}
+export interface DraggableProps extends Partial<ReactDraggableProps> {}
 
 const Draggable: FC<DraggableProps> = ({
   children,

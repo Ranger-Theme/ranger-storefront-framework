@@ -14,7 +14,7 @@ export default defineConfig((options: Options) => {
     watch: options.watch,
     sourcemap: !!options.watch,
     format: ['esm', 'cjs'],
-    external: ['react', '@emotion/react', '@emotion/styled'],
+    external: ['react', 'react-dom', '@emotion/react', '@emotion/styled'],
     minify: 'terser',
     terserOptions: {
       compress: true

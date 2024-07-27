@@ -3,8 +3,7 @@
   "compilerOptions": {
     "outDir": "dist",
     "declarationMap": false,
-    "sourceMap": false,
-    "jsxImportSource": "@emotion/react"
+    "sourceMap": false
   },
   "include": ["**/*.ts", "**/*.tsx"],
   "exclude": ["node_modules", "dist"]

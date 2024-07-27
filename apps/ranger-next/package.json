@@ -1,6 +1,6 @@
 {
   "name": "@ranger-theme/nextjs",
-  "version": "1.1.6",
+  "version": "1.1.7",
   "private": true,
   "scripts": {
     "dev": "next dev -H 127.0.0.1 -p 3000",
@@ -16,7 +16,6 @@
     "@emotion/react": "^11.11.4",
     "@emotion/server": "^11.11.0",
     "@emotion/styled": "^11.11.5",
-    "@mui/material-nextjs": "^5.15.11",
     "@ranger-theme/core": "workspace:^",
     "@ranger-theme/nextjs-config": "workspace:^",
     "@ranger-theme/pwa-config": "workspace:^",

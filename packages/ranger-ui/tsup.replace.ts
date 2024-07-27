@@ -10,7 +10,7 @@ export const replacePlugin = (): Plugin => {
         const contents = await fs.promises.readFile(args.path, 'utf8')
         // Remove line breaks and spaces from template strings
         const transformedContents = contents.replace(/`([^`]+)`/g, (match, p1) => {
-          const cleanedTemplate = p1.replace(/\s+/g, '')
+          const cleanedTemplate = p1.replace(/\s{2,}/g, '')
           return `\`${cleanedTemplate}\``
         })
 

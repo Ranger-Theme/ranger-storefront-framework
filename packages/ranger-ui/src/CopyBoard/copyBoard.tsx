@@ -3,7 +3,7 @@ import type { FC } from 'react'
 import type { Options } from 'react-copy-to-clipboard'
 
 export interface CopyBoardProps {
-  children?: React.ReactNode
+  children: React.ReactNode
   text: string
   onCopy?(text: string, result: boolean): void
   options?: Options | undefined

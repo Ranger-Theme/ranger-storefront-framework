@@ -29,3 +29,22 @@ $ pnpm add --save-dev @ranger-theme/ui
 import { CopyBoard, CountDown, CsvLink, HeadRoom, InfiniteScroll, Player, Portal, PrintScreen } from '@ranger-theme/ui'
 ```
 
+### nextjs dynimac import
+```tsx
+import dynamic from 'next/dynamic'
+
+const CsvLink = dynamic(
+  import('@ranger-theme/ui').then((module) => module.CsvLink),
+  {
+    ssr: false
+  }
+)
+
+const MediaQuery = dynamic(
+  import('@ranger-theme/ui').then((module) => module.MediaQuery),
+  {
+    ssr: false
+  }
+)
+```
+
