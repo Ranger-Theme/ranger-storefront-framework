@@ -1,5 +1,11 @@
 # @ranger-theme/core
 
+## 0.7.1
+
+### Patch Changes
+
+- exports
+
 ## 0.7.0
 
 ### Minor Changes
