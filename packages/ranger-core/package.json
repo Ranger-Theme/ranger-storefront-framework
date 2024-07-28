@@ -1,6 +1,6 @@
 {
   "name": "@ranger-theme/core",
-  "version": "0.6.0",
+  "version": "0.7.0",
   "main": "./dist/index.cjs.js",
   "module": "./dist/index.esm.js",
   "types": "./dist/index.d.ts",
@@ -40,11 +40,5 @@
   },
   "peerDependencies": {
     "react": "^18.2.0"
-  },
-  "exports": {
-    "require": "./dist/index.js",
-    "import": "./dist/index.mjs",
-    "node": "./dist/index.js",
-    "default": "./dist/index.js"
   }
 }

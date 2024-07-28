@@ -1,5 +1,11 @@
 # @ranger-theme/core
 
+## 0.7.0
+
+### Minor Changes
+
+- remove exprot filed
+
 ## 0.6.0
 
 ### Minor Changes
