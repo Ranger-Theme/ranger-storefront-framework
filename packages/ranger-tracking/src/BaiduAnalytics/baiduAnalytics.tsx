@@ -1,4 +1,10 @@
-const BaiduAnalytics = ({ key }) => {
+import type { FC } from 'react'
+
+export interface BaiduAnalyticsProps {
+  key: string
+}
+
+const BaiduAnalytics: FC<BaiduAnalyticsProps> = ({ key }) => {
   const getAnalyticsTag = () => {
     return {
       __html: `
