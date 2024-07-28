@@ -11,7 +11,8 @@ export const replacePlugin = (): Plugin => {
         // Remove line breaks and spaces from template strings
         const transformedContents = contents.replace(/`([^`]+)`/g, (match, p1) => {
           const cleanedTemplate = p1.replace(/\s{2,}/g, '')
-          return `\`${cleanedTemplate}\``
+          const formatTemplate = cleanedTemplate.replace(/\r|\n/g, '')
+          return `\`${formatTemplate}\``
         })
 
         return { contents: transformedContents, loader: 'ts' }

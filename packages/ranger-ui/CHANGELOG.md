@@ -1,5 +1,11 @@
 # @ranger-theme/ui
 
+## 0.6.0
+
+### Minor Changes
+
+- tsup extension
+
 ## 0.5.7
 
 ### Patch Changes

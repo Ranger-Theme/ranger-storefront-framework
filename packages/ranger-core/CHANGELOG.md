@@ -1,5 +1,16 @@
 # @ranger-theme/core
 
+## 0.6.0
+
+### Minor Changes
+
+- tsup extension
+
+### Patch Changes
+
+- Updated dependencies
+  - @ranger-theme/utils@0.7.0
+
 ## 0.5.3
 
 ### Patch Changes

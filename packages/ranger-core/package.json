@@ -1,8 +1,8 @@
 {
   "name": "@ranger-theme/core",
-  "version": "0.5.3",
-  "main": "./dist/index.js",
-  "module": "./dist/index.mjs",
+  "version": "0.6.0",
+  "main": "./dist/index.cjs.js",
+  "module": "./dist/index.esm.js",
   "types": "./dist/index.d.ts",
   "license": "MIT",
   "files": [

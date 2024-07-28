@@ -2,7 +2,7 @@ import Head from 'next/head'
 import dynamic from 'next/dynamic'
 import { useRef } from 'react'
 import { withApollo } from '@ranger-theme/core'
-import { CountDown, CopyBoard, Portal, Resizable, HeadRoom } from '@ranger-theme/ui'
+import { CountDown, CopyBoard, Portal, Resizable, HeadRoom, PrintScreen } from '@ranger-theme/ui'
 import type { AppProps } from 'next/app'
 
 import Header from '@/components/Header'
@@ -15,6 +15,12 @@ const CsvLink = dynamic(
 )
 const MediaQuery = dynamic(
   import('@ranger-theme/ui').then((module) => module.MediaQuery),
+  {
+    ssr: false
+  }
+)
+const Player = dynamic(
+  import('@ranger-theme/ui').then((module) => module.Player),
   {
     ssr: false
   }
@@ -47,43 +53,46 @@ const App = ({ Component, pageProps }: AppProps) => {
         <HeadRoom>
           <Header />
         </HeadRoom>
-      </div>
-      <Component {...pageProps} />
-      <div>
-        <CountDown date={Date.now() + 10000} />
-      </div>
-      <CopyBoard text="hello world" onCopy={onCopy}>
-        <span>Copy to clipboard</span>
-      </CopyBoard>
-      <div>
-        <CsvLink data={csvData}>Download me</CsvLink>
-      </div>
-      <Portal selector=".header">
-        <span>Logo</span>
-      </Portal>
-      {/* <Player
-        className="react-player"
-        url="https://www.youtube.com/watch?v=ysz5S6PUM-U"
-        width="100%"
-        height="100%"
-      /> */}
-      <MediaQuery minWidth={1224}>
-        <p>You are a desktop or laptop</p>
-        <MediaQuery minWidth={1824}>
-          <p>You also have a huge screen</p>
+
+        <Component {...pageProps} />
+        <Player
+          className="react-player"
+          url="https://www.youtube.com/watch?v=aL27fX5kv9U"
+          width="800px"
+          height="500px"
+          controls
+        />
+        <div>
+          <CountDown date={Date.now() + 10000} />
+        </div>
+        <CopyBoard text="hello world" onCopy={onCopy}>
+          <span>Copy to clipboard</span>
+        </CopyBoard>
+        <div>
+          <CsvLink data={csvData}>Download me</CsvLink>
+        </div>
+        <Portal selector=".header">
+          <span>Logo</span>
+        </Portal>
+        <MediaQuery minWidth={1224}>
+          <p>You are a desktop or laptop</p>
+          <MediaQuery minWidth={1824}>
+            <p>You also have a huge screen</p>
+          </MediaQuery>
         </MediaQuery>
-      </MediaQuery>
-      <Resizable width={200} height={200} minConstraints={[100, 100]} maxConstraints={[400, 400]}>
-        <span>Contents</span>
-      </Resizable>
-      {/* <div>
+        <Resizable width={200} height={200} minConstraints={[100, 100]} maxConstraints={[400, 400]}>
+          <span>Contents</span>
+        </Resizable>
+      </div>
+      <div>
         <PrintScreen
+          // eslint-disable-next-line react/no-unstable-nested-components
           trigger={() => {
             return <p>Print this out!</p>
           }}
           content={() => componentRef.current}
         />
-      </div> */}
+      </div>
     </>
   )
 }

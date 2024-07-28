@@ -1,5 +1,11 @@
 # @ranger-theme/utils
 
+## 0.7.0
+
+### Minor Changes
+
+- tsup extension
+
 ## 0.6.0
 
 ### Minor Changes

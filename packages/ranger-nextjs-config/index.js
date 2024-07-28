@@ -58,6 +58,8 @@ module.exports = ({ pkg = {}, dirname = __dirname, timestamp = 0, ...rest }) => 
         })
       )
 
+      config.resolve.extensions.push('.js', '.jsx', '.ts', '.tsx')
+
       // Js trunk time hash
       if (isProd) {
         if (config.output.filename.startsWith('static')) {

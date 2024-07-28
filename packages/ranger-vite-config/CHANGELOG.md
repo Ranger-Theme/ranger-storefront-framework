@@ -1,5 +1,11 @@
 # @ranger-theme/vite-config
 
+## 0.10.0
+
+### Minor Changes
+
+- tsup extension
+
 ## 0.9.0
 
 ### Minor Changes

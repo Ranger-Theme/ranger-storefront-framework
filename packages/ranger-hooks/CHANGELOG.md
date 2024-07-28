@@ -1,5 +1,16 @@
 # @ranger-theme/hooks
 
+## 0.5.0
+
+### Minor Changes
+
+- tsup extension
+
+### Patch Changes
+
+- Updated dependencies
+  - @ranger-theme/utils@0.7.0
+
 ## 0.4.0
 
 ### Minor Changes

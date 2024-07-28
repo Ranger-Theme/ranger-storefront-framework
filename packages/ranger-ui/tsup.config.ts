@@ -16,9 +16,15 @@ export default defineConfig((options: Options) => {
     format: ['esm', 'cjs'],
     external: ['react', 'react-dom', '@emotion/react', '@emotion/styled'],
     minify: 'terser',
+    cjsInterop: true,
     terserOptions: {
       compress: true
     },
-    esbuildPlugins: [replacePlugin()]
+    esbuildPlugins: [replacePlugin()],
+    outExtension({ format }) {
+      return {
+        js: `.${format}.js`
+      }
+    }
   }
 })

@@ -1,5 +1,11 @@
 # @ranger-theme/nextjs-config
 
+## 0.6.0
+
+### Minor Changes
+
+- tsup extension
+
 ## 0.5.0
 
 ### Minor Changes
