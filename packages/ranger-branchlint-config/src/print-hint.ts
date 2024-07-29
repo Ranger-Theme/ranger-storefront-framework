@@ -1,7 +1,7 @@
 import chalk from 'chalk'
 
-import { Config } from './get-config'
 import * as errors from './errors'
+import { Config } from './get-config'
 
 const gray = (message: string) => chalk.gray.bold(message)
 const white = (message: string) => chalk.white(message)

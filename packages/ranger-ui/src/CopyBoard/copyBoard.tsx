@@ -1,6 +1,6 @@
-import { CopyToClipboard } from 'react-copy-to-clipboard'
 import type { FC } from 'react'
 import type { Options } from 'react-copy-to-clipboard'
+import { CopyToClipboard } from 'react-copy-to-clipboard'
 
 export interface CopyBoardProps {
   children: React.ReactNode

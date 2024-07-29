@@ -1,6 +1,6 @@
-import Slider from 'react-slick'
 import type { FC } from 'react'
 import type { Settings } from 'react-slick'
+import Slider from 'react-slick'
 
 import { StyledCarousel } from './styled'
 

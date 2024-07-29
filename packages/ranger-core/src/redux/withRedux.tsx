@@ -2,8 +2,8 @@ import { Component } from 'react'
 
 import { initRedux } from './initRedux'
 
-export const withRedux = (App: any, reducer: any) => {
-  return class AppWithRedux extends Component {
+export const withRedux = (App: any, reducer: any) =>
+  class AppWithRedux extends Component {
     public reduxStore: any
 
     static async getInitialProps(appContext: any) {
@@ -32,4 +32,3 @@ export const withRedux = (App: any, reducer: any) => {
       return <App reduxStore={this.reduxStore} {...this.props} />
     }
   }
-}

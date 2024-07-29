@@ -1,11 +1,11 @@
 import legacy from '@vitejs/plugin-legacy'
 import react from '@vitejs/plugin-react-swc'
+import type { BuildOptions, UserConfigExport } from 'vite'
+import { loadEnv } from 'vite'
 import banner from 'vite-plugin-banner'
 import { createHtmlPlugin } from 'vite-plugin-html'
-import { loadEnv } from 'vite'
-import type { BuildOptions, UserConfigExport } from 'vite'
 
-import { completePlugin, httpProxy, svgBuilder, qiankunTransform, reporterPlugin } from './plugin'
+import { completePlugin, httpProxy, qiankunTransform, reporterPlugin, svgBuilder } from './plugin'
 
 export type BaseConfigType = {
   entry: string

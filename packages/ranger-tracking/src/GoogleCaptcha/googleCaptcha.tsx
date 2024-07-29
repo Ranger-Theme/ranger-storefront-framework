@@ -1,10 +1,10 @@
-import {
-  GoogleReCaptchaProvider,
-  GoogleReCaptcha,
-  useGoogleReCaptcha
-} from 'react-google-recaptcha-v3'
 import type { FC, ReactNode } from 'react'
 import type { IGoogleRecaptchaProps } from 'react-google-recaptcha-v3'
+import {
+  GoogleReCaptcha,
+  GoogleReCaptchaProvider,
+  useGoogleReCaptcha
+} from 'react-google-recaptcha-v3'
 
 export interface GoogleCaptchaProps {
   children?: ReactNode

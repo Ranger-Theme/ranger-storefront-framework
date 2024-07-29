@@ -6,8 +6,8 @@ import { initApollo } from './initApollo'
 
 const isProd: boolean = process.env.NODE_ENV === 'production'
 
-export const withApollo = (App: any) => {
-  return class AppWithApollo extends Component {
+export const withApollo = (App: any) =>
+  class AppWithApollo extends Component {
     public apolloClient: any
 
     static async getInitialProps(appContext: any) {
@@ -15,10 +15,10 @@ export const withApollo = (App: any) => {
       const cookies: any = parseCookies(appContext.ctx)
       const isServer: boolean = typeof window === 'undefined'
       const proto: string = isServer
-        ? appContext.ctx?.req?.headers?.['x-forwarded-proto'] ?? ''
+        ? (appContext.ctx?.req?.headers?.['x-forwarded-proto'] ?? '')
         : window.location.protocol
       const host: string = isServer
-        ? appContext.ctx?.req?.headers?.host ?? ''
+        ? (appContext.ctx?.req?.headers?.host ?? '')
         : window.location.host
       const domain: string = isServer ? `${proto}://${host}` : `${proto}//${host}`
 
@@ -63,4 +63,3 @@ export const withApollo = (App: any) => {
       return <App apolloClient={this.apolloClient} {...this.props} />
     }
   }
-}

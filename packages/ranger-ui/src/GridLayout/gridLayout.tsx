@@ -1,6 +1,6 @@
-import ReactGridLayout from 'react-grid-layout'
 import type { FC } from 'react'
 import type { ReactGridLayoutProps } from 'react-grid-layout'
+import ReactGridLayout from 'react-grid-layout'
 
 export interface GridLayoutProps extends ReactGridLayoutProps {}
 

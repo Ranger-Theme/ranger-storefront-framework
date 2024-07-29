@@ -1,6 +1,6 @@
-import ReactHeadRoom from 'react-headroom'
 import type { FC } from 'react'
 import type { ReactHeadroomProps } from 'react-headroom'
+import ReactHeadRoom from 'react-headroom'
 
 export interface HeadRoomProps extends ReactHeadroomProps {}
 

@@ -1,6 +1,6 @@
-import fs from 'fs'
 import chalk from 'chalk'
 import type { Plugin, PluginBuild } from 'esbuild'
+import fs from 'fs'
 
 export const replacePlugin = (): Plugin => {
   return {

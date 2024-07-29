@@ -1,6 +1,6 @@
-import ReactPlayer from 'react-player'
 import type { FC } from 'react'
 import type { ReactPlayerProps } from 'react-player'
+import ReactPlayer from 'react-player'
 
 export interface PlayerProps extends ReactPlayerProps {}
 

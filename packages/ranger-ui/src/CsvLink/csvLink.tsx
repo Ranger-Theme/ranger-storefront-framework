@@ -1,5 +1,5 @@
-import { CSVLink as ReactCSVLink } from 'react-csv'
 import type { FC } from 'react'
+import { CSVLink as ReactCSVLink } from 'react-csv'
 import type { LinkProps } from 'react-csv/components/Link'
 
 export interface CsvLinkProps extends Omit<LinkProps, 'ref'> {}

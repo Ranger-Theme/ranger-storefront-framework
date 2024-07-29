@@ -1,6 +1,6 @@
-import ReactResponsive from 'react-responsive'
-import type { FC, CSSProperties, ReactNode } from 'react'
+import type { CSSProperties, FC, ReactNode } from 'react'
 import type { MediaQueryAllQueryable, MediaQueryMatchers } from 'react-responsive'
+import ReactResponsive from 'react-responsive'
 
 export interface MediaQueryProps extends MediaQueryAllQueryable {
   component?: ReactNode

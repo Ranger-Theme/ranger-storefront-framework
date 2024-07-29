@@ -1,6 +1,6 @@
-import ReactCountdown from 'react-countdown'
 import type { FC } from 'react'
 import type { CountdownProps as ReactCountdownProps } from 'react-countdown'
+import ReactCountdown from 'react-countdown'
 
 export interface CountDownProps extends ReactCountdownProps {}
 

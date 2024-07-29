@@ -1,8 +1,8 @@
-import { match } from 'path-to-regexp'
 import chalk from 'chalk'
+import { match } from 'path-to-regexp'
 
+import { branchNamePatternError, branchProtectedError } from './errors'
 import { Config } from './get-config'
-import { branchProtectedError, branchNamePatternError } from './errors'
 
 export const lintBranchName = (branchName: string, config: Config): boolean => {
   let { pattern } = config

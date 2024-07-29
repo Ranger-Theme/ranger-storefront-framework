@@ -1,6 +1,6 @@
-import loadable from '@loadable/component'
 import type { FC } from 'react'
 import type { ReactJsonViewProps } from 'react-json-view'
+import loadable from '@loadable/component'
 
 const ReactJson = loadable(() => import('react-json-view'), {
   ssr: false

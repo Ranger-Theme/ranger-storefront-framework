@@ -1,5 +1,5 @@
-import ReactInfiniteScroll from 'react-infinite-scroller'
 import type { FC } from 'react'
+import ReactInfiniteScroll from 'react-infinite-scroller'
 
 export interface InfiniteScrollProps extends React.HTMLProps<any> {
   loadMore(page: number): void

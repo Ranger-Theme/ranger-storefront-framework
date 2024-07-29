@@ -1,4 +1,4 @@
-import { parseCookies, destroyCookie, setCookie } from 'nookies'
+import { destroyCookie, parseCookies, setCookie } from 'nookies'
 
 export interface Options {
   domain?: string
@@ -32,4 +32,4 @@ export const removeItem = (ctx: any = null, name: string, options?: Options) => 
   destroyCookie(ctx, name, mergeOptions)
 }
 
-export { parseCookies, destroyCookie }
+export { destroyCookie, parseCookies }

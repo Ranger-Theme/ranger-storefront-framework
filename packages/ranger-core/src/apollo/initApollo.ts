@@ -1,4 +1,4 @@
-import { ApolloClient, ApolloLink, InMemoryCache, HttpLink } from '@apollo/client'
+import { ApolloClient, ApolloLink, HttpLink, InMemoryCache } from '@apollo/client'
 import { onError } from '@apollo/client/link/error'
 import { parseCookies } from '@ranger-theme/utils'
 import { isEmpty, merge } from 'lodash-es'
@@ -60,10 +60,10 @@ const createApolloClient = ({ cookies, reduxState, domain }: ApolloStruct) => {
     return forward(operation)
   })
 
-  const errorLink = onError(({ graphQLErrors, networkError }) => {
+  const errorLink = onError(({ graphQLErrors, networkError }: any) => {
     if (graphQLErrors) {
       // Global error
-      graphQLErrors.forEach(({ message }: any, index) => {
+      graphQLErrors.forEach(({ message }: any, index: number) => {
         graphQLErrors[index].message = message.replace('GraphQL error: ', '')
 
         if (process.browser) {

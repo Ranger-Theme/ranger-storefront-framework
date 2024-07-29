@@ -1,6 +1,6 @@
-import { ResizableBox } from 'react-resizable'
 import type { FC } from 'react'
 import type { ResizableBoxProps } from 'react-resizable'
+import { ResizableBox } from 'react-resizable'
 
 import { StyledResizable } from './styled'
 

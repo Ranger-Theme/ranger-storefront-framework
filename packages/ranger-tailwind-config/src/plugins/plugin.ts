@@ -1,6 +1,6 @@
 import createPlugin from 'tailwindcss/plugin'
 
-import { ID, addRulesets } from './root'
+import { addRulesets, ID } from './root'
 
 const plugins: any = [
   // base plugins

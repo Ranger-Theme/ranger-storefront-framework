@@ -1,5 +1,5 @@
-import { defineConfig } from 'tsup'
 import type { Options } from 'tsup'
+import { defineConfig } from 'tsup'
 
 import { replacePlugin } from './tsup.replace'
 
@@ -20,7 +20,7 @@ export default defineConfig((options: Options) => {
     terserOptions: {
       compress: true
     },
-    esbuildPlugins: [replacePlugin()],
+    esbuildPlugins: [replacePlugin() as any],
     outExtension({ format }) {
       return {
         js: `.${format}.js`
