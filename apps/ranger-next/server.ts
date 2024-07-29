@@ -1,9 +1,9 @@
+import express from 'express'
 import fs from 'fs'
 import next from 'next'
-import express from 'express'
 import cp from 'node:child_process'
-import { parse } from 'url'
 import { createServer, ServerOptions } from 'spdy-fixes'
+import { parse } from 'url'
 
 const hostname = process.env.HOSTNAME || '127.0.0.1'
 const port = parseInt(process.env.PORT || '3000', 10)

@@ -338,6 +338,7 @@ module.exports = {
     'no-useless-catch': 0,
     // 要求使用 let 或 const 而不是 var
     'no-var': 1,
+    'no-restricted-exports': 0,
     // 要求或禁止对象字面量中方法和属性使用简写语法
     'object-shorthand': 0,
     // 要求使用箭头函数作为回调

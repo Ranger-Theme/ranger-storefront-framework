@@ -1,8 +1,7 @@
-import path from 'node:path'
-import { defineConfig } from 'vite'
-import type { ConfigEnv } from 'vite'
-
 import { baseConfig } from '@ranger-theme/vite-config'
+import path from 'node:path'
+import type { ConfigEnv } from 'vite'
+import { defineConfig } from 'vite'
 
 import pkg from './package.json'
 
