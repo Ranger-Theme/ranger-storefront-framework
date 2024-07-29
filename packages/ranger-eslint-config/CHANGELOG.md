@@ -1,5 +1,11 @@
 # @ranger-theme/eslint-config
 
+## 0.6.0
+
+### Minor Changes
+
+- eslint update rules
+
 ## 0.5.0
 
 ### Minor Changes

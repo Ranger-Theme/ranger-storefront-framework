@@ -2,44 +2,46 @@ module.exports = {
   types: [
     {
       value: 'feat',
-      name: 'feat: A new feature'
+      name: '✨ feat: new feature | 新功能'
     },
     {
       value: 'fix',
-      name: 'fix: A bug fix'
+      name: '🐛 fix: bug fix | Bug修复'
     },
     {
       value: 'docs',
-      name: 'docs: Documentation only changes'
+      name: '✏️ docs: documentation | 文档'
     },
     {
       value: 'style',
-      name: 'style: Changes that do not affect the meaning of the code (white-space, formatting, missing semi-colons, etc)'
+      name: '💄 style: styles | 风格'
     },
     {
       value: 'refactor',
-      name: 'refactor: A code change that neither fixes a bug nor adds a feature'
+      name: '♻️ refactor: code refactoring | 代码重构'
     },
     {
       value: 'perf',
-      name: 'perf: A code change that improves performance'
+      name: '⚡  perf: performance improvements | 性能优化'
     },
     {
       value: 'test',
-      name: 'test: Adding missing tests'
+      name: '✅ test: tests | 测试'
     },
     {
       value: 'chore',
-      name: 'chore: Changes to the build process or auxiliary tools and libraries such as documentation generation'
+      name: '🚀 chore: Changes to the build process | 构建/工程依赖/工具'
     },
     {
       value: 'revert',
-      name: 'revert: revert to a commit'
+      name: '⏪ revert: revert to a commit | 回退'
     },
     {
       value: 'build',
-      name: 'build: pack'
-    }
+      name: '📦‍ build: pack | 打包构建'
+    },
+    { value: 'init', name: '🎉 Init | 初始化' },
+    { value: 'ci', name: '👷 Continuous Integration | CI 配置' }
   ],
   messages: {
     type: '"Select the type of change that you\'re commiting: (Use arrow keys)"',

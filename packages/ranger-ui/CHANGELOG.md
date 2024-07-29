@@ -1,5 +1,11 @@
 # @ranger-theme/ui
 
+## 0.7.0
+
+### Minor Changes
+
+- eslint update rules
+
 ## 0.6.0
 
 ### Minor Changes

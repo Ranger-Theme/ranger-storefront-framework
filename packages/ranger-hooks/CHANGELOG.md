@@ -1,5 +1,16 @@
 # @ranger-theme/hooks
 
+## 0.6.0
+
+### Minor Changes
+
+- eslint update rules
+
+### Patch Changes
+
+- Updated dependencies
+  - @ranger-theme/utils@0.8.0
+
 ## 0.5.0
 
 ### Minor Changes

@@ -1,5 +1,11 @@
 # @ranger-theme/common
 
+## 0.3.0
+
+### Minor Changes
+
+- eslint update rules
+
 ## 0.2.0
 
 ### Minor Changes

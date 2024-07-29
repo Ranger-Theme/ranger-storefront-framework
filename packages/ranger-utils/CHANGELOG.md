@@ -1,5 +1,11 @@
 # @ranger-theme/utils
 
+## 0.8.0
+
+### Minor Changes
+
+- eslint update rules
+
 ## 0.7.0
 
 ### Minor Changes
