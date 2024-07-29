@@ -1,2 +1,6 @@
 export { type BaiduAnalyticsProps, BaiduAnalytics } from './BaiduAnalytics'
+export { type BingTrackingProps, BingTracking } from './BingTracking'
+export { type GoogleCaptchaProps, GoogleCaptcha, useGoogleReCaptcha } from './GoogleCaptcha'
 export { type GoogleTagManagerProps, GoogleTagManager } from './GoogleTagManager'
+export { type GoogleTranslateProps, GoogleTranslate } from './GoogleTranslate'
+export { type GoogleWebCacheProps, GoogleWebCache } from './GoogleWebCache'

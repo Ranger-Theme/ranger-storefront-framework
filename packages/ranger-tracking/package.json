@@ -1,6 +1,6 @@
 {
   "name": "@ranger-theme/tracking",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "main": "./dist/index.cjs.js",
   "module": "./dist/index.esm.js",
   "types": "./dist/index.d.ts",
@@ -20,7 +20,9 @@
     "build": "tsup",
     "clean": "rm -rf dist lib"
   },
-  "dependencies": {},
+  "dependencies": {
+    "react-google-recaptcha-v3": "^1.10.1"
+  },
   "devDependencies": {
     "@ranger-theme/eslint-config": "workspace:^",
     "@ranger-theme/ts-config": "workspace:^",

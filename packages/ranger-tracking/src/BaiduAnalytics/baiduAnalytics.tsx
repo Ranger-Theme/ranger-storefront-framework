@@ -5,7 +5,7 @@ export interface BaiduAnalyticsProps {
 }
 
 const BaiduAnalytics: FC<BaiduAnalyticsProps> = ({ key }) => {
-  const getAnalyticsTag = () => {
+  const getScriptTag = () => {
     return {
       __html: `
         var _hmt = _hmt || [];
@@ -19,7 +19,7 @@ const BaiduAnalytics: FC<BaiduAnalyticsProps> = ({ key }) => {
     }
   }
 
-  return <script dangerouslySetInnerHTML={getAnalyticsTag()} />
+  return <script dangerouslySetInnerHTML={getScriptTag()} />
 }
 
 export default BaiduAnalytics
