@@ -1,5 +1,11 @@
 # @ranger-theme/eslint-config
 
+## 0.7.0
+
+### Minor Changes
+
+- publish use http
+
 ## 0.6.0
 
 ### Minor Changes

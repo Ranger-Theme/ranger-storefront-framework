@@ -1,5 +1,11 @@
 # @ranger-theme/ui
 
+## 0.8.0
+
+### Minor Changes
+
+- publish use http
+
 ## 0.7.0
 
 ### Minor Changes
