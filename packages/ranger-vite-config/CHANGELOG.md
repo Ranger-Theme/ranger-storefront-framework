@@ -1,5 +1,11 @@
 # @ranger-theme/vite-config
 
+## 0.11.0
+
+### Minor Changes
+
+- vite support assets static
+
 ## 0.10.0
 
 ### Minor Changes

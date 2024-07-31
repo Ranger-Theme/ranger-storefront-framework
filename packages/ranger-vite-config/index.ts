@@ -46,6 +46,7 @@ export const baseConfig = ({
 }: BaseConfigType) => {
   process.env = { ...process.env, ...loadEnv(mode, process.cwd(), 'REACT_') }
 
+  const timestamp = new Date().getTime()
   const isProd: boolean = mode === 'production'
   const API: string | undefined = process.env.REACT_APP_API_URL
 
@@ -59,6 +60,21 @@ export const baseConfig = ({
       ...buildOptions,
       rollupOptions: {
         ...(buildOptions?.rollupOptions ?? {}),
+        output: {
+          chunkFileNames: `assets/js/[name]-[hash]-${timestamp}.js`,
+          entryFileNames: `assets/js/[name]-[hash]-${timestamp}.js`,
+          assetFileNames: ({ name }) => {
+            if (/\.(gif|jpe?g|png|svg)$/.test(name ?? '')) {
+              return `assets/images/[name]-[hash]-${timestamp}[extname]`
+            }
+
+            if (/\.css$/.test(name ?? '')) {
+              return `assets/css/[name]-[hash]-${timestamp}[extname]`
+            }
+
+            return `assets/[name]-[hash]-${timestamp}[extname]`
+          }
+        },
         onLog(level: string, log: any, handler: any) {
           if (
             [
