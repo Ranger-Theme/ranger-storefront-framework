@@ -1,5 +1,11 @@
 # @ranger-theme/ui
 
+## 0.9.0
+
+### Minor Changes
+
+- ElfsightWidget
+
 ## 0.8.0
 
 ### Minor Changes
