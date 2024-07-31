@@ -56,7 +56,7 @@ $ pnpm add --save-dev @ranger-theme/http
 If the last argument of `useFetch` is not a dependency array `[]`, then it will not fire until you call one of the http methods like `get`, `post`, etc.
 
 ```js
-import useFetch from 'use-http'
+import useFetch from '@ranger-theme/http'
 
 function Todos() {
   const [todos, setTodos] = useState([])
@@ -93,7 +93,7 @@ function Todos() {
 This fetch is run `onMount/componentDidMount`. The last argument `[]` means it will run `onMount`. If you pass it a variable like `[someVariable]`, it will run `onMount` and again whenever `someVariable` changes values (aka `onUpdate`). If no method is specified, GET is the default.
 
 ```js
-import useFetch from 'use-http'
+import useFetch from '@ranger-theme/http'
 
 function Todos() {
   const options = {} // these options accept all native `fetch` options
@@ -112,7 +112,7 @@ function Todos() {
 ```
 
 <!-- TODO: codesandbox + youtube -->
-<!-- <a target="_blank" rel="noopener noreferrer" href='XXXXXX'><img  width='150px' height='30px' src='https://github.com/ava/use-http/raw/master/public/watch-youtube-video.png' /></a> -->
+<!-- <a target="_blank" rel="noopener noreferrer" href='XXXXXX'><img  width='150px' height='30px' src='https://github.com/ava/@ranger-theme/http/raw/master/public/watch-youtube-video.png' /></a> -->
 
 </details>
 
@@ -121,7 +121,7 @@ function Todos() {
 Can put `suspense` in 2 places. Either `useFetch` (A) or `Provider` (B).
 
 ```js
-import useFetch, { Provider } from 'use-http'
+import useFetch, { Provider } from '@ranger-theme/http'
 
 function Todos() {
   const { data: todos = [] } = useFetch('/todos', {
@@ -151,7 +151,7 @@ function App() {
 Can put `suspense` in 2 places. Either `useFetch` (A) or `Provider` (B). Suspense mode via managed state is very experimental.
 
 ```js
-import useFetch, { Provider } from 'use-http'
+import useFetch, { Provider } from '@ranger-theme/http'
 
 function Todos() {
   const [todos, setTodos] = useState([])
@@ -192,7 +192,7 @@ function App() {
 The `onNewData` will take the current data, and the newly fetched data, and allow you to merge the two however you choose. In the example below, we are appending the new todos to the end of the current todos.
 
 ```jsx
-import useFetch, { Provider } from 'use-http'
+import useFetch, { Provider } from '@ranger-theme/http'
 
 const Todos = () => {
   const [page, setPage] = useState(1)
@@ -324,7 +324,7 @@ const searchGithubRepos = e => get(encodeURI(e.target.value))
 </>
 ```
 
-<a target="_blank" rel="noopener noreferrer" href='https://www.youtube.com/watch?v=7SuD3ZOfu7E&list=PLZIwrWkE9rCdUybd8t3tY-mUMvXkCdenW&index=4'><img  width='150px' height='30px' src='https://github.com/ava/use-http/raw/master/public/watch-youtube-video.png' /></a>
+<a target="_blank" rel="noopener noreferrer" href='https://www.youtube.com/watch?v=7SuD3ZOfu7E&list=PLZIwrWkE9rCdUybd8t3tY-mUMvXkCdenW&index=4'><img  width='150px' height='30px' src='https://github.com/ava/@ranger-theme/http/raw/master/public/watch-youtube-video.png' /></a>
 
 </details>
 
@@ -395,7 +395,7 @@ function App() {
 
 ##### Query for todos
 ```jsx
-import { useQuery } from 'use-http'
+import { useQuery } from '@ranger-theme/http'
 
 export default function QueryComponent() {
   
@@ -428,7 +428,7 @@ export default function QueryComponent() {
 
 ##### Add a new todo
 ```jsx
-import { useMutation } from 'use-http'
+import { useMutation } from '@ranger-theme/http'
 
 export default function MutationComponent() {
   const [todoTitle, setTodoTitle] = useState('')
@@ -462,7 +462,7 @@ export default function MutationComponent() {
 ##### Adding the Provider
 These props are defaults used in every request inside the `<Provider />`. They can be overwritten individually
 ```jsx
-import { Provider } from 'use-http'
+import { Provider } from '@ranger-theme/http'
 import QueryComponent from './QueryComponent'
 import MutationComponent from './MutationComponent'
 
@@ -491,7 +491,7 @@ function App() {
 This example shows how we can do authentication in the `request` interceptor and how we can camelCase the results in the `response` interceptor
     
 ```jsx
-import { Provider } from 'use-http'
+import { Provider } from '@ranger-theme/http'
 import { toCamel } from 'convert-keys'
 
 function App() {
@@ -530,7 +530,7 @@ function App() {
 
 ```
 
-<a target="_blank" rel="noopener noreferrer" href='https://codesandbox.io/s/usefetch-provider-requestresponse-interceptors-s1lex'><img  width='150px' height='30px' src='https://codesandbox.io/static/img/play-codesandbox.svg' /></a>  <a target="_blank" rel="noopener noreferrer" href='https://www.youtube.com/watch?v=3HauoWh0Jts&list=PLZIwrWkE9rCdUybd8t3tY-mUMvXkCdenW&index=8'><img  width='150px' height='30px' src='https://github.com/ava/use-http/raw/master/public/watch-youtube-video.png' /></a>
+<a target="_blank" rel="noopener noreferrer" href='https://codesandbox.io/s/usefetch-provider-requestresponse-interceptors-s1lex'><img  width='150px' height='30px' src='https://codesandbox.io/static/img/play-codesandbox.svg' /></a>  <a target="_blank" rel="noopener noreferrer" href='https://www.youtube.com/watch?v=3HauoWh0Jts&list=PLZIwrWkE9rCdUybd8t3tY-mUMvXkCdenW&index=8'><img  width='150px' height='30px' src='https://github.com/ava/@ranger-theme/http/raw/master/public/watch-youtube-video.png' /></a>
 
 </details>
 
@@ -539,7 +539,7 @@ function App() {
 This example shows how we can upload a file using `useFetch`.
     
 ```jsx
-import useFetch from 'use-http'
+import useFetch from '@ranger-theme/http'
 
 const FileUploader = () => {
   const [file, setFile] = useState()
@@ -568,7 +568,7 @@ const FileUploader = () => {
 This example shows how we can get `.json()`, `.text()`, `.formData()`, `.blob()`, `.arrayBuffer()`, and all the other [http response methods](https://developer.mozilla.org/en-US/docs/Web/API/Response#Methods). By default, `useFetch` 1st tries to call `response.json()` under the hood, if that fails it's backup is `response.text()`. If that fails, then you need a different response type which is where this comes in.
 
 ```js
-import useFetch from 'use-http'
+import useFetch from '@ranger-theme/http'
 
 const App = () => {
   const [name, setName] = useState('')
@@ -593,7 +593,7 @@ const App = () => {
 ```
 
 <a target="_blank" rel="noopener noreferrer" href='https://codesandbox.io/s/usefetch-different-response-types-c6csw'><img  width='150px' height='30px' src='https://codesandbox.io/static/img/play-codesandbox.svg' /></a> 
-<!-- <a target="_blank" rel="noopener noreferrer" href='XXXXXX'><img  width='150px' height='30px' src='https://github.com/ava/use-http/raw/master/public/watch-youtube-video.png' /></a> -->
+<!-- <a target="_blank" rel="noopener noreferrer" href='XXXXXX'><img  width='150px' height='30px' src='https://github.com/ava/@ranger-theme/http/raw/master/public/watch-youtube-video.png' /></a> -->
 
 </details>
 
@@ -602,7 +602,7 @@ const App = () => {
 This example shows how to remove a header all together. Let's say you have `<Provider url='url.com' options={{ headers: { Authentication: 'Bearer MY_TOKEN' } }}><App /></Provider>`, but for one api call, you don't want that header in your `useFetch` at all for one instance in your app. This would allow you to remove that.
 
 ```js
-import useFetch from 'use-http'
+import useFetch from '@ranger-theme/http'
 
 const Todos = () => {
   // let's say for this request, you don't want the `Accept` header at all
@@ -637,7 +637,7 @@ const App = () => {
 In this example you can see how `retryOn` will retry on a status code of `305`, or if we choose the `retryOn()` function, it returns a boolean to decide if we will retry. With `retryDelay` we can either have a fixed delay, or a dynamic one by using `retryDelay()`. Make sure `retries` is set to at minimum `1` otherwise it won't retry the request. If `retries > 0` without `retryOn` then by default we always retry if there's an error or if `!response.ok`. If `retryOn: [400]` and `retries > 0` then we only retry on a response status of `400`.
 
 ```js
-import useFetch from 'use-http'
+import useFetch from '@ranger-theme/http'
 
 const TestRetry = () => {
   const { response, get } = useFetch('https://httpbin.org/status/305', {
@@ -669,7 +669,7 @@ const TestRetry = () => {
 }
 ```
 
-<a target="_blank" rel="noopener noreferrer" href='https://codesandbox.io/s/usefetch-retryon-retrydelay-s74q9'><img  width='150px' height='30px' src='https://codesandbox.io/static/img/play-codesandbox.svg' /></a>  <a target="_blank" rel="noopener noreferrer" href='https://www.youtube.com/watch?v=grE3AX-Q9ss&list=PLZIwrWkE9rCdUybd8t3tY-mUMvXkCdenW&index=9'><img  width='150px' height='30px' src='https://github.com/ava/use-http/raw/master/public/watch-youtube-video.png' /></a>
+<a target="_blank" rel="noopener noreferrer" href='https://codesandbox.io/s/usefetch-retryon-retrydelay-s74q9'><img  width='150px' height='30px' src='https://codesandbox.io/static/img/play-codesandbox.svg' /></a>  <a target="_blank" rel="noopener noreferrer" href='https://www.youtube.com/watch?v=grE3AX-Q9ss&list=PLZIwrWkE9rCdUybd8t3tY-mUMvXkCdenW&index=9'><img  width='150px' height='30px' src='https://github.com/ava/@ranger-theme/http/raw/master/public/watch-youtube-video.png' /></a>
 
 </details>
 
