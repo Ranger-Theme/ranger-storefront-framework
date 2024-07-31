@@ -1,8 +1,8 @@
 import { DependencyList, MutableRefObject, useCallback, useEffect, useMemo, useRef } from 'react'
-import useSSR from 'use-ssr'
 import { FunctionKeys, NonFunctionKeys } from 'utility-types'
 
 import { HTTPMethod, Options, RequestInitJSON, Res, ResponseType } from './types'
+import { useSSR } from './useSSR'
 
 /**
  * Used for error checking. If the condition is false, throw an error

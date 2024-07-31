@@ -1,5 +1,11 @@
 # @ranger-theme/eslint-config
 
+## 0.8.0
+
+### Minor Changes
+
+- eslint makdown
+
 ## 0.7.0
 
 ### Minor Changes

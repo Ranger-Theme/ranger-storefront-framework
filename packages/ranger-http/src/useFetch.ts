@@ -1,5 +1,4 @@
 import { useCallback, useEffect, useMemo, useReducer, useRef } from 'react'
-import useSSR from 'use-ssr'
 
 import doFetchArgs from './doFetchArgs'
 import {
@@ -21,6 +20,7 @@ import {
 import useCache from './useCache'
 import useFetchArgs from './useFetchArgs'
 import { useRefState } from './useRefState'
+import { useSSR } from './useSSR'
 import {
   invariant,
   isFunction,
@@ -80,7 +80,7 @@ function useFetch<TData = any>(...args: UseFetchArgs): UseFetch<TData> {
         controller.current.signal.onabort = onAbort
         const theController = controller.current
 
-        const { url, options, response } = await doFetchArgs<TData>(
+        const { url, options, response } = await doFetchArgs(
           requestInit,
           method,
           theController,

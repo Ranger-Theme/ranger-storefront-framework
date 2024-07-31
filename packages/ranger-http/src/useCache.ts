@@ -1,8 +1,7 @@
-import useSSR from 'use-ssr'
-
 import getLocalStorage from './storage/localStorage'
 import getMemoryStorage from './storage/memoryStorage'
 import { Cache, CachePolicies } from './types'
+import { useSSR } from './useSSR'
 import { invariant } from './utils'
 
 const { NETWORK_ONLY, NO_CACHE } = CachePolicies
