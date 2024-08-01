@@ -1,0 +1,1 @@
+export { versionPlugin } from './version'

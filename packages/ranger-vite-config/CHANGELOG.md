@@ -1,5 +1,11 @@
 # @ranger-theme/vite-config
 
+## 0.13.0
+
+### Minor Changes
+
+- build version file
+
 ## 0.12.0
 
 ### Minor Changes

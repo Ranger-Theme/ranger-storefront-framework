@@ -6,7 +6,14 @@ import banner from 'vite-plugin-banner'
 import compression from 'vite-plugin-compression'
 import { createHtmlPlugin } from 'vite-plugin-html'
 
-import { completePlugin, httpProxy, qiankunTransform, reporterPlugin, svgBuilder } from './plugin'
+import {
+  completePlugin,
+  httpProxy,
+  qiankunTransform,
+  reporterPlugin,
+  svgBuilder,
+  versionPlugin
+} from './plugin'
 
 export type BaseConfigType = {
   entry: string
@@ -141,6 +148,7 @@ export const baseConfig = ({
         polyfills: true,
         renderLegacyChunks: true
       }),
+      isProd && versionPlugin({ version: timestamp }),
       ...(isMicroApp ? [] : [react({ ...reactOptions })]),
       !isProd &&
         httpProxy({
