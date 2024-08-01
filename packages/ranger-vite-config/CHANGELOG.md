@@ -1,5 +1,11 @@
 # @ranger-theme/vite-config
 
+## 0.12.0
+
+### Minor Changes
+
+- vite config support svg and http proxy
+
 ## 0.11.0
 
 ### Minor Changes

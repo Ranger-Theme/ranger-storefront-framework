@@ -58,7 +58,8 @@ const findSvgFile = (dir: string) => {
 export const svgBuilder = (path: string) => {
   if (path === '') return
 
-  const result: any[] = findSvgFile(path)
+  const result: any[] = findSvgFile(/^.*\/$/.test(path) ? path : `${path}/`)
+
   return {
     name: 'svg-transform',
     transformIndexHtml: (html: string) => {

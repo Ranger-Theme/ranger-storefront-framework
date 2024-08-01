@@ -33,8 +33,8 @@ export const httpProxy = (configOptions: {
         tu.port === ''
           ? { https: 443, http: 80 }[protocol]
           : /^\d+$/.test(tu.port)
-          ? Number(tu.port)
-          : error(`Invalid port: ${tu.href}`)
+            ? Number(tu.port)
+            : error(`Invalid port: ${tu.href}`)
 
       middlewares.use((req, res, next) => {
         if (req.url && re.test(req.url)) {

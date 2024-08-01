@@ -3,6 +3,7 @@ import react from '@vitejs/plugin-react-swc'
 import type { BuildOptions, UserConfigExport } from 'vite'
 import { loadEnv } from 'vite'
 import banner from 'vite-plugin-banner'
+import compression from 'vite-plugin-compression'
 import { createHtmlPlugin } from 'vite-plugin-html'
 
 import { completePlugin, httpProxy, qiankunTransform, reporterPlugin, svgBuilder } from './plugin'
@@ -15,9 +16,11 @@ export type BaseConfigType = {
   outDir?: string
   htmlId?: string
   isMicroApp?: boolean
+  svgDirPath?: string
   pkg?: any
   reactOptions?: any
   buildOptions?: BuildOptions
+  proxyOptions?: Parameters<typeof httpProxy>[0]
 }
 
 export const baseConfig = ({
@@ -28,6 +31,7 @@ export const baseConfig = ({
   outDir = 'dist',
   htmlId = 'root',
   isMicroApp = false,
+  svgDirPath = 'svgs',
   pkg = {},
   reactOptions = {
     jsxImportSource: '@emotion/react',
@@ -42,7 +46,8 @@ export const baseConfig = ({
       ]
     ]
   },
-  buildOptions = {}
+  buildOptions = {},
+  proxyOptions = {}
 }: BaseConfigType) => {
   process.env = { ...process.env, ...loadEnv(mode, process.cwd(), 'REACT_') }
 
@@ -139,17 +144,27 @@ export const baseConfig = ({
       ...(isMicroApp ? [] : [react({ ...reactOptions })]),
       !isProd &&
         httpProxy({
-          '/api/': {
+          ...proxyOptions,
+          '/api/': proxyOptions?.['/api/'] ?? {
             target: API,
             changeOrigin: true,
             secure: false,
-            rewrite: (url: string) => url.replace(/^\/api/, '/api')
+            rewrite: (url: string) => url.replace(/^\/api/, '/')
           }
         }),
-      svgBuilder('svgs/'),
+      svgBuilder(svgDirPath),
       completePlugin(),
       reporterPlugin(),
       qiankunTransform(isMicroApp),
+      process.env.REACT_APP_ENABLE_COMPRESS === '1' &&
+        compression({
+          verbose: true,
+          disable: false,
+          deleteOriginFile: false,
+          threshold: 10240,
+          algorithm: 'gzip',
+          ext: '.gz'
+        }),
       process.env.REACT_APP_BUNDLE_VISUALIZE === '1' &&
         require('rollup-plugin-visualizer').visualizer({
           open: true,
