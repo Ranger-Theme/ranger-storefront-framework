@@ -7,7 +7,8 @@ import type { NextPageContext } from 'next/types'
 
 declare const window: any
 
-const url: string = 'https://main--storefront--andyyu1980.hlx.page'
+// const url: string = 'https://main--storefront--andyyu1980.hlx.page'
+const url: string = 'https://main--aem-block-collection--adobe.hlx.live'
 const options: HTMLReactParserOptions = {
   replace: (node: any) => {
     if (node.type === 'script') return <></>
@@ -58,7 +59,7 @@ const Home = ({ html }: { html: string }) => {
 
 Home.getInitialProps = async ({ pathname }: NextPageContext) => {
   console.info('pathname:', pathname)
-  const resource = await fetchEdege(url)
+  const resource = await fetchEdege(url + '/block-collection/video')
   const html = resource
     .replace('<header></header>', '')
     .replace('<footer></footer>', '')

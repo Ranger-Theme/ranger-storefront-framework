@@ -13,7 +13,7 @@ export default function decorate(block) {
     })
     ul.append(li)
   })
-  ul.querySelectorAll('img').forEach((img) =>
+  ul.querySelectorAll('picture > img').forEach((img) =>
     img
       .closest('picture')
       .replaceWith(createOptimizedPicture(img.src, img.alt, false, [{ width: '750' }]))
