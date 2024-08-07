@@ -1,0 +1,1 @@
+export { fetchEdege } from './fetch'

@@ -404,6 +404,7 @@ module.exports = {
         extensions: ['.js', '.jsx', '.ts', '.tsx']
       }
     ],
+    'react/jsx-no-useless-fragment': 0,
     // 防止在componentDidMount中使用setState
     'react/no-did-mount-set-state': 2,
     // 防止在componentDidUpdate中使用setState

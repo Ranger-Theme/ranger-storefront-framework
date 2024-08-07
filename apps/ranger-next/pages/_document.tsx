@@ -1,6 +1,6 @@
-import Script from 'next/script'
-import Document, { Html, Head, Main, NextScript } from 'next/document'
-import type { DocumentContext, DocumentProps, DocumentInitialProps } from 'next/document'
+import type { DocumentContext, DocumentInitialProps, DocumentProps } from 'next/document'
+import Document, { Head, Html, Main, NextScript } from 'next/document'
+// import Script from 'next/script'
 
 class NextDocument extends Document<DocumentProps & { deviceType: string }> {
   static async getInitialProps(
@@ -24,12 +24,13 @@ class NextDocument extends Document<DocumentProps & { deviceType: string }> {
 
   render() {
     return (
-      <Html lang="en" style={{ fontSize: this.props.deviceType === 'H5' ? '50px' : '100px' }}>
+      // <Html lang="en" style={{ fontSize: this.props.deviceType === 'H5' ? '50px' : '100px' }}>
+      <Html>
         <Head>
           <meta name="robots" content="INDEX,FOLLOW" />
         </Head>
         <body>
-          <Script
+          {/* <Script
             id="__html_font_size__"
             strategy="beforeInteractive"
             dangerouslySetInnerHTML={{
@@ -56,7 +57,7 @@ class NextDocument extends Document<DocumentProps & { deviceType: string }> {
               })(window);
             `
             }}
-          />
+          /> */}
           <Main />
           <NextScript />
         </body>
