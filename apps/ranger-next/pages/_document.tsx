@@ -28,6 +28,7 @@ class NextDocument extends Document<DocumentProps & { deviceType: string }> {
       <Html>
         <Head>
           <meta name="robots" content="INDEX,FOLLOW" />
+          <link rel="preload" href="/styles/styles.css" as="style" />
         </Head>
         <body>
           {/* <Script
