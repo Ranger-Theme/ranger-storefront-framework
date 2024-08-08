@@ -1,5 +1,4 @@
 /* eslint-disable import/no-cycle */
-// import { events } from '@dropins/tools/event-bus.js';
 import {
   buildBlock,
   decorateBlocks,
@@ -18,7 +17,6 @@ import {
   waitForLCP
 } from './aem.js'
 import { getProduct, getSkuFromUrl, trackHistory } from './commerce.js'
-// import initializeDropins from './dropins.js';
 
 const LCP_BLOCKS = [
   'product-list-page',
@@ -147,8 +145,6 @@ function preloadFile(href, as) {
  * @param {Element} doc The container element
  */
 async function loadEager(doc) {
-  document.documentElement.lang = 'en'
-  // await initializeDropins();
   decorateTemplateAndTheme()
 
   // Instrument experimentation plugin
@@ -334,8 +330,7 @@ export async function fetchIndex(indexFile, pageSize = 500) {
  * @param {*} topic Topic identifier
  * @returns {boolean} True if consent was given
  */
-// eslint-disable-next-line no-unused-vars
-export function getConsent(topic) {
+export function getConsent() {
   console.warn('getConsent not implemented')
   return true
 }

@@ -13,7 +13,9 @@ const HtmlELement: FC<HtmlELementProps> = ({ html, url }) => {
 
   const options: HTMLReactParserOptions = {
     replace: (node: any) => {
-      if (node.name === 'a') {
+      const href: string = node?.attribs?.href ?? ''
+
+      if (node.name === 'a' && !['http', 'https'].includes(href)) {
         if (node?.attribs?.href?.includes('.mp4')) {
           node.attribs.href = `${url}${node.attribs.href}`
         }

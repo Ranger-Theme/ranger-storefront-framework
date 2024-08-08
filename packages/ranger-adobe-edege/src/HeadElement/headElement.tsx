@@ -23,6 +23,7 @@ const options: HTMLReactParserOptions = {
 const HeadElement: FC<HeadElementProps> = ({ html }) => {
   const head = html.match(/<head[^>]*>([\s\S]*?)<\/head>/g)
   const headEle = (head?.[0] ?? '').replace('<head>', '').replace('</head>', '')
+
   return <Head>{parse(headEle, options)}</Head>
 }
 

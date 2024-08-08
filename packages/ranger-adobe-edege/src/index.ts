@@ -1,3 +1,4 @@
+export { EdegeElement, type EdegeElementProps } from './EdegeElement'
 export { fetchEdege } from './fetch'
 export { HeadElement, type HeadElementProps } from './HeadElement'
 export { HtmlELement, type HtmlELementProps } from './HtmlElement'

@@ -25,14 +25,16 @@ const options: HTMLReactParserOptions = {
 const ScriptElement: FC<ScriptElementProps> = ({ html, url }) => {
   const [isRender, setIsRender] = useState<boolean>(false)
   const head = html.match(/<head[^>]*>([\s\S]*?)<\/head>/g)
+  const title = html.match(/<title[^>]*>([\s\S]*?)<\/title>/g)
   const scriptEle = (head?.[0] ?? '').match(/<script[^>]*>([\s\S]*?)<\/script>/g) || []
+  const titleEle = title?.[0] ?? ''
 
   useEffect(() => {
     window.edegeURL = url
     setIsRender(true)
   }, [])
 
-  return <Head>{isRender && <>{parse(scriptEle.join(''), options)}</>}</Head>
+  return <Head>{isRender && <>{parse(`${scriptEle.join('')}${titleEle}`, options)}</>}</Head>
 }
 
 export default ScriptElement

@@ -22,6 +22,60 @@ $ pnpm add --save-dev @ranger-theme/adobe-edege
 ## 🔨 Usage
 
 ```js
-import { withApollo, withRedux } from '@ranger-theme/adobe-edege'
+import { fetchEdege, HeadElement, HtmlELement, ScriptElement } from '@ranger-theme/adobe-edege'
+import type { NextPageContext } from 'next/types'
+
+const url: string = 'https://main--aem-block-collection--adobe.hlx.live'
+
+const Home = ({ html }: { html: string }) => {
+  return (
+    <div>
+      <HeadElement html={html} />
+      <ScriptElement html={html} url={url} />
+      <div>
+        <HtmlELement html={html} url={url} />
+      </div>
+    </div>
+  )
+}
+
+Home.getInitialProps = async ({ pathname }: NextPageContext) => {
+  const html = await fetchEdege({
+    url
+  })
+
+  return {
+    html
+  }
+}
+
+export default Home
 ```
 
+
+```js
+import { fetchEdege, EdegeElement } from '@ranger-theme/adobe-edege'
+import type { NextPageContext } from 'next/types'
+
+const url: string = 'https://main--aem-block-collection--adobe.hlx.live'
+
+const Home = ({ html }: { html: string }) => {
+  return (
+    <div>
+      <EdegeElement html={html} url={url} />
+    </div>
+  )
+}
+
+Home.getInitialProps = async ({ pathname }: NextPageContext) => {
+  const html = await fetchEdege({
+    url
+  })
+
+  return {
+    html
+  }
+}
+
+export default Home
+```
