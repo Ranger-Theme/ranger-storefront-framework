@@ -1,5 +1,11 @@
 # @ranger-theme/utils
 
+## 0.9.0
+
+### Minor Changes
+
+- adobe edege bin command
+
 ## 0.8.0
 
 ### Minor Changes

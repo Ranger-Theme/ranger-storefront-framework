@@ -1,5 +1,16 @@
 # @ranger-theme/ui
 
+## 0.10.0
+
+### Minor Changes
+
+- adobe edege bin command
+
+### Patch Changes
+
+- Updated dependencies
+  - @ranger-theme/hooks@0.7.0
+
 ## 0.9.0
 
 ### Minor Changes
