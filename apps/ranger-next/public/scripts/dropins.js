@@ -1,6 +1,3 @@
-/* eslint-disable import/no-unresolved */
-/* eslint-disable import/no-extraneous-dependencies */
-
 // Drop-in Tools
 import * as authApi from '@dropins/storefront-auth/api.js'
 // Drop-ins

@@ -2,7 +2,7 @@ import createField from './form-fields.js'
 
 async function createForm(formHref, submitHref) {
   const { pathname } = new URL(formHref)
-  const resp = await fetch(pathname)
+  const resp = await fetch(`${window.edegeURL}${pathname}`)
   const json = await resp.json()
 
   const form = document.createElement('form')
@@ -83,11 +83,10 @@ async function handleSubmit(form) {
 export default async function decorate(block) {
   const links = [...block.querySelectorAll('a')].map((a) => a.href)
   const formLink = links.find(
-    (link) => link.startsWith(window.location.origin) && link.endsWith('.json')
+    (link) => link.startsWith(window.edegeURL || window.location.origin) && link.endsWith('.json')
   )
   const submitLink = links.find((link) => link !== formLink)
   if (!formLink || !submitLink) return
-
   const form = await createForm(formLink, submitLink)
   block.replaceChildren(form)
 

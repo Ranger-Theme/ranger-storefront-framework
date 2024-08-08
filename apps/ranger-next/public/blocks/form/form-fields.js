@@ -87,7 +87,7 @@ const createSelect = async (fd) => {
     let options = []
     if (fd.Options.startsWith('https://')) {
       const optionsUrl = new URL(fd.Options)
-      const resp = await fetch(`${optionsUrl.pathname}${optionsUrl.search}`)
+      const resp = await fetch(`${window.edegeURL}${optionsUrl.pathname}${optionsUrl.search}`)
       const json = await resp.json()
       json.data.forEach((opt) => {
         options.push({

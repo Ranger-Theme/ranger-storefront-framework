@@ -6,16 +6,16 @@ import { getConsent } from './scripts.js'
 export const priceFieldsFragment = `fragment priceFields on ProductViewPrice {
   roles
   regular {
-      amount {
-          currency
-          value
-      }
+    amount {
+      currency
+      value
+    }
   }
   final {
-      amount {
-          currency
-          value
-      }
+    amount {
+      currency
+      value
+    }
   }
 }`
 
