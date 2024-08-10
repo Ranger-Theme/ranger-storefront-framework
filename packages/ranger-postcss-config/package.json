@@ -1,0 +1,18 @@
+{
+  "name": "@ranger-theme/postcss-config",
+  "version": "0.1.0",
+  "license": "MIT",
+  "main": "index.js",
+  "files": [
+    "index.js",
+    "README.md",
+    "CHANGELOG.md"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "postcss": "^8.3.8",
+    "postcss-px-to-viewport-8-plugin": "^1.2.5"
+  }
+}
