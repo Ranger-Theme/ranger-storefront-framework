@@ -1,5 +1,13 @@
 import { useRef } from 'react'
-import { CopyBoard, CountDown, HeadRoom, Portal, PrintScreen, Resizable } from '@ranger-theme/ui'
+import {
+  CopyBoard,
+  CountDown,
+  HeadRoom,
+  IntersectionScroll,
+  Portal,
+  PrintScreen,
+  Resizable
+} from '@ranger-theme/ui'
 import dynamic from 'next/dynamic'
 import Head from 'next/head'
 
@@ -94,6 +102,9 @@ const Cart = () => {
             }}
             content={() => componentRef.current}
           />
+          <IntersectionScroll>
+            <div>Intersection Scroll</div>
+          </IntersectionScroll>
         </div>
       </main>
     </>

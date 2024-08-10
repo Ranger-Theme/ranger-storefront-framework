@@ -1,5 +1,16 @@
 # @ranger-theme/ui
 
+## 0.11.0
+
+### Minor Changes
+
+- ref hooks and cookie ui
+
+### Patch Changes
+
+- Updated dependencies
+  - @ranger-theme/hooks@0.8.0
+
 ## 0.10.0
 
 ### Minor Changes
