@@ -46,7 +46,6 @@ function sampleRUM(checkpoint, data = {}) {
         origin: () => window.location.origin,
         path: () => window.location.href.replace(/\?.*$/, '')
       }
-      // eslint-disable-next-line object-curly-newline, max-len
       window.hlx.rum = {
         weight,
         id,
@@ -193,7 +192,6 @@ function toCamelCase(name) {
  * @param {Element} block The block element
  * @returns {object} The block config
  */
-// eslint-disable-next-line import/prefer-default-export
 function readBlockConfig(block) {
   const config = {}
   block.querySelectorAll(':scope > div').forEach((row) => {

@@ -1,4 +1,3 @@
-/* eslint-disable import/no-cycle */
 import {
   buildBlock,
   decorateBlocks,
@@ -10,28 +9,18 @@ import {
   loadBlocks,
   loadCSS,
   loadScript,
-  readBlockConfig,
   sampleRUM,
   toCamelCase,
   toClassName,
   waitForLCP
 } from './aem.js'
-import { getProduct, getSkuFromUrl, trackHistory } from './commerce.js'
 
-const LCP_BLOCKS = [
-  'product-list-page',
-  'product-list-page-custom',
-  'product-details',
-  'commerce-cart',
-  'commerce-checkout',
-  'commerce-account',
-  'commerce-login'
-] // add your LCP blocks to the list
+// add your LCP blocks to the list
+const LCP_BLOCKS = []
 
 const AUDIENCES = {
   mobile: () => window.innerWidth < 600,
   desktop: () => window.innerWidth >= 600
-  // define your custom audiences here as needed
 }
 
 /**
@@ -121,7 +110,6 @@ function buildAutoBlocks(main) {
  * Decorates the main element.
  * @param {Element} main The main element
  */
-// eslint-disable-next-line import/prefer-default-export
 export function decorateMain(main) {
   // hopefully forward compatible button decoration
   decorateButtons(main)
@@ -131,7 +119,7 @@ export function decorateMain(main) {
   decorateBlocks(main)
 }
 
-function preloadFile(href, as) {
+export function preloadFile(href, as) {
   const link = document.createElement('link')
   link.rel = 'preload'
   link.as = as
@@ -147,89 +135,12 @@ function preloadFile(href, as) {
 async function loadEager(doc) {
   decorateTemplateAndTheme()
 
-  // Instrument experimentation plugin
-  if (
-    getMetadata('experiment') ||
-    Object.keys(getAllMetadata('campaign')).length ||
-    Object.keys(getAllMetadata('audience')).length
-  ) {
-    // eslint-disable-next-line import/no-relative-packages
-    const { loadEager: runEager } = await import('../plugins/experimentation/src/index.js')
-    await runEager(document, { audiences: AUDIENCES }, pluginContext)
-  }
-
-  window.adobeDataLayer = window.adobeDataLayer || []
-
-  let pageType = 'CMS'
-  if (document.body.querySelector('main .product-details')) {
-    pageType = 'Product'
-    const sku = getSkuFromUrl()
-    window.getProductPromise = getProduct(sku)
-
-    preloadFile('/scripts/__dropins__/storefront-pdp/containers/ProductDetails.js', 'script')
-    preloadFile('/scripts/__dropins__/storefront-pdp/api.js', 'script')
-    preloadFile('/scripts/__dropins__/storefront-pdp/render.js', 'script')
-    preloadFile('/scripts/__dropins__/storefront-pdp/chunks/initialize.js', 'script')
-    preloadFile('/scripts/__dropins__/storefront-pdp/chunks/getRefinedProduct.js', 'script')
-  } else if (document.body.querySelector('main .product-details-custom')) {
-    pageType = 'Product'
-    preloadFile('/scripts/preact.js', 'script')
-    preloadFile('/scripts/htm.js', 'script')
-    preloadFile('/blocks/product-details-custom/ProductDetailsCarousel.js', 'script')
-    preloadFile('/blocks/product-details-custom/ProductDetailsSidebar.js', 'script')
-    preloadFile('/blocks/product-details-custom/ProductDetailsShimmer.js', 'script')
-    preloadFile('/blocks/product-details-custom/Icon.js', 'script')
-
-    const blockConfig = readBlockConfig(document.body.querySelector('main .product-details-custom'))
-    const sku = getSkuFromUrl() || blockConfig.sku
-    window.getProductPromise = getProduct(sku)
-  } else if (document.body.querySelector('main .product-list-page')) {
-    pageType = 'Category'
-    preloadFile('/scripts/widgets/search.js', 'script')
-  } else if (document.body.querySelector('main .product-list-page-custom')) {
-    // TODO Remove this bracket if not using custom PLP
-    pageType = 'Category'
-    const plpBlock = document.body.querySelector('main .product-list-page-custom')
-    const { category, urlpath } = readBlockConfig(plpBlock)
-
-    if (category && urlpath) {
-      // eslint-disable-next-line import/no-unresolved, import/no-absolute-path
-      const { preloadCategory } = await import(
-        '../../../../../../../../blocks/product-list-page-custom/product-list-page-custom.js'
-      )
-      preloadCategory({ id: category, urlPath: urlpath })
-    }
-  } else if (document.body.querySelector('main .commerce-cart')) {
-    pageType = 'Cart'
-  } else if (document.body.querySelector('main .commerce-checkout')) {
-    pageType = 'Checkout'
-  }
-
-  window.adobeDataLayer.push({
-    pageContext: {
-      pageType,
-      pageName: document.title,
-      eventType: 'visibilityHidden',
-      maxXOffset: 0,
-      maxYOffset: 0,
-      minXOffset: 0,
-      minYOffset: 0
-    }
-  })
-  if (pageType !== 'Product') {
-    window.adobeDataLayer.push((dl) => {
-      dl.push({ event: 'page-view', eventInfo: { ...dl.getState() } })
-    })
-  }
-
   const main = doc.querySelector('main')
   if (main) {
     decorateMain(main)
     document.body.classList.add('appear')
     await waitForLCP(LCP_BLOCKS)
   }
-
-  // events.emit('eds/lcp', true);
 
   try {
     /* if desktop (proxy for fast connection) or fonts already loaded, load fonts.css */
@@ -255,19 +166,7 @@ async function loadLazy(doc) {
   const element = hash ? doc.getElementById(hash.substring(1)) : false
   if (hash && element) element.scrollIntoView()
 
-  await Promise.all([
-    // loadHeader(doc.querySelector('header')),
-    // loadFooter(doc.querySelector('footer')),
-    loadCSS(`${window.hlx.codeBasePath}/styles/lazy-styles.css`),
-    loadFonts()
-    // import('./acdl/adobe-client-data-layer.min.js'),
-  ])
-
-  if (sessionStorage.getItem('acdl:debug')) {
-    import('./acdl/validate.js')
-  }
-
-  trackHistory()
+  await Promise.all([loadCSS(`${window.hlx.codeBasePath}/styles/lazy-styles.css`), loadFonts()])
 
   sampleRUM('lazy')
   sampleRUM.observe(main.querySelectorAll('div[data-block-name]'))
@@ -338,6 +237,12 @@ export function getConsent() {
 async function loadPage() {
   await loadEager(document)
   await loadLazy(document)
+}
+
+window.edegeLoadPage = async () => {
+  await loadEager(document)
+  const main = document.querySelector('main')
+  await loadBlocks(main)
 }
 
 loadPage()

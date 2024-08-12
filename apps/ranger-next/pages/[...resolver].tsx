@@ -1,11 +1,18 @@
+import { useEffect } from 'react'
 import { fetchEdege, HeadElement, HtmlELement, ScriptElement } from '@ranger-theme/adobe-edege'
 import type { NextPageContext } from 'next/types'
 import path from 'path'
 
+const host: string = process.env.NEXT_PUBLIC_HOST_URL
+
 const Resolver = ({ edegeURL, html }: { edegeURL: string; html: string }) => {
+  useEffect(() => {
+    window?.edegeLoadPage?.()
+  }, [])
+
   return (
     <>
-      <HeadElement html={html} />
+      <HeadElement host={host} html={html} url={edegeURL} />
       <ScriptElement html={html} url={edegeURL} />
       <div>
         <HtmlELement html={html} url={edegeURL} />

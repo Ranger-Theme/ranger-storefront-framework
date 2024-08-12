@@ -4,7 +4,9 @@ import parse from 'html-react-parser'
 import Head from 'next/head'
 
 export interface HeadElementProps {
+  host: string
   html: string
+  url: string
 }
 
 const options: HTMLReactParserOptions = {
@@ -20,11 +22,14 @@ const options: HTMLReactParserOptions = {
   }
 }
 
-const HeadElement: FC<HeadElementProps> = ({ html }) => {
+const HeadElement: FC<HeadElementProps> = ({ host, html, url }) => {
   const head = html.match(/<head[^>]*>([\s\S]*?)<\/head>/g)
-  const headEle = (head?.[0] ?? '').replace('<head>', '').replace('</head>', '')
+  const headEle = (head?.[0] ?? '').replace(/<head>/, '').replace(/<\/head>/, '')
+  const secureHost = host.replace(/http/, 'https')
+  const regxp = new RegExp(secureHost, 'g')
+  const headHtml = headEle.replace(regxp, url)
 
-  return <Head>{parse(headEle, options)}</Head>
+  return <Head>{parse(headHtml, options)}</Head>
 }
 
 export default HeadElement
