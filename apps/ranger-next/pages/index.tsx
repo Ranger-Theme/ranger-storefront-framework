@@ -1,5 +1,4 @@
 import { fetchEdege, HeadElement, HtmlELement, ScriptElement } from '@ranger-theme/adobe-edege'
-import type { NextPageContext } from 'next/types'
 
 const url: string = 'https://main--aem-block-collection--adobe.hlx.live'
 
@@ -15,11 +14,10 @@ const Home = ({ html }: { html: string }) => {
   )
 }
 
-Home.getInitialProps = async ({ pathname }: NextPageContext) => {
-  console.info('pathname:', pathname)
+Home.getInitialProps = async () => {
   const html = await fetchEdege({
-    url: url + '/block-collection/modal'
-    // url
+    api: `${process.env.NEXT_PUBLIC_HOST_URL}api/edege`,
+    url
   })
 
   return {
