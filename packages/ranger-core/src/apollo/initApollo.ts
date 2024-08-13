@@ -33,7 +33,7 @@ const createApolloClient = ({ cookies, reduxState, domain }: ApolloStruct) => {
   const isAdobeDeploy: boolean = process.env.NEXT_PUBLIC_DEPLOY_PLATFORM === 'adobe'
   const isVercelDeploy: boolean = process.env.NEXT_PUBLIC_DEPLOY_PLATFORM === 'vercel'
 
-  if (isAdobeDeploy) apiURL = domain
+  if (isAdobeDeploy) apiURL = `${domain}/`
   if (isVercelDeploy) apiURL = `${domain}/`
 
   const httpLink = new HttpLink({
@@ -54,7 +54,7 @@ const createApolloClient = ({ cookies, reduxState, domain }: ApolloStruct) => {
       headers: {
         Store: exsistCookies?.store_code ?? storeCode,
         'Content-Currency': exsistCookies?.currency_code ?? currencyCode,
-        'x-platform': 'nexperia_headless',
+        'x-platform': 'headless',
         ...context?.headers,
         Authorization: exsistCookies.access_token ? `Bearer ${exsistCookies.access_token}` : null
       }

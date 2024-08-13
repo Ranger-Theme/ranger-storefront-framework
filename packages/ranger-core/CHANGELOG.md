@@ -1,5 +1,23 @@
 # @ranger-theme/core
 
+## 0.11.0
+
+### Minor Changes
+
+- core packages
+
+## 0.10.2
+
+### Patch Changes
+
+- add line to api url
+
+## 0.10.1
+
+### Patch Changes
+
+- debug adobe ssr
+
 ## 0.10.0
 
 ### Minor Changes
