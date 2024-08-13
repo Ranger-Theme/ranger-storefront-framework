@@ -10,6 +10,18 @@ const isAnalyzer = process.env.NEXT_PUBLIC_VISUALIZE_ENABLE === 'true'
 
 module.exports = ({ dirname = __dirname, git = true, pkg = {}, timestamp = 0, ...rest }) => {
   const { plugins, transpilePackages, cacheGroups, ...options } = rest
+  let buildIdOptions = {}
+
+  if (git) {
+    buildIdOptions = {
+      generateBuildId: async () => {
+        const commitId = await nextBuildId({ dir: dirname })
+        const trunk = commitId.substring(0, 16)
+        return `${trunk}_${timestamp.toString()}`
+      }
+    }
+  }
+
   /**
    * @type {import('next').NextConfig}
    */
@@ -43,12 +55,7 @@ module.exports = ({ dirname = __dirname, git = true, pkg = {}, timestamp = 0, ..
       ignoreBuildErrors: isProd
     },
     ...options,
-    generateBuildId: async () => {
-      if (!git) return `adobe_cloud_${timestamp.toString()}`
-      const commitId = await nextBuildId({ dir: dirname })
-      const trunk = commitId.substring(0, 16)
-      return `${trunk}_${timestamp.toString()}`
-    },
+    ...buildIdOptions,
     webpack: (config, { buildId, isServer, nextRuntime }) => {
       // Write buildId to the version controll file
       fs.writeFileSync(

@@ -1,5 +1,11 @@
 # @ranger-theme/nextjs-config
 
+## 0.9.0
+
+### Minor Changes
+
+- remove adbode
+
 ## 0.8.0
 
 ### Minor Changes

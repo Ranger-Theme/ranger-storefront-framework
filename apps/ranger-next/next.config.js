@@ -8,8 +8,8 @@ const timestamp = new Date().getTime()
 
 /** @type {import('next').NextConfig} */
 module.exports = nextConfig({
-  pkg,
   dirname: process.cwd(),
+  pkg,
   timestamp,
   transpilePackages: ['@ranger-theme/ui'],
   compiler: {
