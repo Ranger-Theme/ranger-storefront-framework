@@ -178,7 +178,6 @@ async function loadLazy(doc) {
     Object.keys(getAllMetadata('campaign')).length ||
     Object.keys(getAllMetadata('audience')).length
   ) {
-    // eslint-disable-next-line import/no-relative-packages
     const { loadLazy: runLazy } = await import('../plugins/experimentation/src/index.js')
     await runLazy(document, { audiences: AUDIENCES }, pluginContext)
   }
@@ -240,9 +239,12 @@ async function loadPage() {
 }
 
 window.edegeLoadPage = async () => {
-  await loadEager(document)
   const main = document.querySelector('main')
-  await loadBlocks(main)
+
+  if (main) {
+    await loadEager(document)
+    await loadBlocks(main)
+  }
 }
 
 loadPage()

@@ -482,7 +482,6 @@ function decorateSections(main) {
     section.classList.add('section')
     section.dataset.sectionStatus = 'initialized'
     section.style.visibility = 'hidden'
-
     // Process section metadata
     const sectionMeta = section.querySelector('div.section-metadata')
     if (sectionMeta) {

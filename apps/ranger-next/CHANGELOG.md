@@ -1,5 +1,12 @@
 # @ranger-theme/nextjs
 
+## 1.1.19
+
+### Patch Changes
+
+- Updated dependencies
+  - @ranger-theme/adobe-edege@0.5.0
+
 ## 1.1.18
 
 ### Patch Changes

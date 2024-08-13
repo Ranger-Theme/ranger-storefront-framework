@@ -1,22 +1,37 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { fetchEdege, HeadElement, HtmlELement, ScriptElement } from '@ranger-theme/adobe-edege'
+import Router from 'next/router'
 import type { NextPageContext } from 'next/types'
 import path from 'path'
 
 const host: string = process.env.NEXT_PUBLIC_HOST_URL
 
 const Resolver = ({ edegeURL, html }: { edegeURL: string; html: string }) => {
+  const [isRender, setIsRender] = useState<boolean>(true)
+
   useEffect(() => {
-    window?.edegeLoadPage?.()
+    const handleRouteStart = () => {
+      setIsRender(false)
+    }
+
+    const handleRouteComplete = () => {
+      setIsRender(true)
+    }
+
+    Router.events.on('routeChangeStart', handleRouteStart)
+    Router.events.on('routeChangeComplete', handleRouteComplete)
+
+    return () => {
+      Router.events.off('routeChangeStart', handleRouteStart)
+      Router.events.off('routeChangeComplete', handleRouteComplete)
+    }
   }, [])
 
   return (
     <>
       <HeadElement host={host} html={html} url={edegeURL} />
       <ScriptElement html={html} url={edegeURL} />
-      <div>
-        <HtmlELement html={html} url={edegeURL} />
-      </div>
+      <div>{isRender && <HtmlELement html={html} url={edegeURL} />}</div>
     </>
   )
 }

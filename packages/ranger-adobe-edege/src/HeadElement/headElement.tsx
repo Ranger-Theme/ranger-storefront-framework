@@ -1,7 +1,7 @@
-import type { FC } from 'react'
+import React from 'react'
+import { Helmet } from 'react-helmet'
 import type { HTMLReactParserOptions } from 'html-react-parser'
 import parse from 'html-react-parser'
-import Head from 'next/head'
 
 export interface HeadElementProps {
   host: string
@@ -22,14 +22,26 @@ const options: HTMLReactParserOptions = {
   }
 }
 
-const HeadElement: FC<HeadElementProps> = ({ host, html, url }) => {
+const HeadElement: React.FC<HeadElementProps> = ({ host, html, url }) => {
   const head = html.match(/<head[^>]*>([\s\S]*?)<\/head>/g)
   const headEle = (head?.[0] ?? '').replace(/<head>/, '').replace(/<\/head>/, '')
   const secureHost = host.replace(/http/, 'https')
   const regxp = new RegExp(secureHost, 'g')
   const headHtml = headEle.replace(regxp, url)
+  const components = parse(headHtml, options)
+  const isArray = Array.isArray(components)
 
-  return <Head>{parse(headHtml, options)}</Head>
+  return isArray ? (
+    <Helmet>
+      {components.map((component: any) => {
+        if (!React.isValidElement(component)) return null
+        if (component?.type === React.Fragment) return null
+        return component
+      })}
+    </Helmet>
+  ) : (
+    <Helmet>{components}</Helmet>
+  )
 }
 
 export default HeadElement

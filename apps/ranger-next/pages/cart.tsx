@@ -1,17 +1,7 @@
 import { useRef } from 'react'
-import {
-  CopyBoard,
-  CountDown,
-  HeadRoom,
-  IntersectionScroll,
-  Portal,
-  PrintScreen,
-  Resizable
-} from '@ranger-theme/ui'
+import { CopyBoard, CountDown, IntersectionScroll, PrintScreen, Resizable } from '@ranger-theme/ui'
 import dynamic from 'next/dynamic'
 import Head from 'next/head'
-
-import Header from '@/components/Header'
 
 const CsvLink = dynamic(
   import('@ranger-theme/ui').then((module) => module.CsvLink),
@@ -55,11 +45,8 @@ const Cart = () => {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main>
+      <div className="cart">
         <div ref={componentRef}>
-          <HeadRoom>
-            <Header />
-          </HeadRoom>
           <Player
             className="react-player"
             url="https://www.youtube.com/watch?v=aL27fX5kv9U"
@@ -76,9 +63,6 @@ const Cart = () => {
           <div>
             <CsvLink data={csvData}>Download me</CsvLink>
           </div>
-          <Portal selector=".header">
-            <span>Logo</span>
-          </Portal>
           <MediaQuery minWidth={1224}>
             <p>You are a desktop or laptop</p>
             <MediaQuery minWidth={1824}>
@@ -106,7 +90,7 @@ const Cart = () => {
             <div>Intersection Scroll</div>
           </IntersectionScroll>
         </div>
-      </main>
+      </div>
     </>
   )
 }

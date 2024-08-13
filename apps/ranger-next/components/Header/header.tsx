@@ -4,7 +4,7 @@ const Header = () => {
   return (
     <header className="header">
       <Link href="/">
-        <span>Header Nav</span>
+        <span>Home</span>
       </Link>
       &nbsp;&nbsp;
       <Link href="/about-us">
@@ -13,6 +13,18 @@ const Header = () => {
       &nbsp;&nbsp;
       <Link href="/block-collection/modal">
         <span>Modal</span>
+      </Link>
+      &nbsp;&nbsp;
+      <Link href="/block-collection/table">
+        <span>Table</span>
+      </Link>
+      &nbsp;&nbsp;
+      <Link href="/cart">
+        <span>Cart</span>
+      </Link>
+      &nbsp;&nbsp;
+      <Link href="/checkout">
+        <span>Checkout</span>
       </Link>
     </header>
   )

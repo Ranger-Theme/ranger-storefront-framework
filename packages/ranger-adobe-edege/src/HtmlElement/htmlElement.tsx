@@ -1,4 +1,4 @@
-import type { FC } from 'react'
+import React, { useEffect } from 'react'
 import type { HTMLReactParserOptions } from 'html-react-parser'
 import parse from 'html-react-parser'
 
@@ -7,9 +7,12 @@ export interface HtmlELementProps {
   url: string
 }
 
-const HtmlELement: FC<HtmlELementProps> = ({ html, url }) => {
+declare const window: any
+
+const HtmlELement: React.FC<HtmlELementProps> = ({ html, url }) => {
   const content = html.match(/<main[^>]*>([\s\S]*?)<\/main>/g)
-  const htmlEle = content?.[0] ?? ''
+  const htmlDom = content?.[0] ?? ''
+  const htmlEle = htmlDom.replace(/<main>/g, '').replace(/<\/main>/g, '')
 
   const options: HTMLReactParserOptions = {
     replace: (node: any) => {
@@ -26,8 +29,21 @@ const HtmlELement: FC<HtmlELementProps> = ({ html, url }) => {
       }
     }
   }
+  const components = parse(htmlEle, options) as any[]
 
-  return <>{parse(htmlEle, options)}</>
+  useEffect(() => {
+    if (window.edegeLoadPage) window.edegeLoadPage()
+  }, [])
+
+  return (
+    <main className="adobe-edege">
+      {components.map((component: any) => {
+        if (!React.isValidElement(component)) return null
+        if (component?.type === React.Fragment) return null
+        return component
+      })}
+    </main>
+  )
 }
 
 export default HtmlELement

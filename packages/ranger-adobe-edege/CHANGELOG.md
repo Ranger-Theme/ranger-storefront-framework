@@ -1,5 +1,11 @@
 # @ranger-theme/adobe-edege
 
+## 0.5.0
+
+### Minor Changes
+
+- router listener and refresh
+
 ## 0.4.0
 
 ### Minor Changes

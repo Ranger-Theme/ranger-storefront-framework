@@ -1,11 +1,13 @@
+import type { HelmetData } from 'react-helmet'
+import { Helmet } from 'react-helmet'
 import type { DocumentContext, DocumentInitialProps, DocumentProps } from 'next/document'
 import Document, { Head, Html, Main, NextScript } from 'next/document'
 // import Script from 'next/script'
 
-class NextDocument extends Document<DocumentProps & { deviceType: string }> {
+class NextDocument extends Document<DocumentProps & { deviceType: string; helmet: HelmetData }> {
   static async getInitialProps(
     ctx: DocumentContext
-  ): Promise<DocumentInitialProps & { deviceType: string }> {
+  ): Promise<DocumentInitialProps & { deviceType: string; helmet: HelmetData }> {
     const originalRenderPage = ctx.renderPage
 
     // Run the React rendering logic synchronously
@@ -19,18 +21,34 @@ class NextDocument extends Document<DocumentProps & { deviceType: string }> {
     const initialProps = await Document.getInitialProps(ctx)
     const deviceType = (ctx.req?.headers['x-device-type'] as string) ?? 'PC'
 
-    return { ...initialProps, deviceType }
+    return { ...initialProps, deviceType, helmet: Helmet.renderStatic() }
+  }
+
+  get helmetHtmlAttr() {
+    return this.props.helmet.htmlAttributes.toComponent()
+  }
+
+  get helmetBodyAttr() {
+    return this.props.helmet.bodyAttributes.toComponent()
+  }
+
+  get helmetHead() {
+    return Object.keys(this.props.helmet)
+      .filter((el) => el !== 'htmlAttributes' && el !== 'bodyAttributes')
+      .map((el) => this.props.helmet[el].toComponent())
   }
 
   render() {
     return (
       // <Html lang="en" style={{ fontSize: this.props.deviceType === 'H5' ? '50px' : '100px' }}>
-      <Html>
+      <Html {...this.helmetHtmlAttr}>
         <Head>
           <meta name="robots" content="INDEX,FOLLOW" />
+          <meta name="google" content="notranslate" />
           <link rel="preload" href="/styles/styles.css" as="style" />
+          {...this.helmetHead}
         </Head>
-        <body>
+        <body {...this.helmetBodyAttr}>
           {/* <Script
             id="__html_font_size__"
             strategy="beforeInteractive"
