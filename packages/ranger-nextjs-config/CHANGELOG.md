@@ -1,5 +1,11 @@
 # @ranger-theme/nextjs-config
 
+## 0.8.0
+
+### Minor Changes
+
+- support adobe cloud no git
+
 ## 0.7.0
 
 ### Minor Changes

@@ -8,7 +8,7 @@ const BuildTimePlugin = require('./src/time')
 const isProd = process.env.NODE_ENV === 'production'
 const isAnalyzer = process.env.NEXT_PUBLIC_VISUALIZE_ENABLE === 'true'
 
-module.exports = ({ pkg = {}, dirname = __dirname, timestamp = 0, ...rest }) => {
+module.exports = ({ dirname = __dirname, git = true, pkg = {}, timestamp = 0, ...rest }) => {
   const { plugins, transpilePackages, cacheGroups, ...options } = rest
   /**
    * @type {import('next').NextConfig}
@@ -44,6 +44,7 @@ module.exports = ({ pkg = {}, dirname = __dirname, timestamp = 0, ...rest }) => 
     },
     ...options,
     generateBuildId: async () => {
+      if (!git) return `adobe_cloud_${timestamp.toString()}`
       const commitId = await nextBuildId({ dir: dirname })
       const trunk = commitId.substring(0, 16)
       return `${trunk}_${timestamp.toString()}`
