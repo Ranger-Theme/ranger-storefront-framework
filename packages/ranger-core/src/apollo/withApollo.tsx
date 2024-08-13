@@ -11,16 +11,25 @@ export const withApollo = (App: any) =>
     public apolloClient: any
 
     static async getInitialProps(appContext: any) {
+      let domain: string = ''
+      let host: string = ''
       const { Component: AppComponent, router } = appContext
       const cookies: any = parseCookies(appContext.ctx)
       const isServer: boolean = typeof window === 'undefined'
+      const isAdobeDeploy: boolean = process.env.NEXT_PUBLIC_DEPLOY_PLATFORM === 'adobe'
       const proto: string = isServer
         ? (appContext.ctx?.req?.headers?.['x-forwarded-proto'] ?? '')
         : window.location.protocol
-      const host: string = isServer
-        ? (appContext.ctx?.req?.headers?.host ?? '')
-        : window.location.host
-      const domain: string = isServer ? `${proto}://${host}` : `${proto}//${host}`
+
+      if (isAdobeDeploy) {
+        host = isServer
+          ? (appContext.ctx?.req?.headers?.['origin-host'] ?? '')
+          : window.location.host
+        domain = isServer ? host : `${proto}//${host}`
+      } else {
+        host = isServer ? (appContext.ctx?.req?.headers?.host ?? '') : window.location.host
+        domain = isServer ? `${proto}://${host}` : `${proto}//${host}`
+      }
 
       const apollo = initApollo({
         apolloState: {},

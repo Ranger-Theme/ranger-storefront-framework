@@ -1,5 +1,11 @@
 # @ranger-theme/core
 
+## 0.10.0
+
+### Minor Changes
+
+- support adobe cloud
+
 ## 0.9.0
 
 ### Minor Changes

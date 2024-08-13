@@ -29,10 +29,13 @@ const customFetchToShrinkQuery = (uri: string, options: any) => {
 }
 
 const createApolloClient = ({ cookies, reduxState, domain }: ApolloStruct) => {
-  const isVercelDeploy: boolean = process.env.REACT_APP_DEPLOY_PLATFORM === 'vercel'
-  const vercelURL: string = `${domain}/`
-  const localURL: string = `${process.env.NEXT_PUBLIC_HOST_URL}`
-  const apiURL: string = isVercelDeploy ? vercelURL : localURL
+  let apiURL: string = `${process.env.NEXT_PUBLIC_HOST_URL}`
+  const isAdobeDeploy: boolean = process.env.NEXT_PUBLIC_DEPLOY_PLATFORM === 'adobe'
+  const isVercelDeploy: boolean = process.env.NEXT_PUBLIC_DEPLOY_PLATFORM === 'vercel'
+
+  if (isAdobeDeploy) apiURL = domain
+  if (isVercelDeploy) apiURL = `${domain}/`
+
   const httpLink = new HttpLink({
     uri: `${typeof window === 'undefined' ? `${apiURL}` : `${window.location.origin}/`}api/graphql`,
     credentials: 'same-origin',
