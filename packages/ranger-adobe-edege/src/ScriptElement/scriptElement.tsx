@@ -5,6 +5,7 @@ import parse from 'html-react-parser'
 
 export interface ScriptElementProps {
   html: string
+  platform?: 'SSR' | 'CSR' | 'SSG'
   url: string
 }
 
@@ -22,7 +23,7 @@ const options: HTMLReactParserOptions = {
   }
 }
 
-const ScriptElement: React.FC<ScriptElementProps> = ({ html, url }) => {
+const ScriptElement: React.FC<ScriptElementProps> = ({ html, platform = 'SSR', url }) => {
   const [isRender, setIsRender] = useState<boolean>(false)
   const head = html.match(/<head[^>]*>([\s\S]*?)<\/head>/g)
   const title = html.match(/<title[^>]*>([\s\S]*?)<\/title>/g)
@@ -31,6 +32,7 @@ const ScriptElement: React.FC<ScriptElementProps> = ({ html, url }) => {
   const components = parse(`${scriptEle.join('')}${titleEle}`, options) as any[]
 
   useEffect(() => {
+    window.edegePlatform = platform
     window.edegeURL = url
     setIsRender(true)
   }, [])

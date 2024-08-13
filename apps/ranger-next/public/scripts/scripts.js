@@ -5,23 +5,17 @@ import {
   decorateIcons,
   decorateSections,
   decorateTemplateAndTheme,
-  getMetadata,
   loadBlocks,
   loadCSS,
-  loadScript,
+  loadFooter,
+  loadHeader,
   sampleRUM,
-  toCamelCase,
   toClassName,
   waitForLCP
 } from './aem.js'
 
 // add your LCP blocks to the list
 const LCP_BLOCKS = []
-
-const AUDIENCES = {
-  mobile: () => window.innerWidth < 600,
-  desktop: () => window.innerWidth >= 600
-}
 
 /**
  * Gets all the metadata elements that are in the given scope.
@@ -40,17 +34,6 @@ export function getAllMetadata(scope) {
     res[id] = meta.getAttribute('content')
     return res
   }, {})
-}
-
-// Define an execution context
-const pluginContext = {
-  getAllMetadata,
-  getMetadata,
-  loadCSS,
-  loadScript,
-  sampleRUM,
-  toCamelCase,
-  toClassName
 }
 
 /**
@@ -166,21 +149,16 @@ async function loadLazy(doc) {
   const element = hash ? doc.getElementById(hash.substring(1)) : false
   if (hash && element) element.scrollIntoView()
 
+  const header = doc.querySelector('.header')
+  if (header) loadHeader(header)
+  const footer = doc.querySelector('.footer')
+  if (footer) loadFooter(footer)
+
   await Promise.all([loadCSS(`${window.hlx.codeBasePath}/styles/lazy-styles.css`), loadFonts()])
 
   sampleRUM('lazy')
   sampleRUM.observe(main.querySelectorAll('div[data-block-name]'))
   sampleRUM.observe(main.querySelectorAll('picture > img'))
-
-  // Implement experimentation preview pill
-  if (
-    getMetadata('experiment') ||
-    Object.keys(getAllMetadata('campaign')).length ||
-    Object.keys(getAllMetadata('audience')).length
-  ) {
-    const { loadLazy: runLazy } = await import('../plugins/experimentation/src/index.js')
-    await runLazy(document, { audiences: AUDIENCES }, pluginContext)
-  }
 }
 
 export async function fetchIndex(indexFile, pageSize = 500) {

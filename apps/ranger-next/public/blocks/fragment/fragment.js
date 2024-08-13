@@ -13,10 +13,13 @@ import { decorateMain } from '../../scripts/scripts.js'
  */
 export async function loadFragment(path) {
   if (path && path.startsWith('/')) {
-    const resp = await fetch(`${window.edegeURL}${path}.plain.html`)
+    const api =
+      window?.edegePlatform === 'SSR' ? `${window.location.origin}/api/edege` : window.edegeURL
+    const resp = await fetch(`${api}${path}.plain.html`)
     if (resp.ok) {
+      const result = await resp.text()
       const main = document.createElement('main')
-      main.innerHTML = await resp.text()
+      main.innerHTML = result
 
       // reset base path for media to fragment base
       const resetAttributeBase = (tag, attr) => {

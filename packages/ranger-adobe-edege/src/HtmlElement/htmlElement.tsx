@@ -13,6 +13,8 @@ const HtmlELement: React.FC<HtmlELementProps> = ({ html, url }) => {
   const content = html.match(/<main[^>]*>([\s\S]*?)<\/main>/g)
   const htmlDom = content?.[0] ?? ''
   const htmlEle = htmlDom.replace(/<main>/g, '').replace(/<\/main>/g, '')
+  const hasHeader = html.indexOf('<header></header>') > -1
+  const hasFooter = html.indexOf('<footer></footer>') > -1
 
   const options: HTMLReactParserOptions = {
     replace: (node: any) => {
@@ -37,11 +39,13 @@ const HtmlELement: React.FC<HtmlELementProps> = ({ html, url }) => {
 
   return (
     <main className="adobe-edege">
+      {hasHeader && <header className="header"></header>}
       {components.map((component: any) => {
         if (!React.isValidElement(component)) return null
         if (component?.type === React.Fragment) return null
         return component
       })}
+      {hasFooter && <footer className="footer"></footer>}
     </main>
   )
 }

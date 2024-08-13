@@ -1,5 +1,11 @@
 # @ranger-theme/adobe-edege
 
+## 0.6.0
+
+### Minor Changes
+
+- support header and footer dynimac import
+
 ## 0.5.0
 
 ### Minor Changes

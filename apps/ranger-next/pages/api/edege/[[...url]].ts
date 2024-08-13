@@ -6,7 +6,7 @@ const handler = (request: NextApiRequest, response: NextApiResponse) => {
     changeOrigin: true,
     secure: true,
     pathRewrite: {
-      '^/api/edege': '/'
+      '^/api/edege': ''
     },
     router: async () => {
       return process.env.NEXT_PUBLIC_EDEGE_URL

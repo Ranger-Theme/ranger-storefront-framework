@@ -48,7 +48,8 @@ Resolver.getInitialProps = async ({ asPath }: NextPageContext) => {
 
   const html = await fetchEdege({
     api: `${process.env.NEXT_PUBLIC_HOST_URL}api/edege/${pathname}`,
-    url: edegeURL
+    url: edegeURL,
+    removeHeader: false
   })
 
   return {
