@@ -1,9 +1,9 @@
 const fs = require('fs')
 const dateformat = require('dateformat')
-const nextBuildId = require('next-build-id')
 
-const BannerPlugin = require('./banner')
-const BuildTimePlugin = require('./build')
+const nextBuildId = require('./src/build')
+const BannerPlugin = require('./src/banner')
+const BuildTimePlugin = require('./src/time')
 
 const isProd = process.env.NODE_ENV === 'production'
 const isAnalyzer = process.env.NEXT_PUBLIC_VISUALIZE_ENABLE === 'true'

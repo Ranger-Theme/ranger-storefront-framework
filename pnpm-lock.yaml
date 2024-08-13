@@ -449,9 +449,6 @@ importers:
       dateformat:
         specifier: ^4.5.1
         version: 4.6.3
-      next-build-id:
-        specifier: ^3.0.0
-        version: 3.0.0
     devDependencies:
       '@next/bundle-analyzer':
         specifier: ^13.4.12
@@ -8380,11 +8377,6 @@ packages:
 
   /neo-async@2.6.2:
     resolution: {integrity: sha512-Yd3UES5mWCSqR+qNT93S3UoYUkqAZ9lLg8a7g9rimsWmYGK8cVToA4/sF3RrshdyV3sAGMXVUmpMYOw+dLpOuw==}
-    dev: false
-
-  /next-build-id@3.0.0:
-    resolution: {integrity: sha512-B3JCsL/9Z/wkmo3EySukQHCgx89Aw0i4LPi2MEhCboQBJ6wpkYTIu1z6hOYKuw/S1Wy8ZRqCEq0dVY/ST6jGqg==}
-    engines: {node: '>=8'}
     dev: false
 
   /next-pwa@5.6.0(@babel/core@7.24.9)(next@14.2.5)(webpack@5.93.0):

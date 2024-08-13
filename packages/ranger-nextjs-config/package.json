@@ -1,11 +1,10 @@
 {
   "name": "@ranger-theme/nextjs-config",
-  "version": "0.6.0",
+  "version": "0.7.0",
   "main": "index.js",
   "license": "MIT",
   "files": [
-    "banner.js",
-    "build.js",
+    "src",
     "index.js",
     "README.md",
     "CHANGELOG.md"
@@ -15,8 +14,7 @@
   },
   "dependencies": {
     "chalk": "^4.1.2",
-    "dateformat": "^4.5.1",
-    "next-build-id": "^3.0.0"
+    "dateformat": "^4.5.1"
   },
   "devDependencies": {
     "@next/bundle-analyzer": "^13.4.12"

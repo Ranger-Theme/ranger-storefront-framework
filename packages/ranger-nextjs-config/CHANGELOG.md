@@ -1,5 +1,11 @@
 # @ranger-theme/nextjs-config
 
+## 0.7.0
+
+### Minor Changes
+
+- remove next build id
+
 ## 0.6.0
 
 ### Minor Changes
