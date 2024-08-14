@@ -16,8 +16,11 @@ const Home = ({ html }: { html: string }) => {
 }
 
 Home.getInitialProps = async () => {
+  const isServer: boolean = typeof window === 'undefined'
+  const apiPath: string = isServer ? process.env.NEXT_PUBLIC_HOST_URL : `${window.location.origin}/`
+
   const html = await fetchEdege({
-    api: `${process.env.NEXT_PUBLIC_HOST_URL}api/edege`,
+    api: `${apiPath}api/edege`,
     url
   })
 

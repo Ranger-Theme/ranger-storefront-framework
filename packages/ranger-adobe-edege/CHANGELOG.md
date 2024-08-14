@@ -1,5 +1,11 @@
 # @ranger-theme/adobe-edege
 
+## 0.7.0
+
+### Minor Changes
+
+- declare typescript
+
 ## 0.6.0
 
 ### Minor Changes

@@ -7,7 +7,11 @@ export interface HtmlELementProps {
   url: string
 }
 
-declare const window: any
+declare global {
+  interface Window {
+    edegeLoadPage: () => void
+  }
+}
 
 const HtmlELement: React.FC<HtmlELementProps> = ({ html, url }) => {
   const content = html.match(/<main[^>]*>([\s\S]*?)<\/main>/g)
@@ -31,7 +35,8 @@ const HtmlELement: React.FC<HtmlELementProps> = ({ html, url }) => {
       }
     }
   }
-  const components = parse(htmlEle, options) as any[]
+  const components = parse(htmlEle, options)
+  const isArray = Array.isArray(components)
 
   useEffect(() => {
     if (window.edegeLoadPage) window.edegeLoadPage()
@@ -40,11 +45,17 @@ const HtmlELement: React.FC<HtmlELementProps> = ({ html, url }) => {
   return (
     <main className="adobe-edege">
       {hasHeader && <header className="header"></header>}
-      {components.map((component: any) => {
-        if (!React.isValidElement(component)) return null
-        if (component?.type === React.Fragment) return null
-        return component
-      })}
+      {isArray ? (
+        <>
+          {components.map((component: any) => {
+            if (!React.isValidElement(component)) return null
+            if (component?.type === React.Fragment) return null
+            return component
+          })}
+        </>
+      ) : (
+        <>{components}</>
+      )}
       {hasFooter && <footer className="footer"></footer>}
     </main>
   )

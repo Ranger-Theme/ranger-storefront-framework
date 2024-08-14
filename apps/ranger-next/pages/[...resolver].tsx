@@ -42,14 +42,15 @@ Resolver.getInitialProps = async ({ asPath }: NextPageContext) => {
   const url: any = match?.pop()
   const urlKey: string = url.split('.')?.shift() || ''
   const edegeURL: string = process.env.NEXT_PUBLIC_EDEGE_URL
-  const extname = path.extname(pathname)
+  const extname: string = path.extname(pathname)
+  const isServer: boolean = typeof window === 'undefined'
+  const apiPath: string = isServer ? process.env.NEXT_PUBLIC_HOST_URL : `${window.location.origin}/`
 
   if (extname) return { edegeURL, html: '', urlKey }
 
   const html = await fetchEdege({
-    api: `${process.env.NEXT_PUBLIC_HOST_URL}api/edege/${pathname}`,
-    url: edegeURL,
-    removeHeader: false
+    api: `${apiPath}api/edege/${pathname}`,
+    url: edegeURL
   })
 
   return {

@@ -9,7 +9,12 @@ export interface ScriptElementProps {
   url: string
 }
 
-declare const window: any
+declare global {
+  interface Window {
+    edegePlatform: string
+    edegeURL: string
+  }
+}
 
 const options: HTMLReactParserOptions = {
   replace: (node: any) => {
