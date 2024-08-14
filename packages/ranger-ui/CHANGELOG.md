@@ -1,5 +1,12 @@
 # @ranger-theme/ui
 
+## 0.11.1
+
+### Patch Changes
+
+- Updated dependencies
+  - @ranger-theme/hooks@0.9.0
+
 ## 0.11.0
 
 ### Minor Changes

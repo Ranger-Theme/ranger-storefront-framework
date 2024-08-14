@@ -1,5 +1,13 @@
 # @ranger-theme/vite
 
+## 0.1.23
+
+### Patch Changes
+
+- Updated dependencies
+  - @ranger-theme/hooks@0.9.0
+  - @ranger-theme/ui@0.11.1
+
 ## 0.1.22
 
 ### Patch Changes

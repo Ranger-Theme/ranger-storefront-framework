@@ -1,5 +1,11 @@
 # @ranger-theme/hooks
 
+## 0.9.0
+
+### Minor Changes
+
+- publish the contentful and apollo
+
 ## 0.8.0
 
 ### Minor Changes

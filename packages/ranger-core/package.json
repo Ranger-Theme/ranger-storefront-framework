@@ -1,6 +1,6 @@
 {
   "name": "@ranger-theme/core",
-  "version": "0.11.0",
+  "version": "0.12.0",
   "main": "./dist/index.cjs.js",
   "module": "./dist/index.esm.js",
   "types": "./dist/index.d.ts",
@@ -21,9 +21,9 @@
   },
   "dependencies": {
     "@apollo/client": "^3.10.8",
+    "@ranger-theme/apollo": "workspace:^",
     "@ranger-theme/utils": "workspace:^",
     "@reduxjs/toolkit": "^2.2.6",
-    "graphql": "^16.9.0",
     "lodash-es": "^4.17.21",
     "redux-logger": "^3.0.6"
   },

@@ -1,0 +1,1 @@
+export { useContentful } from './useContentful'

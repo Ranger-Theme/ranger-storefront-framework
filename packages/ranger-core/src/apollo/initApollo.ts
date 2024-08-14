@@ -1,10 +1,10 @@
 import { ApolloClient, ApolloLink, HttpLink, InMemoryCache } from '@apollo/client'
 import { onError } from '@apollo/client/link/error'
+import { shrinkFetchQuery } from '@ranger-theme/apollo'
 import { parseCookies } from '@ranger-theme/utils'
 import { isEmpty, merge } from 'lodash-es'
 
 import { typePolicies } from './policies'
-import { shrinkQuery } from './shrinkQuery'
 
 declare global {
   interface Window {
@@ -20,14 +20,6 @@ type ApolloStruct = {
 
 let apolloClient: any = null
 
-const customFetchToShrinkQuery = (uri: string, options: any) => {
-  let url = uri
-  if (options.method === 'GET') {
-    url = shrinkQuery(uri)
-  }
-  return fetch(url, options)
-}
-
 const createApolloClient = ({ cookies, reduxState, domain }: ApolloStruct) => {
   let apiURL: string = `${process.env.NEXT_PUBLIC_HOST_URL}`
   const isAdobeDeploy: boolean = process.env.NEXT_PUBLIC_DEPLOY_PLATFORM === 'adobe'
@@ -39,7 +31,7 @@ const createApolloClient = ({ cookies, reduxState, domain }: ApolloStruct) => {
   const httpLink = new HttpLink({
     uri: `${typeof window === 'undefined' ? `${apiURL}` : `${window.location.origin}/`}api/graphql`,
     credentials: 'same-origin',
-    fetch: customFetchToShrinkQuery as any,
+    fetch: shrinkFetchQuery as any,
     useGETForQueries: true
   })
 
@@ -71,8 +63,7 @@ const createApolloClient = ({ cookies, reduxState, domain }: ApolloStruct) => {
 
         if (process.browser) {
           window.notification.warning({
-            message: graphQLErrors[index].message,
-            duration: null
+            message: graphQLErrors[index].message
           })
         } else {
           console.error(graphQLErrors[index].message)

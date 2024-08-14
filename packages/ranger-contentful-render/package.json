@@ -1,12 +1,14 @@
 {
-  "name": "@ranger-theme/hooks",
-  "version": "0.9.0",
+  "name": "@ranger-theme/contentful-render",
+  "version": "0.1.0",
   "main": "./dist/index.cjs.js",
   "module": "./dist/index.esm.js",
   "types": "./dist/index.d.ts",
   "license": "MIT",
   "files": [
     "dist",
+    "static",
+    "bin.js",
     "README.md",
     "CHANGELOG.md"
   ],
@@ -20,19 +22,22 @@
     "clean": "rm -rf dist lib"
   },
   "dependencies": {
-    "@ranger-theme/utils": "workspace:^",
-    "ahooks": "^3.8.0"
+    "@ranger-theme/apollo": "workspace:^",
+    "@contentful/rich-text-react-renderer": "^15.22.9",
+    "contentful": "^10.13.2"
   },
   "devDependencies": {
+    "@apollo/client": "^3.10.8",
+    "@contentful/rich-text-types": "^16.8.3",
     "@ranger-theme/eslint-config": "workspace:^",
     "@ranger-theme/ts-config": "workspace:^",
-    "@types/cookie": "^0.6.0",
     "@types/node": "^20.10.6",
     "@types/react": "^18.3.3",
     "react": "^18.2.0",
     "tsup": "^8.0.1"
   },
   "peerDependencies": {
+    "@apollo/client": "^3.10.8",
     "react": "^18.2.0"
   }
 }

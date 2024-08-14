@@ -11,3 +11,11 @@ export const shrinkQuery = (url: string) => {
   values.searchParams.set('query', strippedQuery)
   return values.toString()
 }
+
+export const shrinkFetchQuery = (uri: string, options: any) => {
+  let url = uri
+  if (options.method === 'GET') {
+    url = shrinkQuery(uri)
+  }
+  return fetch(url, options)
+}

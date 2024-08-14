@@ -1,0 +1,1 @@
+export { useAwaitQuery } from './useAwaitQuery'
