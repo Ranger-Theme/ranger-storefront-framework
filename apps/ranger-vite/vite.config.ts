@@ -9,7 +9,7 @@ const viteConfig: any = ({ mode }: ConfigEnv) => {
   const defaultConfig: any = baseConfig({
     mode,
     pkg,
-    https: false,
+    https: true,
     entry: path.resolve(__dirname, 'bootstrap/main.tsx'),
     outDir: 'build'
   })
@@ -26,6 +26,10 @@ const viteConfig: any = ({ mode }: ConfigEnv) => {
         '@': path.resolve(__dirname, './'),
         '~': path.resolve(__dirname, './')
       }
+    },
+    server: {
+      host: '127.0.0.1',
+      port: 3000
     }
   })
 }

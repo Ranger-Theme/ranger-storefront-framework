@@ -6,11 +6,13 @@ import banner from 'vite-plugin-banner'
 import compression from 'vite-plugin-compression'
 import { createHtmlPlugin } from 'vite-plugin-html'
 
+import type { HttpsOptions } from './plugin'
 import {
   completePlugin,
   httpProxy,
   qiankunTransform,
   reporterPlugin,
+  secureHttpsPlugin,
   svgBuilder,
   versionPlugin
 } from './plugin'
@@ -23,11 +25,13 @@ export type BaseConfigType = {
   outDir?: string
   htmlId?: string
   isMicroApp?: boolean
+  isSecureHttps?: boolean
   svgDirPath?: string
   pkg?: any
   reactOptions?: any
   buildOptions?: BuildOptions
   proxyOptions?: Parameters<typeof httpProxy>[0]
+  httpsOptions?: Partial<HttpsOptions>
 }
 
 export const baseConfig = ({
@@ -54,7 +58,8 @@ export const baseConfig = ({
     ]
   },
   buildOptions = {},
-  proxyOptions = {}
+  proxyOptions = {},
+  httpsOptions = {}
 }: BaseConfigType) => {
   process.env = { ...process.env, ...loadEnv(mode, process.cwd(), 'REACT_') }
 
@@ -160,6 +165,7 @@ export const baseConfig = ({
             rewrite: (url: string) => url.replace(/^\/api/, '/')
           }
         }),
+      https && secureHttpsPlugin(httpsOptions),
       svgBuilder(svgDirPath),
       completePlugin(),
       reporterPlugin(),

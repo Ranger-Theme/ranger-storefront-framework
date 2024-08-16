@@ -1,4 +1,5 @@
 export { completePlugin } from './complete'
+export { type HttpsOptions, secureHttpsPlugin } from './https'
 export { httpProxy } from './proxy'
 export { qiankunTransform } from './qiankun'
 export { reporterPlugin } from './report'
