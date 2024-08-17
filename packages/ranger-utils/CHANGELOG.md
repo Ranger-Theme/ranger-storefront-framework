@@ -1,5 +1,11 @@
 # @ranger-theme/utils
 
+## 0.10.0
+
+### Minor Changes
+
+- styled forward props
+
 ## 0.9.0
 
 ### Minor Changes

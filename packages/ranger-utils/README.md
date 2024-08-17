@@ -22,6 +22,6 @@ $ pnpm add --save-dev @ranger-theme/utils
 ## 🔨 Usage
 
 ```js
-import { events, parseCookies, destroyCookie, setItem, getItem, removeItem } from '@ranger-theme/utils'
+import { events, parseCookies, destroyCookie, setItem, getItem, removeItem, isPropValid } from '@ranger-theme/utils'
 ```
 
