@@ -1,3 +1,4 @@
+export { autoComplete, importCDNPlugin, type Options } from './cdn'
 export { completePlugin } from './complete'
 export { type HttpsOptions, secureHttpsPlugin } from './https'
 export { httpProxy } from './proxy'

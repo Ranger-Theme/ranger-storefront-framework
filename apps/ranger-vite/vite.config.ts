@@ -11,16 +11,15 @@ const viteConfig: any = ({ mode }: ConfigEnv) => {
     pkg,
     https: true,
     entry: path.resolve(__dirname, 'bootstrap/main.tsx'),
-    outDir: 'build'
+    outDir: 'build',
+    cdnOptions: {
+      enableInDevMode: true,
+      modules: ['react', 'react-dom']
+    }
   })
 
   return defineConfig({
     ...defaultConfig,
-    // SSL certificate config
-    // https: {
-    //   key: fs.readFileSync('keys/ssl-key.pem'),
-    //   cert: fs.readFileSync('keys/ssl-cert.pem')
-    // },
     resolve: {
       alias: {
         '@': path.resolve(__dirname, './'),

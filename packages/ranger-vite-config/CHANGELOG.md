@@ -1,5 +1,11 @@
 # @ranger-theme/vite-config
 
+## 0.15.0
+
+### Minor Changes
+
+- vite support cdn import
+
 ## 0.14.0
 
 ### Minor Changes

@@ -6,10 +6,12 @@ import banner from 'vite-plugin-banner'
 import compression from 'vite-plugin-compression'
 import { createHtmlPlugin } from 'vite-plugin-html'
 
-import type { HttpsOptions } from './plugin'
+import type { HttpsOptions, Options } from './plugin'
 import {
+  autoComplete,
   completePlugin,
   httpProxy,
+  importCDNPlugin,
   qiankunTransform,
   reporterPlugin,
   secureHttpsPlugin,
@@ -32,6 +34,7 @@ export type BaseConfigType = {
   buildOptions?: BuildOptions
   proxyOptions?: Parameters<typeof httpProxy>[0]
   httpsOptions?: Partial<HttpsOptions>
+  cdnOptions?: Options
 }
 
 export const baseConfig = ({
@@ -59,7 +62,10 @@ export const baseConfig = ({
   },
   buildOptions = {},
   proxyOptions = {},
-  httpsOptions = {}
+  httpsOptions = {},
+  cdnOptions = {
+    modules: []
+  }
 }: BaseConfigType) => {
   process.env = { ...process.env, ...loadEnv(mode, process.cwd(), 'REACT_') }
 
@@ -144,6 +150,7 @@ export const baseConfig = ({
           ]
         }
       }),
+      cdnOptions.modules.length > 0 && importCDNPlugin(cdnOptions),
       pkg &&
         banner(
           `/**\n * name: ${pkg.name}\n * version: v${pkg.version}\n * author: ${pkg.author}\n * version: ${pkg.version}\n * copyright: ${pkg.copyright}\n */`
@@ -190,3 +197,5 @@ export const baseConfig = ({
 
   return config
 }
+
+export { autoComplete }
