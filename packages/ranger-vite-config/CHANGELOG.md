@@ -1,5 +1,11 @@
 # @ranger-theme/vite-config
 
+## 0.16.0
+
+### Minor Changes
+
+- window path for vite issues
+
 ## 0.15.0
 
 ### Minor Changes

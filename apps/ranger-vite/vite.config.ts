@@ -10,7 +10,7 @@ const viteConfig: any = ({ mode }: ConfigEnv) => {
     mode,
     pkg,
     https: true,
-    entry: path.resolve(__dirname, 'bootstrap/main.tsx'),
+    entry: '/bootstrap/main.tsx',
     outDir: 'build',
     cdnOptions: {
       enableInDevMode: true,

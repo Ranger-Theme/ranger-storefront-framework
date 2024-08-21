@@ -1,11 +1,10 @@
 {
   "name": "@ranger-theme/pwa-config",
-  "version": "0.1.0",
-  "main": "index.js",
+  "version": "0.2.0",
+  "main": "src/index.js",
   "license": "MIT",
   "files": [
-    "cache.js",
-    "index.js",
+    "src",
     "README.md",
     "CHANGELOG.md"
   ],
@@ -13,6 +12,13 @@
     "access": "public"
   },
   "dependencies": {
-    "next-pwa": "^5.6.0"
+    "clean-webpack-plugin": "^4.0.0",
+    "globby": "^11.0.4",
+    "terser-webpack-plugin": "^5.3.3",
+    "workbox-webpack-plugin": "^6.5.4",
+    "workbox-window": "^6.5.4"
+  },
+  "devDependencies": {
+    "webpack": "^5.74.0"
   }
 }

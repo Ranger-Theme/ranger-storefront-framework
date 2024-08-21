@@ -101,7 +101,7 @@ module.exports = {
     // 不允许标签与变量同名
     'no-label-var': 2,
     // 禁用特定的全局变量
-    'no-restricted-globals': 2,
+    'no-restricted-globals': 0,
     // 禁止 var 声明 与外层作用域的变量同名
     'no-shadow': 0,
     // 禁止覆盖受限制的标识符

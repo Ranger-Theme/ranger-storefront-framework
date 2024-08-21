@@ -1,5 +1,11 @@
 # @ranger-theme/eslint-config
 
+## 0.9.0
+
+### Minor Changes
+
+- window path for vite issues
+
 ## 0.8.0
 
 ### Minor Changes

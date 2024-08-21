@@ -38,7 +38,7 @@ export type BaseConfigType = {
 }
 
 export const baseConfig = ({
-  entry,
+  entry = '/bootstrap/main.tsx',
   mode,
   https = false,
   port = 3000,

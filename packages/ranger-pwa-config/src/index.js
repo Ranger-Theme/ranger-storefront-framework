@@ -1,5 +1,4 @@
-const withPWA = require('next-pwa')
-const nextCache = require('./cache')
+const withPWA = require('./pwa')
 
 module.exports = ({ timestamp = 0, ...rest }) => {
   const plugin = []
@@ -19,7 +18,6 @@ module.exports = ({ timestamp = 0, ...rest }) => {
         dynamicStartUrl: false,
         buildExcludes: [/middleware-manifest\.json$/],
         publicExcludes: ['!robots.txt', '!version.json'],
-        runtimeCaching: nextCache,
         ...rest
       })
     )

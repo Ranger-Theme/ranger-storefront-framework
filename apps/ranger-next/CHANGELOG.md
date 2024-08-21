@@ -1,5 +1,15 @@
 # @ranger-theme/nextjs
 
+## 1.1.31
+
+### Patch Changes
+
+- Updated dependencies
+  - @ranger-theme/pwa-config@0.2.0
+  - @ranger-theme/adobe-edege@0.7.0
+  - @ranger-theme/core@0.12.1
+  - @ranger-theme/ui@0.11.2
+
 ## 1.1.30
 
 ### Patch Changes
