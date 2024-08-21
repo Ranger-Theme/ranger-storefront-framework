@@ -1,4 +1,4 @@
-import { destroyCookie, parseCookies, setCookie } from 'nookies'
+import { destroyCookie, parseCookies, setCookie } from './nookies'
 
 export interface Options {
   domain?: string

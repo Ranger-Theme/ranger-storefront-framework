@@ -744,12 +744,15 @@ importers:
 
   packages/ranger-utils:
     dependencies:
+      cookie:
+        specifier: ^0.5.0
+        version: 0.5.0
       events:
         specifier: ^3.3.0
         version: 3.3.0
-      nookies:
-        specifier: ^2.5.2
-        version: 2.5.2
+      set-cookie-parser:
+        specifier: ^2.4.6
+        version: 2.7.0
     devDependencies:
       '@ranger-theme/eslint-config':
         specifier: workspace:^
@@ -757,9 +760,18 @@ importers:
       '@ranger-theme/ts-config':
         specifier: workspace:^
         version: link:../ranger-ts-config
+      '@types/cookie':
+        specifier: ^0.5.1
+        version: 0.5.1
+      '@types/express':
+        specifier: ^4.17.13
+        version: 4.17.21
       '@types/node':
         specifier: ^20.10.6
         version: 20.14.13
+      '@types/set-cookie-parser':
+        specifier: ^2.4.2
+        version: 2.4.2
       tsup:
         specifier: ^8.0.1
         version: 8.2.3(typescript@5.5.4)
@@ -3843,6 +3855,10 @@ packages:
       '@types/node': 20.14.13
     dev: true
 
+  /@types/cookie@0.5.1:
+    resolution: {integrity: sha512-COUnqfB2+ckwXXSFInsFdOAWQzCCx+a5hq2ruyj+Vjund94RJQd4LG2u9hnvJrTgunKAaax7ancBYlDrNYxA0g==}
+    dev: true
+
   /@types/cookie@0.6.0:
     resolution: {integrity: sha512-4Kh9a6B2bQciAhf7FSuMRRkUWecJgJu9nPnx3yzpsfXX/c50REIqpHY4C82bXP90qrLtXtkDxTZosYO3UpOwlA==}
     dev: true
@@ -4088,6 +4104,12 @@ packages:
       '@types/http-errors': 2.0.4
       '@types/node': 20.14.13
       '@types/send': 0.17.4
+    dev: true
+
+  /@types/set-cookie-parser@2.4.2:
+    resolution: {integrity: sha512-fBZgytwhYAUkj/jC/FAV4RQ5EerRup1YQsXQCh8rZfiHkc4UahC192oH0smGwsXol3cL3A5oETuAHeQHmhXM4w==}
+    dependencies:
+      '@types/node': 20.14.13
     dev: true
 
   /@types/trusted-types@2.0.7:
@@ -5242,8 +5264,8 @@ packages:
     resolution: {integrity: sha512-QADzlaHc8icV8I7vbaJXJwod9HWYp8uCqf1xa4OfNu1T7JVxQIrUgOWtHdNDtPiywmFbiS12VjotIXLrKM3orQ==}
     dev: false
 
-  /cookie@0.4.2:
-    resolution: {integrity: sha512-aSWTXFzaKWkvHO1Ny/s+ePFpvKsPnjc551iI41v3ny/ow6tBG5Vd+FuqGNhh1LxOmVzOlGUriIlOaokOvhaStA==}
+  /cookie@0.5.0:
+    resolution: {integrity: sha512-YZ3GUyn/o8gfKJlnlX7g7xq4gyO6OSuhGPKaaGssGB2qgDUS0gPgtTvoyZLTt9Ab6dC4hfc9dV5arkvc/OCmrw==}
     engines: {node: '>= 0.6'}
     dev: false
 
@@ -8431,13 +8453,6 @@ packages:
       undefsafe: 2.0.5
     dev: true
 
-  /nookies@2.5.2:
-    resolution: {integrity: sha512-x0TRSaosAEonNKyCrShoUaJ5rrT5KHRNZ5DwPCuizjgrnkpE5DRf3VL7AyyQin4htict92X1EQ7ejDbaHDVdYA==}
-    dependencies:
-      cookie: 0.4.2
-      set-cookie-parser: 2.6.0
-    dev: false
-
   /normalize-package-data@2.5.0:
     resolution: {integrity: sha512-/5CMN3T0R4XTj4DcGaexo+roZSdSFW/0AOOTROrjxzCG1wrWXEsGbRKevjlIL+ZDE4sZlJr5ED4YW0yqmkK+eA==}
     dependencies:
@@ -9887,8 +9902,8 @@ packages:
       - supports-color
     dev: false
 
-  /set-cookie-parser@2.6.0:
-    resolution: {integrity: sha512-RVnVQxTXuerk653XfuliOxBP81Sf0+qfQE73LIYKcyMYHG94AuH0kgrQpRDuTZnSmjpysHmzxJXKNfa6PjFhyQ==}
+  /set-cookie-parser@2.7.0:
+    resolution: {integrity: sha512-lXLOiqpkUumhRdFF3k1osNXCy9akgx/dyPZ5p8qAg9seJzXr5ZrlqZuWIMuY6ejOsVLE6flJ5/h3lsn57fQ/PQ==}
     dev: false
 
   /set-function-length@1.2.2:

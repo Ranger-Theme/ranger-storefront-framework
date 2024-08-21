@@ -1,5 +1,11 @@
 # @ranger-theme/utils
 
+## 0.11.0
+
+### Minor Changes
+
+- cookie typescript
+
 ## 0.10.0
 
 ### Minor Changes
