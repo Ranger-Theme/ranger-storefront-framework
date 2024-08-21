@@ -4,6 +4,8 @@ const webpack = require('webpack')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const TerserPlugin = require('terser-webpack-plugin')
 
+const logger = require('./logger')
+
 const buildCustomWorker = ({ id, basedir, customWorkerDir, destdir, plugins, minify }) => {
   let workerDir = undefined
 
@@ -23,8 +25,8 @@ const buildCustomWorker = ({ id, basedir, customWorkerDir, destdir, plugins, min
   if (customWorkerEntries.length === 0) return
 
   if (customWorkerEntries.length > 1) {
-    console.warn(
-      `> [PWA] WARNING: More than one custom worker found (${customWorkerEntries.join(
+    logger.warn(
+      `WARNING: More than one custom worker found (${customWorkerEntries.join(
         ','
       )}), not building a custom worker`
     )
@@ -32,8 +34,8 @@ const buildCustomWorker = ({ id, basedir, customWorkerDir, destdir, plugins, min
   }
 
   const customWorkerEntry = customWorkerEntries[0]
-  console.info(`> [PWA] Custom worker found: ${customWorkerEntry}`)
-  console.info(`> [PWA] Build custom worker: ${path.join(destdir, name)}`)
+  logger.info(`Custom worker found: ${customWorkerEntry}`)
+  logger.info(`Build custom worker: ${path.join(destdir, name)}`)
   webpack({
     mode: 'none',
     target: 'webworker',
@@ -109,8 +111,8 @@ const buildCustomWorker = ({ id, basedir, customWorkerDir, destdir, plugins, min
       : undefined
   }).run((error, status) => {
     if (error || status.hasErrors()) {
-      console.error('> [PWA] Failed to build custom worker')
-      console.error(status.toString({ colors: true }))
+      logger.error('Failed to build custom worker')
+      logger.error(status.toString({ colors: true }))
       process.exit(-1)
     }
   })

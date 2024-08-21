@@ -1,5 +1,12 @@
 # @ranger-theme/nextjs
 
+## 1.1.33
+
+### Patch Changes
+
+- Updated dependencies
+  - @ranger-theme/pwa-config@0.3.0
+
 ## 1.1.32
 
 ### Patch Changes

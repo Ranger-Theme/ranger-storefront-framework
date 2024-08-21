@@ -1,5 +1,11 @@
 # @ranger-theme/pwa-config
 
+## 0.3.0
+
+### Minor Changes
+
+- logger cmd color
+
 ## 0.2.0
 
 ### Minor Changes

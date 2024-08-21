@@ -4,6 +4,8 @@ const webpack = require('webpack')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const TerserPlugin = require('terser-webpack-plugin')
 
+const logger = require('./logger')
+
 const getFallbackEnvs = ({ fallbacks, basedir, id, pageExtensions }) => {
   let { document, data } = fallbacks
 
@@ -41,15 +43,15 @@ const getFallbackEnvs = ({ fallbacks, basedir, id, pageExtensions }) => {
 
   if (Object.values(envs).filter((v) => !!v).length === 0) return
 
-  console.info('> [PWA] Fallback to precache routes when fetch failed from cache or network:')
+  logger.info('Fallback to precache routes when fetch failed from cache or network:')
   if (envs.__PWA_FALLBACK_DOCUMENT__)
-    console.info(`> [PWA]   document (page): ${envs.__PWA_FALLBACK_DOCUMENT__}`)
-  if (envs.__PWA_FALLBACK_IMAGE__) console.info(`> [PWA]   image: ${envs.__PWA_FALLBACK_IMAGE__}`)
-  if (envs.__PWA_FALLBACK_AUDIO__) console.info(`> [PWA]   audio: ${envs.__PWA_FALLBACK_AUDIO__}`)
-  if (envs.__PWA_FALLBACK_VIDEO__) console.info(`> [PWA]   video: ${envs.__PWA_FALLBACK_VIDEO__}`)
-  if (envs.__PWA_FALLBACK_FONT__) console.info(`> [PWA]   font: ${envs.__PWA_FALLBACK_FONT__}`)
+    logger.info(`document (page): ${envs.__PWA_FALLBACK_DOCUMENT__}`)
+  if (envs.__PWA_FALLBACK_IMAGE__) logger.info(`image: ${envs.__PWA_FALLBACK_IMAGE__}`)
+  if (envs.__PWA_FALLBACK_AUDIO__) logger.info(`audio: ${envs.__PWA_FALLBACK_AUDIO__}`)
+  if (envs.__PWA_FALLBACK_VIDEO__) logger.info(`video: ${envs.__PWA_FALLBACK_VIDEO__}`)
+  if (envs.__PWA_FALLBACK_FONT__) logger.info(`font: ${envs.__PWA_FALLBACK_FONT__}`)
   if (envs.__PWA_FALLBACK_DATA__)
-    console.info(`> [PWA]   data (/_next/data/**/*.json): ${envs.__PWA_FALLBACK_DATA__}`)
+    logger.info(`data (/_next/data/**/*.json): ${envs.__PWA_FALLBACK_DATA__}`)
 
   return envs
 }
@@ -137,8 +139,8 @@ const buildFallbackWorker = ({ id, fallbacks, basedir, destdir, minify, pageExte
       : undefined
   }).run((error, status) => {
     if (error || status.hasErrors()) {
-      console.error('> [PWA] Failed to build fallback worker')
-      console.error(status.toString({ colors: true }))
+      logger.error('Failed to build fallback worker')
+      logger.error(status.toString({ colors: true }))
       process.exit(-1)
     }
   })

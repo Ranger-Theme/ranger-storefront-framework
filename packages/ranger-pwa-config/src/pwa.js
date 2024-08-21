@@ -6,6 +6,7 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const WorkboxPlugin = require('workbox-webpack-plugin')
 
 const defaultCache = require('./cache')
+const logger = require('./logger')
 const buildCustomWorker = require('./build-custom-worker')
 const buildFallbackWorker = require('./build-fallback-worker')
 
@@ -64,17 +65,17 @@ module.exports =
       }
 
       if (disable) {
-        if (options.isServer) console.info('> [PWA] PWA support is disabled')
+        if (options.isServer) logger.info('PWA support is disabled')
         return config
       }
 
       if (subdomainPrefix) {
-        console.error(
-          '> [PWA] subdomainPrefix is deprecated, use basePath in next.config.js instead: https://nextjs.org/docs/api-reference/next.config.js/basepath'
+        logger.error(
+          'subdomainPrefix is deprecated, use basePath in next.config.js instead: https://nextjs.org/docs/api-reference/next.config.js/basepath'
         )
       }
 
-      console.info(`> [PWA] Compile ${options.isServer ? 'server' : 'client (static)'}`)
+      logger.info(`Compile ${options.isServer ? 'server' : 'client (static)'}`)
 
       let { runtimeCaching = defaultCache } = pluginOptions
       const _scope = path.posix.join(scope, '/')
@@ -118,17 +119,17 @@ module.exports =
         }
 
         if (register) {
-          console.info(`> [PWA] Auto register service worker with: ${path.resolve(registerJs)}`)
+          logger.info(`Auto register service worker with: ${path.resolve(registerJs)}`)
         } else {
-          console.info(
-            '> [PWA] Auto register service worker is disabled, please call following code in componentDidMount callback or useEffect hook'
+          logger.info(
+            'Auto register service worker is disabled, please call following code in componentDidMount callback or useEffect hook'
           )
-          console.info('> [PWA]   window.workbox.register()')
+          logger.info('window.workbox.register()')
         }
 
-        console.info(`> [PWA] Service worker: ${path.join(_dest, sw)}`)
-        console.info(`> [PWA]   url: ${_sw}`)
-        console.info(`> [PWA]   scope: ${_scope}`)
+        logger.info(`Service worker: ${path.join(_dest, sw)}`)
+        logger.info(`url: ${_sw}`)
+        logger.info(`scope: ${_scope}`)
 
         config.plugins.push(
           new CleanWebpackPlugin({
@@ -268,7 +269,7 @@ module.exports =
 
         if (workbox.swSrc) {
           const swSrc = path.join(options.dir, workbox.swSrc)
-          console.info(`> [PWA] Inject manifest in ${swSrc}`)
+          logger.info(`Inject manifest in ${swSrc}`)
           config.plugins.push(
             new WorkboxPlugin.InjectManifest({
               ...workboxCommon,
@@ -278,8 +279,8 @@ module.exports =
           )
         } else {
           if (dev) {
-            console.info(
-              '> [PWA] Build in develop mode, cache and precache are mostly disabled. This means offline support is disabled, but you can continue developing other functions in service worker.'
+            logger.info(
+              'Build in develop mode, cache and precache are mostly disabled. This means offline support is disabled, but you can continue developing other functions in service worker.'
             )
 
             ignoreURLParametersMatching.push(/ts/)
