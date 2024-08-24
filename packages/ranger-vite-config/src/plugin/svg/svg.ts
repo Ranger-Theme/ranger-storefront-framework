@@ -44,7 +44,7 @@ const findSvgFile = (dir: string) => {
             content += `viewBox="0 0 ${width} ${height}"`
           }
 
-          return `<symbol id="${dirent.name.replace('.svg', '')}" ${content}>`
+          return `<symbol id="icon-${dirent.name.replace('.svg', '')}" ${content}>`
         })
         .replace('</svg>', '</symbol>')
 

@@ -13,7 +13,7 @@ const viteConfig: any = ({ mode }: ConfigEnv) => {
     entry: '/bootstrap/main.tsx',
     outDir: 'build',
     cdnOptions: {
-      enableInDevMode: true,
+      enableInDevMode: false,
       modules: ['react', 'react-dom']
     }
   })

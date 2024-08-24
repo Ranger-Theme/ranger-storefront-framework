@@ -1,5 +1,11 @@
 # @ranger-theme/vite-config
 
+## 0.17.0
+
+### Minor Changes
+
+- support svg id
+
 ## 0.16.0
 
 ### Minor Changes
