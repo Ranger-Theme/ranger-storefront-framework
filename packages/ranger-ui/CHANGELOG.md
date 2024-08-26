@@ -1,5 +1,15 @@
 # @ranger-theme/ui
 
+## 0.12.0
+
+### Minor Changes
+
+- nextjs support external cdn
+
+### Patch Changes
+
+- @ranger-theme/hooks@0.9.3
+
 ## 0.11.3
 
 ### Patch Changes

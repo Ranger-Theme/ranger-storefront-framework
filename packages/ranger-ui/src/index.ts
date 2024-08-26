@@ -1,3 +1,4 @@
+export { CDNJavascript, type CDNJavascriptProps } from './CDNJavascript'
 export { CookieConsent, type CookieConsentProps } from './CookieConsent'
 export { CopyBoard, type CopyBoardProps } from './CopyBoard'
 export { CountDown, type CountDownProps } from './CountDown'

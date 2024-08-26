@@ -16,5 +16,8 @@ module.exports = nextConfig({
     reactRemoveProperties: isProd,
     removeConsole: false
   },
+  externalOptions: {
+    enabled: true
+  },
   plugins: [...pwaConfig({ timestamp })]
 })

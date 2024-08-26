@@ -1,5 +1,12 @@
 # @ranger-theme/hooks
 
+## 0.9.3
+
+### Patch Changes
+
+- Updated dependencies
+  - @ranger-theme/utils@0.12.0
+
 ## 0.9.2
 
 ### Patch Changes

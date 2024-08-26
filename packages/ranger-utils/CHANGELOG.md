@@ -1,5 +1,11 @@
 # @ranger-theme/utils
 
+## 0.12.0
+
+### Minor Changes
+
+- nextjs support external cdn
+
 ## 0.11.0
 
 ### Minor Changes

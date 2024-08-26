@@ -4,11 +4,19 @@ const dateformat = require('dateformat')
 const nextBuildId = require('./build')
 const BannerPlugin = require('./banner')
 const BuildTimePlugin = require('./time')
+const ExternalCDNPlugin = require('./cdn')
 
 const isProd = process.env.NODE_ENV === 'production'
 const isAnalyzer = process.env.NEXT_PUBLIC_VISUALIZE_ENABLE === 'true'
 
-module.exports = ({ dirname = __dirname, git = true, pkg = {}, timestamp = 0, ...rest }) => {
+module.exports = ({
+  dirname = __dirname,
+  git = true,
+  pkg = {},
+  timestamp = 0,
+  externalOptions: { enabled = false, externals = [] },
+  ...rest
+}) => {
   const { plugins, transpilePackages, cacheGroups, ...options } = rest
   let buildIdOptions = {}
 
@@ -133,6 +141,13 @@ module.exports = ({ dirname = __dirname, git = true, pkg = {}, timestamp = 0, ..
   }
 
   const nextPlugins = [...(plugins ?? [])]
+
+  nextPlugins.push(
+    ExternalCDNPlugin({
+      enabled,
+      externals
+    })
+  )
 
   if (isAnalyzer)
     nextPlugins.push(

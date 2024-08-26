@@ -1,5 +1,11 @@
 # @ranger-theme/nextjs-config
 
+## 0.10.0
+
+### Minor Changes
+
+- nextjs support external cdn
+
 ## 0.9.0
 
 ### Minor Changes
