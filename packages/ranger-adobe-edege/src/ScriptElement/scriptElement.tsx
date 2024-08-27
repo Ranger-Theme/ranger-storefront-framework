@@ -35,6 +35,7 @@ const ScriptElement: React.FC<ScriptElementProps> = ({ html, platform = 'SSR', u
   const scriptEle = (head?.[0] ?? '').match(/<script[^>]*>([\s\S]*?)<\/script>/g) || []
   const titleEle = title?.[0] ?? ''
   const components = parse(`${scriptEle.join('')}${titleEle}`, options) as any[]
+  const isArray = Array.isArray(components)
 
   useEffect(() => {
     window.edegePlatform = platform
@@ -43,13 +44,19 @@ const ScriptElement: React.FC<ScriptElementProps> = ({ html, platform = 'SSR', u
   }, [])
 
   return isRender ? (
-    <Helmet>
-      {components.map((component: any) => {
-        if (!React.isValidElement(component)) return null
-        if (component?.type === React.Fragment) return null
-        return component
-      })}
-    </Helmet>
+    <>
+      {isArray ? (
+        <Helmet>
+          {components.map((component: any) => {
+            if (!React.isValidElement(component)) return null
+            if (component?.type === React.Fragment) return null
+            return component
+          })}
+        </Helmet>
+      ) : (
+        <Helmet>{components}</Helmet>
+      )}
+    </>
   ) : null
 }
 

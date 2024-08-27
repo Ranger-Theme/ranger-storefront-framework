@@ -1,5 +1,11 @@
 # @ranger-theme/adobe-edege
 
+## 0.8.0
+
+### Minor Changes
+
+- hack the script resource
+
 ## 0.7.0
 
 ### Minor Changes
