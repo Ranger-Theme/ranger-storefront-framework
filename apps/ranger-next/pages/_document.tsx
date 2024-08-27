@@ -4,6 +4,8 @@ import { CDNJavascript } from '@ranger-theme/ui'
 import type { DocumentContext, DocumentInitialProps, DocumentProps } from 'next/document'
 import Document, { Head, Html, Main, NextScript } from 'next/document'
 
+import SvgResource from '@/components/SvgResource'
+
 class NextDocument extends Document<DocumentProps & { deviceType: string; helmet: HelmetData }> {
   static async getInitialProps(
     ctx: DocumentContext
@@ -65,6 +67,7 @@ class NextDocument extends Document<DocumentProps & { deviceType: string; helmet
           />
         </Head>
         <body {...this.helmetBodyAttr}>
+          <SvgResource />
           <Main />
           <NextScript />
         </body>

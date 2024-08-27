@@ -60,3 +60,19 @@ module.exports = nextConfig({
 })
 ```
 
+## SVG Builder
+- generate svg builder config file: next.svg.js
+```js
+module.exports = {
+  dir: 'svgs',
+  output: 'components',
+  componentName: 'SvgResource',
+  extension: 'ts'
+}
+```
+
+- use commond to generate svg components: `pnpm svgbuilder`
+```sh
+pnpm svgbuilder
+```
+

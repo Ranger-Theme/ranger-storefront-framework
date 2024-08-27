@@ -1,5 +1,11 @@
 # @ranger-theme/nextjs-config
 
+## 0.11.0
+
+### Minor Changes
+
+- next command bin to svg
+
 ## 0.10.0
 
 ### Minor Changes

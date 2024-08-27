@@ -17,7 +17,7 @@ module.exports = nextConfig({
     removeConsole: false
   },
   externalOptions: {
-    enabled: true
+    enabled: false
   },
   plugins: [...pwaConfig({ timestamp })]
 })

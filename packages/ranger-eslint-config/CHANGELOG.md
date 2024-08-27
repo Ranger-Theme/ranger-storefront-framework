@@ -1,5 +1,11 @@
 # @ranger-theme/eslint-config
 
+## 0.10.0
+
+### Minor Changes
+
+- next command bin to svg
+
 ## 0.9.0
 
 ### Minor Changes
