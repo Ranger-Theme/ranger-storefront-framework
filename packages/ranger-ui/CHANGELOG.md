@@ -1,5 +1,11 @@
 # @ranger-theme/ui
 
+## 0.13.0
+
+### Minor Changes
+
+- container and performance
+
 ## 0.12.0
 
 ### Minor Changes
