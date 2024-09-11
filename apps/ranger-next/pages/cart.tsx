@@ -1,5 +1,12 @@
-import { useRef } from 'react'
-import { CopyBoard, CountDown, IntersectionScroll, PrintScreen, Resizable } from '@ranger-theme/ui'
+import { useRef, useState } from 'react'
+import {
+  CopyBoard,
+  CountDown,
+  IntersectionScroll,
+  PrintScreen,
+  Resizable,
+  SignatureCanvas
+} from '@ranger-theme/ui'
 import dynamic from 'next/dynamic'
 import Head from 'next/head'
 
@@ -23,8 +30,9 @@ const Player = dynamic(
 )
 
 const Cart = () => {
-  console.info('Cart is render...')
   const componentRef = useRef<any>(null)
+  const sigPadRef = useRef<any>(null)
+  const [trimmedDataURL, setTrimmedDataURL] = useState<string>('')
 
   const csvData = [
     ['firstname', 'lastname', 'email'],
@@ -37,6 +45,14 @@ const Cart = () => {
     window.alert(text)
   }
 
+  const onClear = () => {
+    sigPadRef.current.clear()
+  }
+
+  const onTrim = () => {
+    setTrimmedDataURL(sigPadRef.current.getTrimmedCanvas().toDataURL('image/png'))
+  }
+
   return (
     <>
       <Head>
@@ -46,7 +62,21 @@ const Cart = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div className="cart">
+        <div>{trimmedDataURL}</div>
         <div ref={componentRef}>
+          <div>
+            <SignatureCanvas
+              penColor="green"
+              canvasProps={{ width: 500, height: 200, className: 'sigCanvas' }}
+              ref={sigPadRef}
+            />
+            <button type="button" onClick={onClear}>
+              Clear
+            </button>
+            <button type="button" onClick={onTrim}>
+              Trim
+            </button>
+          </div>
           <Player
             className="react-player"
             url="https://www.youtube.com/watch?v=aL27fX5kv9U"

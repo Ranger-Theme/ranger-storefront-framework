@@ -5,6 +5,7 @@ import parse from 'html-react-parser'
 export interface HtmlELementProps {
   html: string
   url: string
+  selector?: string
 }
 
 declare global {
@@ -13,7 +14,7 @@ declare global {
   }
 }
 
-const HtmlELement: React.FC<HtmlELementProps> = ({ html, url }) => {
+const HtmlELement: React.FC<HtmlELementProps> = ({ html, url, selector = '' }) => {
   const content = html.match(/<main[^>]*>([\s\S]*?)<\/main>/g)
   const htmlDom = content?.[0] ?? ''
   const htmlEle = htmlDom.replace(/<main>/g, '').replace(/<\/main>/g, '')
@@ -43,7 +44,7 @@ const HtmlELement: React.FC<HtmlELementProps> = ({ html, url }) => {
   }, [])
 
   return (
-    <main className="adobe-edege">
+    <main className={`adobe-edege ${selector}`}>
       {hasHeader && <header className="header"></header>}
       {isArray ? (
         <>

@@ -1,5 +1,11 @@
 # @ranger-theme/adobe-edege
 
+## 0.9.0
+
+### Minor Changes
+
+- support html class
+
 ## 0.8.0
 
 ### Minor Changes

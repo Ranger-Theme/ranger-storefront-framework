@@ -428,6 +428,7 @@ module.exports = {
     'react/require-default-props': 0,
     'react/state-in-constructor': 0,
     'react/destructuring-assignment': 0,
+    'react/no-unused-class-component-methods': 0,
     // prettier代码格式化
     'prettier/prettier': [
       'error',

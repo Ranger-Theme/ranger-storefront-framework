@@ -9,10 +9,18 @@ export interface EdegeElementProps extends React.DetailsHTMLAttributes<any> {
   host: string
   html: string
   url: string
+  selector?: string
   tag?: keyof JSX.IntrinsicElements
 }
 
-const EdegeElement: FC<EdegeElementProps> = ({ host, html, url, tag = 'div', ...props }) => {
+const EdegeElement: FC<EdegeElementProps> = ({
+  host,
+  html,
+  url,
+  selector,
+  tag = 'div',
+  ...props
+}) => {
   const Component = tag
 
   return (
@@ -20,7 +28,7 @@ const EdegeElement: FC<EdegeElementProps> = ({ host, html, url, tag = 'div', ...
       <HeadElement host={host} html={html} url={url} />
       <ScriptElement html={html} url={url} />
       <Component {...props}>
-        <HtmlELement html={html} url={url} />
+        <HtmlELement html={html} url={url} selector={selector} />
       </Component>
     </>
   )
