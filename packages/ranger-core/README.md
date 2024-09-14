@@ -22,6 +22,6 @@ $ pnpm add --save-dev @ranger-theme/core
 ## 🔨 Usage
 
 ```js
-import { withApollo, withRedux } from '@ranger-theme/core'
+import { withApollo, withRedux, useAwaitQuery, useTransation } from '@ranger-theme/core'
 ```
 

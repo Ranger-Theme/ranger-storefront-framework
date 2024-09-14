@@ -1,5 +1,11 @@
 # @ranger-theme/core
 
+## 0.12.4
+
+### Patch Changes
+
+- support i18n and hooks
+
 ## 0.12.3
 
 ### Patch Changes

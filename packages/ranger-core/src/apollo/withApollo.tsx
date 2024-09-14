@@ -20,6 +20,14 @@ export const withApollo = (App: any) =>
       const proto: string = isServer
         ? (appContext.ctx?.req?.headers?.['x-forwarded-proto'] ?? '')
         : window.location.protocol
+      // filter http only secure
+      const usedCookies: any = {
+        access_token: cookies?.access_token ?? '',
+        cart_id: cookies?.cart_id ?? '',
+        cookie_consent: cookies?.cookie_consent ?? '',
+        currency_code: cookies?.currency_code ?? '',
+        store_code: cookies?.store_code ?? ''
+      }
 
       if (isAdobeDeploy) {
         host = isServer
@@ -33,7 +41,7 @@ export const withApollo = (App: any) =>
 
       const apollo = initApollo({
         apolloState: {},
-        cookies,
+        cookies: usedCookies,
         domain
       })
 
@@ -59,7 +67,7 @@ export const withApollo = (App: any) =>
       return {
         ...appProps,
         apolloState,
-        cookies
+        cookies: usedCookies
       }
     }
 

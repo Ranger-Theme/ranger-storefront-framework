@@ -1,6 +1,6 @@
 {
   "name": "@ranger-theme/core",
-  "version": "0.12.3",
+  "version": "0.12.4",
   "main": "./dist/index.cjs.js",
   "module": "./dist/index.esm.js",
   "types": "./dist/index.d.ts",
@@ -21,6 +21,8 @@
   },
   "dependencies": {
     "@apollo/client": "^3.10.8",
+    "@formatjs/intl-datetimeformat": "^6.12.5",
+    "@formatjs/intl-numberformat": "^8.10.3",
     "@ranger-theme/apollo": "workspace:^",
     "@ranger-theme/utils": "workspace:^",
     "@reduxjs/toolkit": "^2.2.6",
@@ -35,10 +37,12 @@
     "@types/react": "^18.3.3",
     "@types/redux-logger": "^3.0.13",
     "react": "^18.2.0",
+    "react-intl": "^6.6.8",
     "tsup": "^8.0.1"
   },
   "peerDependencies": {
-    "react": "^18.2.0"
+    "react": "^18.2.0",
+    "react-intl": "^6.6.8"
   },
   "exports": {
     "require": "./dist/index.cjs.js",

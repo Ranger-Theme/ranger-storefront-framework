@@ -1,5 +1,7 @@
 import Link from 'next/link'
 
+import FormattedMessage from '@/components/FormattedMessage'
+
 const Header = () => {
   return (
     <header>
@@ -24,7 +26,9 @@ const Header = () => {
       </Link>
       &nbsp;&nbsp;
       <Link href="/cart">
-        <span>Cart</span>
+        <span>
+          <FormattedMessage id="global.cart" />
+        </span>
       </Link>
       &nbsp;&nbsp;
       <Link href="/checkout">
