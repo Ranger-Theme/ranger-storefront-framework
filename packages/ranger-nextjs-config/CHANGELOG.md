@@ -1,5 +1,11 @@
 # @ranger-theme/nextjs-config
 
+## 0.12.0
+
+### Minor Changes
+
+- default options
+
 ## 0.11.0
 
 ### Minor Changes

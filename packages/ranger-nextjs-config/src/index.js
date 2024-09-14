@@ -14,7 +14,7 @@ module.exports = ({
   git = true,
   pkg = {},
   timestamp = 0,
-  externalOptions: { enabled = false, externals = [] },
+  externalOptions = { enabled: false, externals: [] },
   ...rest
 }) => {
   const { plugins, transpilePackages, cacheGroups, ...options } = rest
@@ -144,8 +144,8 @@ module.exports = ({
 
   nextPlugins.push(
     ExternalCDNPlugin({
-      enabled,
-      externals
+      enabled: externalOptions.enabled,
+      externals: externalOptions.externals
     })
   )
 
