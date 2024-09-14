@@ -1,5 +1,11 @@
 # @ranger-theme/nextjs-config
 
+## 0.12.1
+
+### Patch Changes
+
+- format svg attrs
+
 ## 0.12.0
 
 ### Minor Changes

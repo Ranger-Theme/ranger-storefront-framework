@@ -33,6 +33,8 @@ const findSvgFile = (dir) => {
         .toString()
         .replace(clearReturn, '')
         .replace(classReturn, 'className')
+        .replace(/fill-rule=/g, 'fillRule=')
+        .replace(/clip-rule=/g, 'clipRule=')
         .replace(svgTitle, (_$1, $2) => {
           let width = 0
           let height = 0
