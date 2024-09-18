@@ -1,5 +1,11 @@
 # @ranger-theme/core
 
+## 0.12.5
+
+### Patch Changes
+
+- next router link
+
 ## 0.12.4
 
 ### Patch Changes

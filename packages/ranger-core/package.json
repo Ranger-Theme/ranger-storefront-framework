@@ -1,6 +1,6 @@
 {
   "name": "@ranger-theme/core",
-  "version": "0.12.4",
+  "version": "0.12.5",
   "main": "./dist/index.cjs.js",
   "module": "./dist/index.esm.js",
   "types": "./dist/index.d.ts",
@@ -36,11 +36,13 @@
     "@types/node": "^20.10.6",
     "@types/react": "^18.3.3",
     "@types/redux-logger": "^3.0.13",
+    "next": "^14.1.0",
     "react": "^18.2.0",
     "react-intl": "^6.6.8",
     "tsup": "^8.0.1"
   },
   "peerDependencies": {
+    "next": "^14.1.0",
     "react": "^18.2.0",
     "react-intl": "^6.6.8"
   },
