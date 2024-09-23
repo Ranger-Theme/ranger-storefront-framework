@@ -1,5 +1,11 @@
 # @ranger-theme/nextjs-config
 
+## 0.13.0
+
+### Minor Changes
+
+- update code
+
 ## 0.12.2
 
 ### Patch Changes
