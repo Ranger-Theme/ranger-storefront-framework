@@ -1,5 +1,11 @@
 # @ranger-theme/nextjs-config
 
+## 0.12.2
+
+### Patch Changes
+
+- svg clip path support
+
 ## 0.12.1
 
 ### Patch Changes

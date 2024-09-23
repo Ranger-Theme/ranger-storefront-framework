@@ -61,7 +61,7 @@ const createApolloClient = ({ cookies, reduxState, domain }: ApolloStruct) => {
       graphQLErrors.forEach(({ message }: any, index: number) => {
         graphQLErrors[index].message = message.replace('GraphQL error: ', '')
 
-        if (process.browser) {
+        if (typeof window !== 'undefined') {
           window.notification.warning({
             message: graphQLErrors[index].message
           })
@@ -72,7 +72,7 @@ const createApolloClient = ({ cookies, reduxState, domain }: ApolloStruct) => {
     }
 
     if (networkError) {
-      if (process.browser) {
+      if (typeof window !== 'undefined') {
         window.notification.error({
           message: networkError
         })

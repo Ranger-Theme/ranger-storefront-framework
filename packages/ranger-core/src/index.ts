@@ -1,5 +1,5 @@
 export { withApollo } from './apollo'
-export { useAwaitQuery, useTransation } from './hooks'
+export { useTransation } from './hooks'
 export { Link } from './link'
 export { LocaleProvider } from './locale'
 export { withRedux } from './redux'

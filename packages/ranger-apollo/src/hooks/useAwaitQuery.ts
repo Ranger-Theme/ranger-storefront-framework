@@ -1,13 +1,14 @@
 import { useCallback } from 'react'
-import type { DocumentNode, QueryOptions } from '@apollo/client'
-import { useApolloClient } from '@apollo/client'
+import { ApolloQueryResult, DocumentNode, QueryOptions, useApolloClient } from '@apollo/client'
+
+interface AwaitQueryOptions extends Omit<QueryOptions, 'query'> {}
 
 export const useAwaitQuery = (query: DocumentNode) => {
   const apolloClient = useApolloClient()
 
   return useCallback(
-    async (options: Partial<QueryOptions<any, any>>) => {
-      const res = await apolloClient.query({
+    async (options?: AwaitQueryOptions) => {
+      const res: ApolloQueryResult<any> = await apolloClient.query({
         ...options,
         query
       })

@@ -1,5 +1,11 @@
 # @ranger-theme/ui
 
+## 0.13.1
+
+### Patch Changes
+
+- svg clip path support
+
 ## 0.13.0
 
 ### Minor Changes

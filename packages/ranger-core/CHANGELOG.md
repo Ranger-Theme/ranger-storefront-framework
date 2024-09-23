@@ -1,5 +1,13 @@
 # @ranger-theme/core
 
+## 0.12.6
+
+### Patch Changes
+
+- svg clip path support
+- Updated dependencies
+  - @ranger-theme/apollo@0.1.1
+
 ## 0.12.5
 
 ### Patch Changes
