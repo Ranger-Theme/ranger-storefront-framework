@@ -26,7 +26,7 @@ export {
   type ScrollElementProps,
   scroller,
   ScrollLink,
-  type ScrollLinkType
+  type ScrollLinkProps
 } from './ScrollTarget'
 export { SignatureCanvas, type SignatureCanvasProps } from './SignatureCanvas'
 export { Slick, type SlickProps } from './Slick'

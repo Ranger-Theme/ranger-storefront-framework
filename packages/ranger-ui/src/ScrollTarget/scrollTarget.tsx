@@ -1,10 +1,29 @@
 import type { FC } from 'react'
 import { Element, Link } from 'react-scroll'
-import type { ReactScrollLinkProps } from 'react-scroll/modules/components/Link'
 
-export type ScrollLinkType = ReactScrollLinkProps & Omit<React.HTMLProps<HTMLButtonElement>, 'ref'>
+export interface ScrollLinkProps extends Omit<React.HTMLProps<HTMLButtonElement>, 'ref'> {
+  to: string
+  containerId?: string | undefined
+  activeClass?: string | undefined
+  activeStyle?: React.CSSProperties | undefined
+  spy?: boolean | undefined
+  hashSpy?: boolean | undefined
+  horizontal?: boolean | undefined
+  smooth?: boolean | string | undefined
+  offset?: number | undefined
+  delay?: number | undefined
+  isDynamic?: boolean | undefined
+  onClick?(): void
+  duration?: number | string | ((distance: number) => number) | undefined
+  absolute?: boolean | undefined
+  onSetActive?(to: string, element: HTMLElement): void
+  onSetInactive?(to: string, element: HTMLElement): void
+  ignoreCancelEvents?: boolean | undefined
+  saveHashHistory?: boolean | undefined
+  spyThrottle?: number | undefined
+}
 
-export const ScrollLink: FC<ScrollLinkType> = ({ to = '', children, ...props }) => {
+export const ScrollLink: FC<ScrollLinkProps> = ({ to = '', children, ...props }) => {
   return (
     <Link to={to} {...props}>
       {children}
