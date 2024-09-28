@@ -1,13 +1,10 @@
 import type { FC } from 'react'
-import type { LinkProps } from 'react-scroll'
 import { Element, Link } from 'react-scroll'
+import type { ReactScrollLinkProps } from 'react-scroll/modules/components/Link'
 
-export interface ScrollLinkProps extends Omit<LinkProps, 'ref'> {
-  to: string
-  children?: React.ReactNode
-}
+export type ScrollLinkType = ReactScrollLinkProps & Omit<React.HTMLProps<HTMLButtonElement>, 'ref'>
 
-export const ScrollLink: FC<ScrollLinkProps> = ({ to = '', children, ...props }) => {
+export const ScrollLink: FC<ScrollLinkType> = ({ to = '', children, ...props }) => {
   return (
     <Link to={to} {...props}>
       {children}
