@@ -19,5 +19,14 @@ export { Player, type PlayerProps } from './Player'
 export { Portal, type PortalProps } from './Portal'
 export { PrintScreen, type PrintScreenProps, useReactToPrint } from './PrintScreen'
 export { Resizable, type ResizableProps } from './Resizable'
+export {
+  Events,
+  scroll,
+  ScrollElement,
+  type ScrollElementProps,
+  scroller,
+  ScrollLink,
+  type ScrollLinkProps
+} from './ScrollTarget'
 export { SignatureCanvas, type SignatureCanvasProps } from './SignatureCanvas'
 export { Slick, type SlickProps } from './Slick'

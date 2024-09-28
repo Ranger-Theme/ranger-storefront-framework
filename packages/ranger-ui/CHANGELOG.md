@@ -1,5 +1,11 @@
 # @ranger-theme/ui
 
+## 0.13.2
+
+### Patch Changes
+
+- scroll element
+
 ## 0.13.1
 
 ### Patch Changes
