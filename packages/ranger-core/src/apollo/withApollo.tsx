@@ -5,6 +5,7 @@ import { parseCookies } from '@ranger-theme/utils'
 import { initApollo } from './initApollo'
 
 const isProd: boolean = process.env.NODE_ENV === 'production'
+const disabledSSR: boolean = process.env.NEXT_PUBLIC_DISABLED_SSR === 'true'
 
 export const withApollo = (App: any) =>
   class AppWithApollo extends Component {
@@ -55,7 +56,7 @@ export const withApollo = (App: any) =>
       }
 
       // Run all GraphQL queries
-      if (typeof window === 'undefined' && isProd) {
+      if (typeof window === 'undefined' && isProd && !disabledSSR) {
         await getDataFromTree(
           <App {...appProps} Component={AppComponent} router={router} apolloClient={apollo} />
         )

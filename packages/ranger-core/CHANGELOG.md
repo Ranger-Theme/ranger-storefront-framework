@@ -1,5 +1,11 @@
 # @ranger-theme/core
 
+## 0.13.0
+
+### Minor Changes
+
+- support cache code
+
 ## 0.12.6
 
 ### Patch Changes

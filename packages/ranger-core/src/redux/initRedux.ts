@@ -6,6 +6,8 @@ type StoreType = {
   reducer: any
 }
 
+declare const window: any
+
 const __REACT_REDUX_STORE__: any = '__REACT_REDUX_STORE__'
 const isLogger: boolean = process.env.NEXT_PUBLIC_REDUX_LOGGER === 'true'
 const isProd: boolean = process.env.NODE_ENV === 'production'
@@ -22,7 +24,7 @@ const initializeStore = ({ reduxState, reducer }: StoreType) => {
     reducer: combineReducers(reducer),
     devTools: !isProd,
     preloadedState: reduxState,
-    middleware: (getDefaultMiddleware) => [...getDefaultMiddleware(), ...middleware]
+    middleware: (getDefaultMiddleware) => [...getDefaultMiddleware(), ...middleware] as any
   })
 }
 
