@@ -28,8 +28,8 @@ const createApolloClient = ({ cookies, reduxState, domain }: ApolloStruct) => {
   return new ApolloClient({
     link: ApolloLink.split(
       (operation) => operation.getContext().clientName === 'livesearch',
-      adobeLink,
-      liveLink
+      liveLink,
+      adobeLink
     ),
     cache: new InMemoryCache({
       addTypename: false,
