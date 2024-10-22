@@ -1,5 +1,11 @@
 # @ranger-theme/core
 
+## 0.14.0
+
+### Minor Changes
+
+- support live search
+
 ## 0.13.0
 
 ### Minor Changes
