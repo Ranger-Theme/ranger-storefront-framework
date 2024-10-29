@@ -1,5 +1,12 @@
 # @ranger-theme/nextjs
 
+## 1.1.53
+
+### Patch Changes
+
+- Updated dependencies
+  - @ranger-theme/core@0.14.4
+
 ## 1.1.52
 
 ### Patch Changes

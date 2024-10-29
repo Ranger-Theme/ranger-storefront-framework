@@ -1,5 +1,11 @@
 # @ranger-theme/core
 
+## 0.14.4
+
+### Patch Changes
+
+- publish
+
 ## 0.14.3
 
 ### Patch Changes
