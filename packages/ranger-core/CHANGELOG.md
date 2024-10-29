@@ -1,5 +1,11 @@
 # @ranger-theme/core
 
+## 0.14.2
+
+### Patch Changes
+
+- domian path
+
 ## 0.14.1
 
 ### Patch Changes

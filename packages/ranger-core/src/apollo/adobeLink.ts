@@ -18,7 +18,7 @@ export const createAdobeLink = (config: AdobeLinkType) => {
   if (isAdobeDeploy) apiURL = `${config.domain}/`
   if (isVercelDeploy) apiURL = `${config.domain}/`
 
-  const suffix: string = isAdobeDeploy ? '/graphql' : 'api/graphql'
+  const suffix: string = isAdobeDeploy ? 'graphql' : 'api/graphql'
   const httpLink = new HttpLink({
     uri: `${typeof window === 'undefined' ? `${apiURL}` : `${window.location.origin}/`}${suffix}`,
     credentials: 'same-origin',
