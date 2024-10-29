@@ -19,9 +19,11 @@ export const createLiveSearch = (config: LiveSearchType) => {
   if (isAdobeDeploy) apiURL = `${config.end_point}/`
   if (isVercelDeploy) apiURL = `${config.end_point}/`
 
-  const suffix: string = isAdobeDeploy ? '/graphql' : 'api/livesearch'
+  const suffix: string = isAdobeDeploy ? 'graphql' : 'api/livesearch'
   const httpLink = new HttpLink({
-    uri: `${typeof window === 'undefined' ? `${apiURL}` : `${window.location.origin}/`}${suffix}`,
+    uri: isAdobeDeploy
+      ? `${apiURL}${suffix}`
+      : `${typeof window === 'undefined' ? `${apiURL}` : `${window.location.origin}/`}${suffix}`,
     credentials: 'same-origin',
     fetch: shrinkFetchQuery as any,
     useGETForQueries: true

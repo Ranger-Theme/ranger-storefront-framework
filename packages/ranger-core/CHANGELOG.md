@@ -1,5 +1,11 @@
 # @ranger-theme/core
 
+## 0.14.3
+
+### Patch Changes
+
+- live search
+
 ## 0.14.2
 
 ### Patch Changes
