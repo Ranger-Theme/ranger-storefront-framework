@@ -1,5 +1,17 @@
 # @ranger-theme/core
 
+## 0.14.6
+
+### Patch Changes
+
+- recover
+
+## 0.14.5
+
+### Patch Changes
+
+- query get
+
 ## 0.14.4
 
 ### Patch Changes
