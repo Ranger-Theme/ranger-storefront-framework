@@ -19,7 +19,7 @@ export const createLiveSearch = (config: LiveSearchType) => {
   if (isAdobeDeploy) apiURL = `${config.end_point}/`
   if (isVercelDeploy) apiURL = `${config.end_point}/`
 
-  const suffix: string = isAdobeDeploy ? '' : 'api/livesearch'
+  const suffix: string = isAdobeDeploy ? 'api/livesearch' : 'api/livesearch'
   const httpLink = new HttpLink({
     uri: isAdobeDeploy
       ? `${apiURL}${suffix}`

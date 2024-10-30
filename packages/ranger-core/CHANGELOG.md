@@ -1,5 +1,17 @@
 # @ranger-theme/core
 
+## 0.15.0
+
+### Minor Changes
+
+- use post
+
+## 0.14.7
+
+### Patch Changes
+
+- support cross domain
+
 ## 0.14.6
 
 ### Patch Changes
