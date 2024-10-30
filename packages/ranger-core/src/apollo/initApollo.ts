@@ -23,7 +23,7 @@ const createApolloClient = ({ cookies, reduxState, domain }: ApolloStruct) => {
   const isClient = typeof window !== 'undefined'
   const adobeLink = createAdobeLink({ cookies, domain, reduxState })
   const conifg = reduxState?.app?.livesearch ?? {}
-  const liveLink = createLiveSearch(conifg)
+  const liveLink = createLiveSearch({ domain, ...conifg })
 
   return new ApolloClient({
     link: ApolloLink.split(

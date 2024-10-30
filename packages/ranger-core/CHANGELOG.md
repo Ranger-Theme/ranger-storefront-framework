@@ -1,5 +1,17 @@
 # @ranger-theme/core
 
+## 0.15.2
+
+### Patch Changes
+
+- publish
+
+## 0.15.1
+
+### Patch Changes
+
+- proxy api to livesearch
+
 ## 0.15.0
 
 ### Minor Changes

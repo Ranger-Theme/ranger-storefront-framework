@@ -9,6 +9,7 @@ export type LiveSearchType = {
   store_view_code: string
   website_code: string
   x_api_key: string
+  domain: string
 }
 
 export const createLiveSearch = (config: LiveSearchType) => {
@@ -16,14 +17,12 @@ export const createLiveSearch = (config: LiveSearchType) => {
   const isAdobeDeploy: boolean = process.env.NEXT_PUBLIC_DEPLOY_PLATFORM === 'adobe'
   const isVercelDeploy: boolean = process.env.NEXT_PUBLIC_DEPLOY_PLATFORM === 'vercel'
 
-  if (isAdobeDeploy) apiURL = `${config.end_point}/`
-  if (isVercelDeploy) apiURL = `${config.end_point}/`
+  if (isAdobeDeploy) apiURL = `${config.domain}/`
+  if (isVercelDeploy) apiURL = `${config.domain}/`
 
-  const suffix: string = isAdobeDeploy ? 'api/livesearch' : 'api/livesearch'
+  const suffix: string = 'api/livesearch'
   const httpLink = new HttpLink({
-    uri: isAdobeDeploy
-      ? `${apiURL}${suffix}`
-      : `${typeof window === 'undefined' ? `${apiURL}` : `${window.location.origin}/`}${suffix}`,
+    uri: `${typeof window === 'undefined' ? `${apiURL}` : `${window.location.origin}/`}${suffix}`,
     credentials: 'same-origin',
     fetch: shrinkFetchQuery as any,
     useGETForQueries: true
