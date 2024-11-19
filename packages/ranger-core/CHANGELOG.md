@@ -1,5 +1,11 @@
 # @ranger-theme/core
 
+## 1.0.0
+
+### Major Changes
+
+- apollo query log and valid api
+
 ## 0.15.2
 
 ### Patch Changes

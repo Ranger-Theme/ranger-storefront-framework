@@ -1,6 +1,6 @@
 export { setRafTimeout } from './animation'
 export { useCookie } from './cookie'
-export { useCountdown } from './countdown'
 export { usePwaInstall } from './pwa'
 export { useScrollIntoView } from './scroll'
+export { useTimedown } from './timedown'
 export * from 'ahooks'

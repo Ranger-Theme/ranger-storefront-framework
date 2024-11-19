@@ -1,5 +1,11 @@
 # @ranger-theme/hooks
 
+## 1.0.0
+
+### Major Changes
+
+- apollo query log and valid api
+
 ## 0.9.3
 
 ### Patch Changes

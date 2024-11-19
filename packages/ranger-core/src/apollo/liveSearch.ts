@@ -2,6 +2,8 @@ import { ApolloLink, HttpLink } from '@apollo/client'
 import { onError } from '@apollo/client/link/error'
 import { shrinkFetchQuery } from '@ranger-theme/apollo'
 
+import { logURLLink } from './logURL'
+
 export type LiveSearchType = {
   end_point: string
   magento_environment_id: string
@@ -21,8 +23,9 @@ export const createLiveSearch = (config: LiveSearchType) => {
   if (isVercelDeploy) apiURL = `${config.domain}/`
 
   const suffix: string = 'api/livesearch'
+  const uri: string = `${typeof window === 'undefined' ? `${apiURL}` : `${window.location.origin}/`}${suffix}`
   const httpLink = new HttpLink({
-    uri: `${typeof window === 'undefined' ? `${apiURL}` : `${window.location.origin}/`}${suffix}`,
+    uri,
     credentials: 'same-origin',
     fetch: shrinkFetchQuery as any,
     useGETForQueries: true
@@ -71,5 +74,6 @@ export const createLiveSearch = (config: LiveSearchType) => {
   })
 
   const apolloLink = middlewareLink.concat(httpLink)
-  return errorLink.concat(apolloLink)
+  const finalLink = errorLink.concat(apolloLink)
+  return ApolloLink.from([logURLLink(uri), finalLink])
 }
