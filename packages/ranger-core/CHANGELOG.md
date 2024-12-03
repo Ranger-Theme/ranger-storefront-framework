@@ -1,5 +1,11 @@
 # @ranger-theme/core
 
+## 1.1.0
+
+### Minor Changes
+
+- remove cookie
+
 ## 1.0.0
 
 ### Major Changes

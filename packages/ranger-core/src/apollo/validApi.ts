@@ -6,7 +6,7 @@ export const validApiMessage = (message: string) => {
     'The request is allowed for logged in customer',
     'The current user cannot perform operations on cart',
     // eslint-disable-next-line quotes
-    "The cart isn't active",
+    "The cart isn't active.",
     // eslint-disable-next-line quotes
     "The current customer isn't authorized."
   ]
