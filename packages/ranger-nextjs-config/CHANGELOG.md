@@ -1,5 +1,11 @@
 # @ranger-theme/nextjs-config
 
+## 0.14.0
+
+### Minor Changes
+
+- svg builder
+
 ## 0.13.0
 
 ### Minor Changes
