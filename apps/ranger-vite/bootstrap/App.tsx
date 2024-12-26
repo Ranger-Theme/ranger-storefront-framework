@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useCookie } from '@ranger-theme/hooks'
 import { CountDown } from '@ranger-theme/ui'
 
@@ -8,6 +8,15 @@ const App = () => {
   const { cookie } = useCookie()
   const [count, setCount] = useState<number>(0)
   console.info(cookie.getItem('access_token'))
+
+  useEffect(() => {
+    const fetchConfig = async () => {
+      const res = await fetch('/api/rest/api')
+      console.info(res)
+    }
+
+    fetchConfig()
+  }, [])
 
   return (
     <>

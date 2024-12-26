@@ -1,5 +1,11 @@
 # @ranger-theme/vite-config
 
+## 1.0.4
+
+### Patch Changes
+
+- http proxy es import
+
 ## 1.0.3
 
 ### Patch Changes

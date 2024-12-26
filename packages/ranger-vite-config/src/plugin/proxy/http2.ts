@@ -1,4 +1,4 @@
-import * as proxy from 'http2-proxy'
+import proxy from 'http2-proxy'
 import type { Connect, Plugin } from 'vite'
 
 const error = (message: string): never => {
@@ -40,6 +40,7 @@ export const httpProxy = (configOptions: {
         if (req.url && re.test(req.url)) {
           const url = (rewrite?.(req.url) ?? req.url).replace(/^\/+/, '')
           const { pathname, search } = new URL(url, tu)
+
           proxy.web(
             req,
             res,
