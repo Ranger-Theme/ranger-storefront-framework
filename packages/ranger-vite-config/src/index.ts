@@ -97,24 +97,6 @@ export const baseConfig = ({
 
             return `assets/[name]-[hash]-${timestamp}[extname]`
           }
-        },
-        onLog(level: string, log: any, handler: any) {
-          if (
-            [
-              'CYCLIC_CROSS_CHUNK_REEXPORT',
-              'MODULE_LEVEL_DIRECTIVE',
-              'PLUGIN_WARNING',
-              'CIRCULAR_DEPENDENCY'
-            ].includes(log.code)
-          ) {
-            return // Ignore circular dependency warnings
-          }
-
-          if (level === 'warn') {
-            handler('error', log)
-          } else {
-            handler(level, log)
-          }
         }
       }
     },

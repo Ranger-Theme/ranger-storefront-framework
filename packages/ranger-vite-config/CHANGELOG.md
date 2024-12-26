@@ -1,5 +1,11 @@
 # @ranger-theme/vite-config
 
+## 1.0.5
+
+### Patch Changes
+
+- remove vite onLog
+
 ## 1.0.4
 
 ### Patch Changes
