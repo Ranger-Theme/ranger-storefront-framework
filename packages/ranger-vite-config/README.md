@@ -7,7 +7,7 @@
 ## 📚 Documentation
 
 - [Npm](https://www.npmjs.com/package/@ranger-theme/vite-config)
-- [CHANGELOG](CHANGELOG.md)
+- [CHANGELOG](https://www.npmjs.com/package/@ranger-theme/vite-config/CHANGELOG.md)
 
 ## 📦 Install
 

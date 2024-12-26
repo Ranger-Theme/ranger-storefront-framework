@@ -1,7 +1,4 @@
-// import forge from 'node-forge/lib/forge'
 import forge from 'node-forge'
-
-import 'node-forge/lib/pki'
 
 const toPositiveHex = (hexString: string) => {
   let mostSignificativeHexAsInt = parseInt(hexString[0], 16)

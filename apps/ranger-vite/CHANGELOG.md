@@ -1,5 +1,33 @@
 # @ranger-theme/vite
 
+## 0.1.40
+
+### Patch Changes
+
+- Updated dependencies
+  - @ranger-theme/vite-config@1.0.3
+
+## 0.1.39
+
+### Patch Changes
+
+- Updated dependencies
+  - @ranger-theme/vite-config@1.0.2
+
+## 0.1.38
+
+### Patch Changes
+
+- Updated dependencies
+  - @ranger-theme/vite-config@1.0.1
+
+## 0.1.37
+
+### Patch Changes
+
+- Updated dependencies
+  - @ranger-theme/vite-config@1.0.0
+
 ## 0.1.36
 
 ### Patch Changes

@@ -1,5 +1,29 @@
 # @ranger-theme/vite-config
 
+## 1.0.3
+
+### Patch Changes
+
+- remove node forge lib
+
+## 1.0.2
+
+### Patch Changes
+
+- extension js file format
+
+## 1.0.1
+
+### Patch Changes
+
+- vite esm module
+
+## 1.0.0
+
+### Major Changes
+
+- update vite to latest v6
+
 ## 0.17.0
 
 ### Minor Changes

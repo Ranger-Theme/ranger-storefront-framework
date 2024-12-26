@@ -9,7 +9,7 @@ const viteConfig: any = ({ mode }: ConfigEnv) => {
   const defaultConfig: any = baseConfig({
     mode,
     pkg,
-    https: true,
+    https: false,
     entry: '/bootstrap/main.tsx',
     outDir: 'build',
     cdnOptions: {

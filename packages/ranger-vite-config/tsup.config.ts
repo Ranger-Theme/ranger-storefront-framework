@@ -16,7 +16,7 @@ export default defineConfig((options: Options) => {
     external: [],
     outExtension({ format }) {
       return {
-        js: `.${format}.js`
+        js: `.${format === 'esm' ? 'mjs' : format}`
       }
     }
   }

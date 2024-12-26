@@ -127,8 +127,7 @@ export const baseConfig = ({
       cors: true,
       host: '127.0.0.1',
       port,
-      hmr: true,
-      https
+      hmr: true
     },
     plugins: [
       createHtmlPlugin({
