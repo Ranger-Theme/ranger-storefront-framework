@@ -21,8 +21,11 @@ const viteConfig: any = ({ mode }: ConfigEnv) => {
         external: [
           'tinymce/tinymce',
           'tinymce/icons/default',
+          'tinymce/models/dom',
+          'tinymce/icons/langs',
           'tinymce/themes/silver',
-          'tinymce/plugins/*'
+          'tinymce/plugins/*',
+          'tinymce/skins/*'
         ]
       }
     }

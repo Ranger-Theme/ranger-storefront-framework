@@ -8,7 +8,7 @@ export type ScriptMap = {
 }
 
 interface TinymceEditorProps extends IAllProps {
-  type: ScriptType
+  type?: ScriptType
 }
 
 const apiKey: string = import.meta.env.REACT_APP_EDITOR_API_KEY
@@ -20,6 +20,9 @@ const scriptSrcMap: ScriptMap = {
 }
 
 const TinymceEditor: FC<TinymceEditorProps> = ({ type = 'local', ...props }) => {
+  const initParams: any = {
+    license_key: 'gpl'
+  }
   const useDarkMode: boolean = window.matchMedia('(prefers-color-scheme: dark)').matches
 
   const handleEditorChange = (content: string) => {
@@ -38,9 +41,9 @@ const TinymceEditor: FC<TinymceEditorProps> = ({ type = 'local', ...props }) => 
         apiKey={apiKey}
         tinymceScriptSrc={scriptSrcMap?.[type] ?? undefined}
         init={{
+          ...initParams,
           height: 500,
           promotion: false,
-          license_key: 'gpl',
           plugins:
             'preview importcss searchreplace autolink autosave save directionality code visualblocks visualchars fullscreen image link media codesample table charmap pagebreak nonbreaking anchor insertdatetime advlist lists wordcount help charmap code',
           editimage_cors_hosts: ['picsum.photos'],
