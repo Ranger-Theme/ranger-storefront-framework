@@ -173,8 +173,8 @@ importers:
         specifier: ^18.2.0
         version: 18.3.1(react@18.3.1)
       tinymce:
-        specifier: ^7.6.0
-        version: 7.6.0
+        specifier: 7.2.1
+        version: 7.2.1
     devDependencies:
       '@ranger-theme/eslint-config':
         specifier: workspace:^
@@ -5122,7 +5122,7 @@ packages:
       prop-types: 15.8.1
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
-      tinymce: 7.6.0
+      tinymce: 7.2.1
     dev: false
 
   /@tsconfig/node10@1.0.11:
@@ -12154,8 +12154,8 @@ packages:
     resolution: {integrity: sha512-w89qg7PI8wAdvX60bMDP+bFoD5Dvhm9oLheFp5O4a2QF0cSBGsBX4qZmadPMvVqlLJBBci+WqGGOAPvcDeNSVg==}
     dev: false
 
-  /tinymce@7.6.0:
-    resolution: {integrity: sha512-kUrklnD7H8JbpSDEGRh51GKK6Mrf+pR9neSDzUHvXKV+2oRtMB7sqfAtEOnM0/WKdstwaX0qoNCZNo2H1Y0EFA==}
+  /tinymce@7.2.1:
+    resolution: {integrity: sha512-ADd1cvdIuq6NWyii0ZOZRuu+9sHIdQfcRNWBcBps2K8vy7OjlRkX6iw7zz1WlL9kY4z4L1DvIP+xOrVX/46aHA==}
     dev: false
 
   /tmp@0.0.33:
