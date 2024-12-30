@@ -15,6 +15,16 @@ const viteConfig: any = ({ mode }: ConfigEnv) => {
     cdnOptions: {
       enableInDevMode: false,
       modules: ['react', 'react-dom']
+    },
+    buildOptions: {
+      rollupOptions: {
+        external: [
+          'tinymce/tinymce',
+          'tinymce/icons/default',
+          'tinymce/themes/silver',
+          'tinymce/plugins/*'
+        ]
+      }
     }
   })
 

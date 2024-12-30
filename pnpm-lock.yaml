@@ -163,12 +163,18 @@ importers:
       '@ranger-theme/vite-config':
         specifier: workspace:^
         version: link:../../packages/ranger-vite-config
+      '@tinymce/tinymce-react':
+        specifier: ^5.1.1
+        version: 5.1.1(react-dom@18.3.1)(react@18.3.1)
       react:
         specifier: ^18.2.0
         version: 18.3.1
       react-dom:
         specifier: ^18.2.0
         version: 18.3.1(react@18.3.1)
+      tinymce:
+        specifier: ^7.6.0
+        version: 7.6.0
     devDependencies:
       '@ranger-theme/eslint-config':
         specifier: workspace:^
@@ -5105,6 +5111,18 @@ packages:
     engines: {node: '>=10'}
     dependencies:
       defer-to-connect: 2.0.1
+    dev: false
+
+  /@tinymce/tinymce-react@5.1.1(react-dom@18.3.1)(react@18.3.1):
+    resolution: {integrity: sha512-DQ0wpvnf/9z8RsOEAmrWZ1DN1PKqcQHfU+DpM3llLze7FHmxVtzuN8O+FYh0oAAF4stzAXwiCIVacfqjMwRieQ==}
+    peerDependencies:
+      react: ^18.0.0 || ^17.0.1 || ^16.7.0
+      react-dom: ^18.0.0 || ^17.0.1 || ^16.7.0
+    dependencies:
+      prop-types: 15.8.1
+      react: 18.3.1
+      react-dom: 18.3.1(react@18.3.1)
+      tinymce: 7.6.0
     dev: false
 
   /@tsconfig/node10@1.0.11:
@@ -12134,6 +12152,10 @@ packages:
 
   /through@2.3.8:
     resolution: {integrity: sha512-w89qg7PI8wAdvX60bMDP+bFoD5Dvhm9oLheFp5O4a2QF0cSBGsBX4qZmadPMvVqlLJBBci+WqGGOAPvcDeNSVg==}
+    dev: false
+
+  /tinymce@7.6.0:
+    resolution: {integrity: sha512-kUrklnD7H8JbpSDEGRh51GKK6Mrf+pR9neSDzUHvXKV+2oRtMB7sqfAtEOnM0/WKdstwaX0qoNCZNo2H1Y0EFA==}
     dev: false
 
   /tmp@0.0.33:
