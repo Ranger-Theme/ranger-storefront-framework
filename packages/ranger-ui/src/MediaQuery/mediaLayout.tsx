@@ -2,7 +2,6 @@ import type { FC, ReactNode } from 'react'
 import { useEffect, useState } from 'react'
 import type { MediaQueryAllQueryable } from 'react-responsive'
 import { useMediaQuery } from 'react-responsive'
-import { isEmpty } from 'lodash-es'
 
 const LayoutMap = new Map([
   ['default', { minWidth: 768 }],
@@ -21,7 +20,7 @@ export interface MediaLayoutProps {
 export const MediaLayout: FC<MediaLayoutProps> = ({ children, type = 'default', params = {} }) => {
   const isPrams = LayoutMap.get(type)
   const [isClient, setIsClient] = useState(false)
-  const realParams = isEmpty(isPrams) ? params : isPrams
+  const realParams: any = JSON.stringify(isPrams) === '{}' ? params : isPrams
   const isCondition = useMediaQuery(realParams)
 
   useEffect(() => {

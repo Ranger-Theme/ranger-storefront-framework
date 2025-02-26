@@ -1,5 +1,11 @@
 # @ranger-theme/ui
 
+## 0.14.2
+
+### Patch Changes
+
+- replace lodash es
+
 ## 0.14.1
 
 ### Patch Changes

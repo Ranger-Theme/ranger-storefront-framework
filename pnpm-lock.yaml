@@ -650,9 +650,6 @@ importers:
       '@ranger-theme/hooks':
         specifier: workspace:^
         version: link:../ranger-hooks
-      lodash-es:
-        specifier: ^4.17.21
-        version: 4.17.21
       react-cookie-consent:
         specifier: ^9.0.0
         version: 9.0.0(react@18.3.1)
@@ -723,9 +720,6 @@ importers:
       '@ranger-theme/ts-config':
         specifier: workspace:^
         version: link:../ranger-ts-config
-      '@types/lodash-es':
-        specifier: ^4.17.12
-        version: 4.17.12
       '@types/node':
         specifier: ^20.10.6
         version: 20.14.13
