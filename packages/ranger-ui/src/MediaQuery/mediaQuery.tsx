@@ -3,7 +3,6 @@ import type { MediaQueryAllQueryable, MediaQueryMatchers } from 'react-responsiv
 import ReactResponsive from 'react-responsive'
 
 export interface MediaQueryProps extends MediaQueryAllQueryable {
-  component?: ReactNode
   children?: ReactNode | ((matches: boolean) => ReactNode)
   query?: string
   style?: CSSProperties
@@ -14,7 +13,7 @@ export interface MediaQueryProps extends MediaQueryAllQueryable {
   onChange?: (_matches: boolean) => void
 }
 
-const MediaQuery: FC<MediaQueryProps> = ({
+export const MediaQuery: FC<MediaQueryProps> = ({
   children,
   className = '',
   query,
@@ -40,5 +39,3 @@ const MediaQuery: FC<MediaQueryProps> = ({
     </ReactResponsive>
   )
 }
-
-export default MediaQuery

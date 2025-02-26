@@ -1,6 +1,6 @@
 {
   "name": "@ranger-theme/ui",
-  "version": "0.13.5",
+  "version": "0.14.0",
   "main": "./dist/index.cjs.js",
   "module": "./dist/index.esm.js",
   "types": "./dist/index.d.ts",
@@ -21,6 +21,7 @@
   },
   "dependencies": {
     "@ranger-theme/hooks": "workspace:^",
+    "lodash-es": "^4.17.21",
     "react-cookie-consent": "^9.0.0",
     "react-copy-to-clipboard": "^5.1.0",
     "react-countdown": "^2.3.5",
@@ -46,6 +47,7 @@
     "@emotion/styled": "^11.11.5",
     "@ranger-theme/eslint-config": "workspace:^",
     "@ranger-theme/ts-config": "workspace:^",
+    "@types/lodash-es": "^4.17.12",
     "@types/node": "^20.10.6",
     "@types/react": "^18.3.3",
     "@types/react-copy-to-clipboard": "^5.0.7",

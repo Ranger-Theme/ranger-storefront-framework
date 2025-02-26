@@ -1,5 +1,11 @@
 # @ranger-theme/ui
 
+## 0.14.0
+
+### Minor Changes
+
+- media layout
+
 ## 0.13.5
 
 ### Patch Changes
