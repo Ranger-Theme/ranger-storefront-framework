@@ -1,4 +1,5 @@
 import type { CSSProperties, FC, ReactNode } from 'react'
+import { useEffect, useState } from 'react'
 import type { MediaQueryAllQueryable, MediaQueryMatchers } from 'react-responsive'
 import ReactResponsive from 'react-responsive'
 
@@ -13,7 +14,7 @@ export interface MediaQueryProps extends MediaQueryAllQueryable {
   onChange?: (_matches: boolean) => void
 }
 
-export const MediaQuery: FC<MediaQueryProps> = ({
+const MediaQuery: FC<MediaQueryProps> = ({
   children,
   className = '',
   query,
@@ -24,18 +25,30 @@ export const MediaQuery: FC<MediaQueryProps> = ({
   onChange,
   ...props
 }) => {
+  const [isClient, setIsClient] = useState<boolean>(false)
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') setIsClient(true)
+  }, [])
+
   return (
-    <ReactResponsive
-      className={className}
-      query={query}
-      style={style}
-      device={device}
-      values={values}
-      onBeforeChange={onBeforeChange}
-      onChange={onChange}
-      {...props}
-    >
-      {children}
-    </ReactResponsive>
+    <>
+      {isClient ? (
+        <ReactResponsive
+          className={className}
+          query={query}
+          style={style}
+          device={device}
+          values={values}
+          onBeforeChange={onBeforeChange}
+          onChange={onChange}
+          {...props}
+        >
+          {children}
+        </ReactResponsive>
+      ) : null}
+    </>
   )
 }
+
+export default MediaQuery

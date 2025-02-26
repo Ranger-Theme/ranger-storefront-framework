@@ -1,5 +1,12 @@
 # @ranger-theme/vite
 
+## 0.1.46
+
+### Patch Changes
+
+- Updated dependencies
+  - @ranger-theme/ui@0.14.3
+
 ## 0.1.45
 
 ### Patch Changes
